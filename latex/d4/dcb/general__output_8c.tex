@@ -1,0 +1,182 @@
+\hypertarget{general__output_8c}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/general\+\_\+output/general\+\_\+output.c File Reference}
+\label{general__output_8c}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/general\_output/general\_output.c@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/general\_output/general\_output.c}}
+
+
+Source code file for General Output module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{general__output_8c_a25b794e0a5e98baa50a7c14eca903cfc}{init\+\_\+general\+Output\+Pin}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} pin)
+\begin{DoxyCompactList}\small\item\em Configuration of G\+P\+IO as general output pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{general__output_8c_a93f0d864238e52884f19b9026aee1a05}{general\+Output\+Pin\+\_\+set\+Pin\+High}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} pin)
+\begin{DoxyCompactList}\small\item\em Set output pin high. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{general__output_8c_a1f8eac197d11d8d6dcd5e999686344a1}{general\+Output\+Pin\+\_\+set\+Pin\+Low}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} pin)
+\begin{DoxyCompactList}\small\item\em Set output pin low. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source code file for General Output module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{general__output_8c_a93f0d864238e52884f19b9026aee1a05}\label{general__output_8c_a93f0d864238e52884f19b9026aee1a05}} 
+\index{general\_output.c@{general\_output.c}!generalOutputPin\_setPinHigh@{generalOutputPin\_setPinHigh}}
+\index{generalOutputPin\_setPinHigh@{generalOutputPin\_setPinHigh}!general\_output.c@{general\_output.c}}
+\doxysubsubsection{\texorpdfstring{generalOutputPin\_setPinHigh()}{generalOutputPin\_setPinHigh()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} general\+Output\+Pin\+\_\+set\+Pin\+High (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Set output pin high. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 0-\/87 (see \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file general\+\_\+output.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                              \{}
+\DoxyCodeLine{64     EALLOW;                                                                             \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{65     \textcolor{keywordflow}{switch}(pin)\{}
+\DoxyCodeLine{66     \textcolor{keywordflow}{case} 0 ... 31:  TMC\_BASE\_PIO-\/>DATA[0].SET |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                    \textcolor{comment}{// Set Output to 1}}
+\DoxyCodeLine{67                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{68     \textcolor{keywordflow}{case} 32 ... 63: pin -\/= 32;}
+\DoxyCodeLine{69                     TMC\_BASE\_PIO-\/>DATA[1].SET |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                    \textcolor{comment}{// Set Output to 1}}
+\DoxyCodeLine{70                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{71     \textcolor{keywordflow}{case} 64 ... 87: pin -\/= 64;}
+\DoxyCodeLine{72                     TMC\_BASE\_PIO-\/>DATA[2].SET |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                    \textcolor{comment}{// Set Output to 1}}
+\DoxyCodeLine{73                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{74     \textcolor{keywordflow}{default}:        EDIS;}
+\DoxyCodeLine{75                     \textcolor{keywordflow}{return} -\/1;                                                          \textcolor{comment}{// Invalid input value}}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77     EDIS;                                                                               \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{general__output_8c_a1f8eac197d11d8d6dcd5e999686344a1}\label{general__output_8c_a1f8eac197d11d8d6dcd5e999686344a1}} 
+\index{general\_output.c@{general\_output.c}!generalOutputPin\_setPinLow@{generalOutputPin\_setPinLow}}
+\index{generalOutputPin\_setPinLow@{generalOutputPin\_setPinLow}!general\_output.c@{general\_output.c}}
+\doxysubsubsection{\texorpdfstring{generalOutputPin\_setPinLow()}{generalOutputPin\_setPinLow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} general\+Output\+Pin\+\_\+set\+Pin\+Low (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Set output pin low. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 0-\/87 (see \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file general\+\_\+output.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{88                                             \{}
+\DoxyCodeLine{89     EALLOW;                                                                             \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{90     \textcolor{keywordflow}{switch}(pin)\{}
+\DoxyCodeLine{91     \textcolor{keywordflow}{case} 0 ... 31:  TMC\_BASE\_PIO-\/>DATA[0].CLEAR |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);              \textcolor{comment}{// Set Output to 0}}
+\DoxyCodeLine{92                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{93     \textcolor{keywordflow}{case} 32 ... 63: pin -\/= 32;}
+\DoxyCodeLine{94                     TMC\_BASE\_PIO-\/>DATA[1].CLEAR |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);              \textcolor{comment}{// Set Output to 0}}
+\DoxyCodeLine{95                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{96     \textcolor{keywordflow}{case} 64 ... 87: pin -\/= 64;}
+\DoxyCodeLine{97                     TMC\_BASE\_PIO-\/>DATA[2].CLEAR |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);              \textcolor{comment}{// Set Output to 0}}
+\DoxyCodeLine{98                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{99     \textcolor{keywordflow}{default}:        EDIS;}
+\DoxyCodeLine{100                     \textcolor{keywordflow}{return} -\/1;                                                          \textcolor{comment}{// Invalid input value}}
+\DoxyCodeLine{101     \}}
+\DoxyCodeLine{102     EDIS;                                                                               \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{103     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{104 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{general__output_8c_a25b794e0a5e98baa50a7c14eca903cfc}\label{general__output_8c_a25b794e0a5e98baa50a7c14eca903cfc}} 
+\index{general\_output.c@{general\_output.c}!init\_generalOutputPin@{init\_generalOutputPin}}
+\index{init\_generalOutputPin@{init\_generalOutputPin}!general\_output.c@{general\_output.c}}
+\doxysubsubsection{\texorpdfstring{init\_generalOutputPin()}{init\_generalOutputPin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+general\+Output\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Configuration of G\+P\+IO as general output pin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 0-\/87 (see \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file general\+\_\+output.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15                                        \{}
+\DoxyCodeLine{16     EALLOW;                                                                             \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{17     \textcolor{keywordflow}{switch}(pin)\{}
+\DoxyCodeLine{18     \textcolor{keywordflow}{case} 0 ... 31:  TMC\_BASE\_PIO-\/>CTL[0].PUD |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                 \textcolor{comment}{// Disable the internal pullup on the specified pin.}}
+\DoxyCodeLine{19                     \textcolor{keywordflow}{if}(pin <=15)\{}
+\DoxyCodeLine{20                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << (pin*2));       \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{21                     \}}
+\DoxyCodeLine{22                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{23                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << ((pin-\/16)*2));  \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{24                     \}}
+\DoxyCodeLine{25                     TMC\_BASE\_PIO-\/>CTL[0].DIR |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                 \textcolor{comment}{// Configures the GPIO pin as an output}}
+\DoxyCodeLine{26                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{27     \textcolor{keywordflow}{case} 32 ... 63: pin -\/= 32;}
+\DoxyCodeLine{28                     TMC\_BASE\_PIO-\/>CTL[1].PUD |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                 \textcolor{comment}{// Disable the internal pullup on the specified pin.}}
+\DoxyCodeLine{29                     \textcolor{keywordflow}{if}(pin <=15)\{}
+\DoxyCodeLine{30                         TMC\_BASE\_PIO-\/>CTL[1].MUX1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << (pin*2));       \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{31                     \}}
+\DoxyCodeLine{32                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{33                         TMC\_BASE\_PIO-\/>CTL[1].MUX2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << ((pin-\/16)*2));  \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{34                     \}}
+\DoxyCodeLine{35                     TMC\_BASE\_PIO-\/>CTL[1].DIR |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                 \textcolor{comment}{// Configures the GPIO pin as an output}}
+\DoxyCodeLine{36                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{37     \textcolor{keywordflow}{case} 64 ... 87: pin -\/= 64;}
+\DoxyCodeLine{38                     TMC\_BASE\_PIO-\/>CTL[2].PUD |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                 \textcolor{comment}{// Disable the internal pullup on the specified pin.}}
+\DoxyCodeLine{39                     \textcolor{keywordflow}{if}(pin <=15)\{}
+\DoxyCodeLine{40                         TMC\_BASE\_PIO-\/>CTL[2].MUX1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << (pin*2));       \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{41                     \}}
+\DoxyCodeLine{42                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{43                         TMC\_BASE\_PIO-\/>CTL[2].MUX2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << ((pin-\/16)*2));  \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{44                     \}}
+\DoxyCodeLine{45                     TMC\_BASE\_PIO-\/>CTL[2].DIR |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                 \textcolor{comment}{// Configures the GPIO pin as an output}}
+\DoxyCodeLine{46                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{47     \textcolor{keywordflow}{default}:        EDIS;}
+\DoxyCodeLine{48                     \textcolor{keywordflow}{return} -\/1;                                                          \textcolor{comment}{// Invalid input value}}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50     EDIS;                                                                               \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{51     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}

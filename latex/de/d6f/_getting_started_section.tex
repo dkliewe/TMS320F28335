@@ -1,0 +1,1228 @@
+\label{_getting_started_section_md_doc_pages_getting_started}%
+\Hypertarget{_getting_started_section_md_doc_pages_getting_started}%
+
+
+ Topics of how to get started with T\+M\+S320\+F28335 and Code Composer Studio with brief descriptions\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\mbox{\hyperlink{first_steps}{First Steps}}&Description of first steps for working with the T\+M\+S320\+F28335 Library and suggestions for your project start \\\cline{1-2}
+\mbox{\hyperlink{setup_ccs_project}{Set Up C\+C\+S-\/\+Project}}&Step by step guidance for setting up a new Code Composer Studio-\/\+Project \\\cline{1-2}
+\mbox{\hyperlink{create_target_config}{Manage Target Configuration Files}}&Step by step guidance for managing T\+M\+S320\+F28335 Target Configuration Files for all your projects \\\cline{1-2}
+\mbox{\hyperlink{import_library}{Import Library to Project Explorer}}&Step by step guidance for the import of the T\+M\+S320\+F28335 Library into your C\+C\+S-\/\+Project Explorer \\\cline{1-2}
+\mbox{\hyperlink{link_to_library}{Link Library to Project}}&Step by step guidance for linking the imported T\+M\+S320\+F28335 Library to your project \\\cline{1-2}
+\mbox{\hyperlink{write_to_flash}{Programming the Flash}}&Step by step guidance of Programming the Flash and running the Microcontroller T\+M\+S320\+F28335 in Standalone mode \\\cline{1-2}
+\end{longtabu}
+  \hypertarget{first_steps}{}\doxysection{First Steps}\label{first_steps}
+This page gives some basic information and describes how to get started with Code Composer Studio and T\+M\+S320\+F28335 Library
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyItemize}
+\item A G\+P\+IO can only be configured for one module
+\item An overview of which G\+P\+IO can be configured for which module can be seen in the table below
+\item All possible G\+P\+I\+Os and A\+D\+C-\/\+Pins as Input-\/\+Parameter can be seen in the table below or in \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}}
+\end{DoxyItemize}
+
+1) Plan which modules you need in your program and which G\+P\+I\+Os you want to use for each module
+
+2) \href{df/dbc/setup_ccs_project.html}{\texttt{ Set~up~C\+CS~Project}} and \href{d1/d93/import_library.html}{\texttt{ Import~Library}}
+
+4) \href{d5/d8f/link_to_library.html}{\texttt{ Link Library to Project}}
+
+3) Include \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}} and the header-\/files of the modules you want to use
+
+4) Call \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{set\+System\+Controls()}} function
+
+5) Call init-\/functions of the modules you want to use
+
+
+\begin{DoxyItemize}
+\item For available functions of each module see the description of respective module in Modules-\/\+Section
+\item In C\+CS main()\+: Type \char`\"{}init\char`\"{} and then press Ctrl+\+Space to see an overview of all init functions
+\end{DoxyItemize}
+
+  \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{11}{|X[-1]}|}
+\hline
+{\bfseries{Pin}}  &{\bfseries{General Input}}  &{\bfseries{General Output}}  &{\bfseries{A\+DC}}  &{\bfseries{C\+AN}}  &{\bfseries{e\+C\+AP}}  &{\bfseries{e\+P\+WM}}  &{\bfseries{e\+Q\+EP}}  &{\bfseries{I2C}}  &{\bfseries{S\+CI}}  &{\bfseries{S\+PI}}   \\\cline{1-11}
+G\+P\+I\+O0  &  &  &&&&~\newline
+e\+P\+W\+M1A  &&&&\\\cline{1-11}
+G\+P\+I\+O1  &  &  &&&~\newline
+e\+C\+A\+P6  &~\newline
+e\+P\+W\+M1B  &&&&\\\cline{1-11}
+G\+P\+I\+O2  &  &  &&&&~\newline
+e\+P\+W\+M2A  &&&&\\\cline{1-11}
+G\+P\+I\+O3  &  &  &&&~\newline
+e\+C\+A\+P5  &~\newline
+e\+P\+W\+M2B  &&&&\\\cline{1-11}
+G\+P\+I\+O4  &  &  &&&&~\newline
+e\+P\+W\+M3  &&&&\\\cline{1-11}
+G\+P\+I\+O5  &  &  &&&~\newline
+e\+C\+A\+P1  &~\newline
+e\+P\+W\+M3B  &&&&\\\cline{1-11}
+G\+P\+I\+O6  &  &  &&&&~\newline
+e\+P\+W\+M4A  &&&&\\\cline{1-11}
+G\+P\+I\+O7  &  &  &&&~\newline
+e\+C\+A\+P2  &~\newline
+e\+P\+W\+M4B  &&&&\\\cline{1-11}
+G\+P\+I\+O8  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+B\+\_\+\+TX  &
+
+&~\newline
+e\+P\+W\+M5A  &
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O9  &  &  &
+
+&
+
+&~\newline
+e\+C\+A\+P3  &~\newline
+e\+P\+W\+M5B  &
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+B\+\_\+\+TX  &
+
+\\\cline{1-11}
+G\+P\+I\+O10  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+B\+\_\+\+RX  &
+
+&~\newline
+e\+P\+W\+M6A  &
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O11  &  &  &
+
+&
+
+&~\newline
+e\+C\+A\+P4  &~\newline
+e\+P\+W\+M6B  &
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+B\+\_\+\+RX  &
+
+\\\cline{1-11}
+G\+P\+I\+O12  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+B\+\_\+\+TX  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O13  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+B\+\_\+\+RX  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O14  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+B\+\_\+\+TX  &
+
+\\\cline{1-11}
+G\+P\+I\+O15  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+B\+\_\+\+RX  &
+
+\\\cline{1-11}
+G\+P\+I\+O16  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+B\+\_\+\+TX  &
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+S\+P\+I\+\_\+\+A\+\_\+\+S\+I\+MO   \\\cline{1-11}
+G\+P\+I\+O17  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+B\+\_\+\+RX  &
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+S\+P\+I\+\_\+\+A\+\_\+\+S\+O\+MI   \\\cline{1-11}
+G\+P\+I\+O18  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+A\+\_\+\+RX  &
+
+&
+
+&
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+B\+\_\+\+TX  &~\newline
+S\+P\+I\+\_\+\+A\+\_\+\+C\+LK   \\\cline{1-11}
+G\+P\+I\+O19  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+A\+\_\+\+TX  &
+
+&
+
+&
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+B\+\_\+\+RX  &~\newline
+S\+P\+I\+\_\+\+A\+\_\+\+SS   \\\cline{1-11}
+G\+P\+I\+O20  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+B\+\_\+\+TX  &
+
+&
+
+&~\newline
+e\+Q\+E\+P\+\_\+1\+\_\+A  &
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O21  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+B\+\_\+\+RX  &
+
+&
+
+&~\newline
+e\+Q\+E\+P\+\_\+1\+\_\+B  &
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O22  &  &  &
+
+&
+
+&
+
+&
+
+&~\newline
+e\+Q\+E\+P\+\_\+1\+\_\+S  &
+
+&~\newline
+S\+C\+I\+\_\+\+B\+\_\+\+TX  &
+
+\\\cline{1-11}
+G\+P\+I\+O23  &  &  &
+
+&
+
+&
+
+&
+
+&~\newline
+e\+Q\+E\+P\+\_\+1\+\_\+I  &
+
+&~\newline
+S\+C\+I\+\_\+\+B\+\_\+\+RX  &
+
+\\\cline{1-11}
+G\+P\+I\+O24  &  &  &
+
+&
+
+&~\newline
+e\+C\+A\+P1  &
+
+&~\newline
+e\+Q\+E\+P\+\_\+2\+\_\+A  &
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O25  &  &  &
+
+&
+
+&~\newline
+e\+C\+A\+P2  &
+
+&~\newline
+e\+Q\+E\+P\+\_\+2\+\_\+B  &
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O26  &  &  &
+
+&
+
+&~\newline
+e\+C\+A\+P3  &
+
+&~\newline
+e\+Q\+E\+P\+\_\+2\+\_\+I  &
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O27  &  &  &
+
+&
+
+&~\newline
+e\+C\+A\+P4  &
+
+&~\newline
+e\+Q\+E\+P\+\_\+2\+\_\+S  &
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O28  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+A\+\_\+\+RX  &
+
+\\\cline{1-11}
+G\+P\+I\+O29  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+A\+\_\+\+TX  &
+
+\\\cline{1-11}
+G\+P\+I\+O30  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+A\+\_\+\+RX  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O31  &  &  &
+
+&~\newline
+C\+A\+N\+\_\+\+A\+\_\+\+TX  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O32  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+I2\+C\+\_\+\+A\+\_\+\+S\+DA  &
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O33  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+I2\+C\+\_\+\+A\+\_\+\+S\+CL  &
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O34  &  &  &
+
+&
+
+&~\newline
+e\+C\+A\+P1  &
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O48  &  &  &
+
+&
+
+&~\newline
+e\+C\+A\+P5  &
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O49  &  &  &
+
+&
+
+&~\newline
+e\+C\+A\+P6  &
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O58  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O59  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O60  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O61  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O62  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+C\+\_\+\+RX  &
+
+\\\cline{1-11}
+G\+P\+I\+O63  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&~\newline
+S\+C\+I\+\_\+\+C\+\_\+\+TX  &
+
+\\\cline{1-11}
+G\+P\+I\+O84  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O85  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O86  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+G\+P\+I\+O87  &  &  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+A0  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+A1  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+A2  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+A3  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+A4  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+A5  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+A6  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+A7  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+B0  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+B1  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+B2  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+B3  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+B4  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+B5  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+B6  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+A\+D\+C\+I\+N\+B7  &
+
+&
+
+&  &
+
+&
+
+&
+
+&
+
+&
+
+&
+
+&
+
+\\\cline{1-11}
+\end{longtabu}
+  \hypertarget{setup_ccs_project}{}\doxysection{Set Up C\+C\+S-\/\+Project}\label{setup_ccs_project}
+This page describes how to set up a new Code Composer Studio-\/\+Project
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Create Project}}
+
+1) Open Code Composer Studio
+
+2) File -\/$>$ New -\/$>$ C\+CS Project
+
+ ~\newline
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Config Target Configuration File}}
+
+3) Set Target to \char`\"{}2833x Delfino\char`\"{}, \char`\"{}\+T\+M\+S320\+F28335\char`\"{}
+
+Set Connection to \char`\"{}\+Texas Instruments X\+D\+S100v2 U\+S\+B Debug Probe\char`\"{}
+
+ ~\newline
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Name your project}}
+
+4) Check \char`\"{}\+Use default location\char`\"{} to save your project in your workspace $\vert$ Uncheck \char`\"{}\+Use default location\char`\"{} to choose a path for your project
+
+5) Set Compiler version to \char`\"{}\+T\+I v15.\+12.\+1.\+L\+T\+S\char`\"{} for Code Composer Studio v6.\+1.\+3 ~\newline
+ Set Compiler version \char`\"{}\+T\+I v20.\+2.\+0.\+L\+T\+S\char`\"{} or \char`\"{}\+T\+I v20.\+2.\+1.\+L\+T\+S\char`\"{} for Code Composer Studio v10
+
+ ~\newline
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Project type and tool-\/chain}}
+
+6) Set output type to \char`\"{}\+Executable\char`\"{}
+
+Output format\+: \char`\"{}legacy off\char`\"{}
+
+Linker command file\+: \char`\"{}$<$automatic$>$\char`\"{}
+
+Runtime support library\+: \char`\"{}$<$automatic$>$\char`\"{}
+
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Project templates and examples}}
+
+7) Select Empty Project (with main.\+c)
+
+8) Finish
+
+ \hypertarget{create_target_config}{}\doxysection{Manage Target Configuration Files}\label{create_target_config}
+This page describes how to create a target configuration file and manage the target configuration files of your projects
+
+\DoxyHorRuler{0}
+
+
+1) Click View -\/-\/$>$ Target Configurations
+
+ ~\newline
+
+
+2) The Target Configuration view shows a list of all configuration files associated to the workspace
+
+ ~\newline
+
+
+3) You can create a new target configuration file by right Mouse Button Click on User Defined -\/-\/$>$ New Target Configuration File
+
+ ~\newline
+
+
+4) You can also see and edit configurations of existing Target configuration files by double-\/\+Click to the respective file
+
+5) By creating a new target configuration file
+
+ ~\newline
+
+
+and setting it as default
+
+ ~\newline
+
+
+The default configuration file will be used when there is no target configuration file associated with the active project and the project is debugged \hypertarget{import_library}{}\doxysection{Import Library to Project Explorer}\label{import_library}
+This page describes how to import the T\+M\+S320\+F28335 Library into your Project Explorer
+
+\DoxyHorRuler{0}
+
+
+1) Safe Library in desired location on your computer and extract files
+
+2) Click with Right Mouse Button onto white space in Project Explorer
+
+ ~\newline
+
+
+3) Enable Select search-\/directory and browse to Project Path of T\+M\+S320\+F28335 Library
+
+ ~\newline
+
+
+4) Select T\+M\+S320\+F28335 and Finish operation
+
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Library T\+M\+S320\+F28335 has been imported to Project Explorer}} \hypertarget{link_to_library}{}\doxysection{Link Library to Project}\label{link_to_library}
+This page describes how to link the T\+M\+S320\+F28335 Library to your Project
+
+\DoxyHorRuler{0}
+
+
+1) Click your Project with Right Mouse Button -\/-\/$>$ Properties
+
+ ~\newline
+
+
+2) Go to Build -\/$>$ Dependencies -\/$>$ Add -\/$>$ Select T\+M\+S320\+F28335 and click OK
+
+ ~\newline
+
+
+3) Go to Build -\/$>$ Include Options -\/$>$ Add dir to \#include search path -\/$>$ Workspaces
+
+ ~\newline
+
+
+4) Select T\+M\+S320\+F28335 and click OK
+
+ ~\newline
+
+
+-\/-\/$>$ Path will be shown in window\+:
+
+ ~\newline
+
+
+Click OK
+
+5) Go to C2000 Linker -\/-\/$>$ File Search Path -\/-\/$>$ Include library file or command file as input -\/-\/$>$ Workspace
+
+ ~\newline
+
+
+6) Select T\+M\+S320\+F28335 -\/-\/$>$ Debug -\/-\/$>$ T\+M\+S320\+F28335.\+lib and click OK
+
+ ~\newline
+
+
+-\/-\/$>$ Path will be shown in window
+
+ ~\newline
+
+
+Click OK
+
+7) Click Apply and Close
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{The libary has been linked to your project successfully and you can use library functions in your project now}} \hypertarget{write_to_flash}{}\doxysection{Programming the Flash}\label{write_to_flash}
+This page describes how to program and execute code from the on-\/chip flash memory. Using the on-\/chip flash eliminates the need for external non-\/volatile memory or a host processor from which to bootload.
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Link Initialized Sections to On-\/\+Chip-\/\+Flash}}
+
+1) Click your Project with the right Mouse Button -\/-\/$>$ Open Properties
+
+2) Navigate to General -\/-\/$>$ Select the Linker command file\+: F28335.\+cmd
+
+
+
+Apply and Close -\/-\/$>$ F28335.\+cmd is created in Project Folder
+
+3) Open file F28335.\+cmd and replace code by \href{../doc_documents/F28335.txt}{\texttt{ this~code}} ~\newline
+
+
+Initialized Sections are now linked to Flash for standalone operation
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Executing from Flash after Reset}}
+
+4) Click your Project with the right Mouse Button -\/-\/$>$ New -\/-\/$>$ File
+
+5) Name your file \char`\"{}\+T\+M\+S320\+F28335\+\_\+\+Startupcode.\+asm\char`\"{} -\/ Ensure that it is an assembly file with ending .asm
+
+
+
+6) Open file T\+M\+S320\+F28335\+\_\+\+Startupcode.\+asm and replace code by \href{../doc_documents/TMS320F28335_Startupcode.asm}{\texttt{ this code}} ~\newline
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Check your configuration}}
+
+7) Click Build Project
+
+8) Click Debug Button -\/-\/$>$ Erasing Flash Sectors appears
+
+
+
+9) Click Reset C\+PU Button 
+
+-\/-\/$>$ Disassembly window opens
+
+-\/-\/$>$ Click View Disassembly... 
+
+You can see the start of the bootloader in the bootram now
+
+10) You can now single step through the bootloader, to understand the operations of the bootloader $\vert$ Or you click on Run -\/-\/$>$ Go Main to skip the single steps
+
+
+
+-\/-\/$>$ When code jumps to your main() function, it confirms that your flash has been programmed properly and that the bootloader is properly configured to jump to flash. ~\newline
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Flash has been successfully programmed and your code runs in standalone operation on the T\+M\+S320\+F28335 when it is powered.}} 

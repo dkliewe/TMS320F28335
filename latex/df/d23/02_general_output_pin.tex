@@ -1,0 +1,10 @@
+Author\+: Kliewe ~\newline
+ Date\+: 21.\+09.\+2020\hypertarget{02_general_output_pin_autotoc_md7}{}\doxysubsection{Configuration and operations of general output pin}\label{02_general_output_pin_autotoc_md7}
+The function \mbox{\hyperlink{general__output__pin_8h_aa26a4b2fbb079805bc667572da8c0631}{init\+\_\+pin\+\_\+as\+\_\+general\+\_\+output(\+Uint16)}} configures a G\+P\+IO to a general output pin with two possible states\+: H\+I\+GH (3,3 V) and L\+OW (0 V).~\newline
+Via functions \mbox{\hyperlink{general__output__pin_8h_a2773eb9163affe044041ab96bbebfefe}{set\+\_\+general\+\_\+output\+\_\+pin\+\_\+high(\+Uint16)}} and \mbox{\hyperlink{general__output__pin_8h_acec9ed6d9149a06d6e1e455a2816cbc1}{set\+\_\+general\+\_\+output\+\_\+pin\+\_\+low(\+Uint16)}} the state of the respective pin can be controlled.~\newline
+Possible G\+P\+I\+Os as input parameter are defined in \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}}\hypertarget{02_general_output_pin_autotoc_md8}{}\doxysubsection{Code example}\label{02_general_output_pin_autotoc_md8}
+ void main(void)\{~\newline
+int result = 0;~\newline
+ result = init\+\_\+pin\+\_\+as\+\_\+general\+\_\+output(G\+P\+I\+O0); //\+Configures G\+P\+I\+O0 as general output pin. Gives back result of operation~\newline
+ \} \hypertarget{02_general_output_pin_autotoc_md9}{}\doxysubsection{Link to detailed description and commented code\+:}\label{02_general_output_pin_autotoc_md9}
+\href{dir_819998430c1c625b21e107965b05a153.html}{\texttt{ general\+\_\+output\+\_\+pin}} 

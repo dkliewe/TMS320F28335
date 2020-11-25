@@ -1,0 +1,638 @@
+\hypertarget{sci_8h}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/sci/sci.h File Reference}
+\label{sci_8h}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/sci/sci.h@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/sci/sci.h}}
+
+
+Header file for S\+CI module.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct___s_c_i_interface}{\+\_\+\+S\+C\+I\+Interface}}
+\begin{DoxyCompactList}\small\item\em S\+CI Interface\+: Assign G\+P\+I\+Os and baudrate to S\+C\+I\+\_\+A / S\+C\+I\+\_\+B / S\+C\+I\+\_\+C. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct___s_c_i_interface}{\+\_\+\+S\+C\+I\+Interface}} \mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}
+\begin{DoxyCompactList}\small\item\em S\+CI Interface\+: Assign G\+P\+I\+Os and baudrate to S\+C\+I\+\_\+A / S\+C\+I\+\_\+B / S\+C\+I\+\_\+C. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{sci_8h_a105c6b3af2a3e5e1fbce5eb7048a03cd}{init\+\_\+\+S\+CI}} (\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}})
+\begin{DoxyCompactList}\small\item\em Initialization of S\+CI Interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{sci_8h_a762480c1e5e924eaaffcb2b38418495e}{S\+C\+I\+\_\+set\+Interrupt\+Tx}} (\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}, void $\ast$)
+\begin{DoxyCompactList}\small\item\em Configure Tx Interrupt of S\+CI Interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{sci_8h_acb20b89ef6ddc3237355224699e2c56a}{S\+C\+I\+\_\+set\+Interrupt\+Rx}} (\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}, void $\ast$)
+\begin{DoxyCompactList}\small\item\em Configure Rx Interrupt of S\+CI Interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{sci_8h_ad9bec8dac43da745ac2264b8d3d7027f}{S\+C\+I\+\_\+send}} (\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}, char)
+\begin{DoxyCompactList}\small\item\em S\+CI Interface Send data to Tx F\+I\+FO. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{sci_8h_ae62f7cafa9a9681b7012407d5a414ed4}{S\+C\+I\+\_\+read}} (\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}, \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} $\ast$)
+\begin{DoxyCompactList}\small\item\em S\+CI Interface Read data from Rx F\+I\+FO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sci_8h_aa87c2826d9b4adcaf7d7fe891861982e}{S\+C\+I\+\_\+interrupt\+Ack}} (void)
+\begin{DoxyCompactList}\small\item\em Giving interrupts acknowledge to interrupt again. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sci_8h_a6a17afbe8e24f2385d5b2d30899ed3e2}{S\+C\+I\+\_\+clear\+Rx\+Interrupt\+Flag}} (\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}})
+\begin{DoxyCompactList}\small\item\em S\+CI Interface clear Rx Interrupt flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sci_8h_a50d4630e931c9a5a51687cb9f9373fa5}{S\+C\+I\+\_\+clear\+Tx\+Interrupt\+Flag}} (\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}})
+\begin{DoxyCompactList}\small\item\em S\+CI Interface clear Tx Interrupt flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for S\+CI module. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{sci_8h_a66cad29f0df4e7600e6397e153735b55}\label{sci_8h_a66cad29f0df4e7600e6397e153735b55}} 
+\index{sci.h@{sci.h}!SCIInterface@{SCIInterface}}
+\index{SCIInterface@{SCIInterface}!sci.h@{sci.h}}
+\doxysubsubsection{\texorpdfstring{SCIInterface}{SCIInterface}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___s_c_i_interface}{\+\_\+\+S\+C\+I\+Interface}} \mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}}
+
+
+
+S\+CI Interface\+: Assign G\+P\+I\+Os and baudrate to S\+C\+I\+\_\+A / S\+C\+I\+\_\+B / S\+C\+I\+\_\+C. 
+
+~\newline
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sci_8h_a105c6b3af2a3e5e1fbce5eb7048a03cd}\label{sci_8h_a105c6b3af2a3e5e1fbce5eb7048a03cd}} 
+\index{sci.h@{sci.h}!init\_SCI@{init\_SCI}}
+\index{init\_SCI@{init\_SCI}!sci.h@{sci.h}}
+\doxysubsubsection{\texorpdfstring{init\_SCI()}{init\_SCI()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+\+S\+CI (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}}]{S\+C\+I\+\_\+\+Int }\end{DoxyParamCaption})}
+
+
+
+Initialization of S\+CI Interface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) S\+C\+I\+Interface S\+C\+I\+\_\+\+Int ~\newline
+ 2) Uint32 baudrate ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = S\+C\+I\+\_\+\+Int.\+scirx invalid value ~\newline
+-\/-\/$>$ -\/2 = S\+C\+I\+\_\+\+Int.\+scitx invalid value ~\newline
+-\/-\/$>$ -\/3 = S\+C\+I\+\_\+\+Int already in use ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 21 of file sci.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21                                     \{}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} BRR=0;}
+\DoxyCodeLine{23     \mbox{\hyperlink{struct___t_m_s___s_c_i}{TMPS\_SCI}} SCI;                                       \textcolor{comment}{// Create variable for register-\/access}}
+\DoxyCodeLine{24     \textcolor{keyword}{static} \textcolor{keywordtype}{int} SCI\_A\_in\_use=0;}
+\DoxyCodeLine{25     \textcolor{keyword}{static} \textcolor{keywordtype}{int} SCI\_B\_in\_use=0;}
+\DoxyCodeLine{26     \textcolor{keyword}{static} \textcolor{keywordtype}{int} SCI\_C\_in\_use=0;}
+\DoxyCodeLine{27     EALLOW;}
+\DoxyCodeLine{28     \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4fd96149cf7a32e512458ced0a1cc8d8}{scirx}})\{}
+\DoxyCodeLine{29         \textcolor{keywordflow}{case} 11:    \textcolor{keywordflow}{if}(!SCI\_B\_in\_use)\{}
+\DoxyCodeLine{30                         TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<11);                       \textcolor{comment}{// Enable Pullup for GPIO (SCIRXDB)}}
+\DoxyCodeLine{31                         TMC\_BASE\_PIO-\/>CTL[0].QSEL1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<22);                      \textcolor{comment}{// Asynch input GPIO (SCIRXDB)}}
+\DoxyCodeLine{32                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<22);                   \textcolor{comment}{// Configure GPIO to SCIRXDB}}
+\DoxyCodeLine{33                         \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4d54406639a7c75c69cb8ba40ebf19cd}{scitx}})\{}
+\DoxyCodeLine{34                             \textcolor{keywordflow}{case} 9:     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<9);        \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{35                                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<18);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{36                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{37                             \textcolor{keywordflow}{case} 14:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<14);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{38                                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<28);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{39                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{40                             \textcolor{keywordflow}{case} 18:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<18);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{41                                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<4);    \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{42                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{43                             \textcolor{keywordflow}{case} 22:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<22);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{44                                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<12);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{45                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{46                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{47                                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{48                         \}}
+\DoxyCodeLine{49                         SCI=TMC\_BASE\_SCIB;                                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{50                         SCI\_B\_in\_use=1;}
+\DoxyCodeLine{51                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{52                     \}}
+\DoxyCodeLine{53                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{54                         \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{55                     \}}
+\DoxyCodeLine{56         \textcolor{keywordflow}{case} 15:    \textcolor{keywordflow}{if}(!SCI\_B\_in\_use)\{}
+\DoxyCodeLine{57                         TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<15);                       \textcolor{comment}{// Enable Pullup for GPIO (SCIRXDB)}}
+\DoxyCodeLine{58                         TMC\_BASE\_PIO-\/>CTL[0].QSEL1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<30);                      \textcolor{comment}{// Asynch input GPIO (SCIRXDB)}}
+\DoxyCodeLine{59                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<30);                   \textcolor{comment}{// Configure GPIO to SCIRXDB}}
+\DoxyCodeLine{60                         \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4d54406639a7c75c69cb8ba40ebf19cd}{scitx}})\{}
+\DoxyCodeLine{61                             \textcolor{keywordflow}{case} 9:     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<9);        \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{62                                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<18);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{63                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{64                             \textcolor{keywordflow}{case} 14:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<14);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{65                                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<28);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{66                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{67                             \textcolor{keywordflow}{case} 18:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<18);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{68                                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<4);    \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{69                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{70                             \textcolor{keywordflow}{case} 22:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<22);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{71                                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<12);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{72                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{73                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{74                                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{75                         \}}
+\DoxyCodeLine{76                         SCI=TMC\_BASE\_SCIB;                                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{77                         SCI\_B\_in\_use=1;}
+\DoxyCodeLine{78                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{79                     \}}
+\DoxyCodeLine{80                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{81                         \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{82                     \}}
+\DoxyCodeLine{83         \textcolor{keywordflow}{case} 19:    \textcolor{keywordflow}{if}(!SCI\_B\_in\_use)\{}
+\DoxyCodeLine{84                         TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<19);                       \textcolor{comment}{// Enable Pullup for GPIO (SCIRXDB)}}
+\DoxyCodeLine{85                         TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<6);                   \textcolor{comment}{// Asynch input GPIO (SCIRXDB)}}
+\DoxyCodeLine{86                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<6);                        \textcolor{comment}{// Configure GPIO to SCIRXDB}}
+\DoxyCodeLine{87                         \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4d54406639a7c75c69cb8ba40ebf19cd}{scitx}})\{}
+\DoxyCodeLine{88                             \textcolor{keywordflow}{case} 9:     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<9);        \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{89                                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<18);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{90                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{91                             \textcolor{keywordflow}{case} 14:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<14);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{92                                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<28);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{93                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{94                             \textcolor{keywordflow}{case} 18:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<18);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{95                                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<4);    \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{96                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{97                             \textcolor{keywordflow}{case} 22:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<22);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{98                                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<12);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{99                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{100                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{101                                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{102                         \}}
+\DoxyCodeLine{103                         SCI=TMC\_BASE\_SCIB;                                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{104                         SCI\_B\_in\_use=1;}
+\DoxyCodeLine{105                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{106                     \}}
+\DoxyCodeLine{107                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{108                         \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{109                     \}}
+\DoxyCodeLine{110         \textcolor{keywordflow}{case} 23:    \textcolor{keywordflow}{if}(!SCI\_B\_in\_use)\{}
+\DoxyCodeLine{111                         TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<23);                       \textcolor{comment}{// Enable Pullup for GPIO (SCIRXDB)}}
+\DoxyCodeLine{112                         TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<14);                      \textcolor{comment}{// Asynch input GPIO (SCIRXDB)}}
+\DoxyCodeLine{113                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<14);                   \textcolor{comment}{// Configure GPIO to SCIRXDB}}
+\DoxyCodeLine{114                         \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4d54406639a7c75c69cb8ba40ebf19cd}{scitx}})\{}
+\DoxyCodeLine{115                             \textcolor{keywordflow}{case} 9:     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<9);        \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{116                                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<18);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{117                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{118                             \textcolor{keywordflow}{case} 14:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<14);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{119                                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<28);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{120                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{121                             \textcolor{keywordflow}{case} 18:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<18);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{122                                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2<<4);    \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{123                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{124                             \textcolor{keywordflow}{case} 22:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<22);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{125                                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<12);   \textcolor{comment}{// Configure GPIO to SCITXDB}}
+\DoxyCodeLine{126                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{127                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{128                                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{129                         \}}
+\DoxyCodeLine{130                         SCI=TMC\_BASE\_SCIB;                                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{131                         SCI\_B\_in\_use=1;}
+\DoxyCodeLine{132                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{133                     \}}
+\DoxyCodeLine{134                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{135                         \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{136                     \}}
+\DoxyCodeLine{137         \textcolor{keywordflow}{case} 28:    \textcolor{keywordflow}{if}(!SCI\_A\_in\_use)\{}
+\DoxyCodeLine{138                         TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<28);                       \textcolor{comment}{// Enable Pullup for GPIO (SCIRXDA)}}
+\DoxyCodeLine{139                         TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<24);                      \textcolor{comment}{// Asynch input GPIO (SCIRXDA)}}
+\DoxyCodeLine{140                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<24);                   \textcolor{comment}{// Configure GPIO to SCIRXDA}}
+\DoxyCodeLine{141                         \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4d54406639a7c75c69cb8ba40ebf19cd}{scitx}})\{}
+\DoxyCodeLine{142                             \textcolor{keywordflow}{case} 29:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<29);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{143                                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<26);       \textcolor{comment}{// Configure GPIO29 to SCITXDA}}
+\DoxyCodeLine{144                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{145                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{146                                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{147                         \}}
+\DoxyCodeLine{148                         SCI=TMC\_BASE\_SCIA;                                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{149                         SCI\_A\_in\_use=1;}
+\DoxyCodeLine{150                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{151                     \}}
+\DoxyCodeLine{152                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{153                         \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{154                     \}}
+\DoxyCodeLine{155         \textcolor{keywordflow}{case} 62:    \textcolor{keywordflow}{if}(!SCI\_C\_in\_use)\{}
+\DoxyCodeLine{156                         TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<30);                       \textcolor{comment}{// Enable Pullup for GPIO (SCIRXDC)}}
+\DoxyCodeLine{157                         TMC\_BASE\_PIO-\/>CTL[1].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<28);                      \textcolor{comment}{// Asynch input GPIO (SCIRXDC)}}
+\DoxyCodeLine{158                         TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<28);                   \textcolor{comment}{// Configure GPIO to SCIRXDC}}
+\DoxyCodeLine{159                         \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4d54406639a7c75c69cb8ba40ebf19cd}{scitx}})\{}
+\DoxyCodeLine{160                             \textcolor{keywordflow}{case} 63:    TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<31);       \textcolor{comment}{// Enable Pullup for GPIO (SCITXDB)}}
+\DoxyCodeLine{161                                         TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<30);       \textcolor{comment}{// Configure GPIO63 to SCITXDC}}
+\DoxyCodeLine{162                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{163                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{164                                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{165                         \}}
+\DoxyCodeLine{166                         SCI=TMC\_BASE\_SCIC;                                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{167                         SCI\_C\_in\_use=1;}
+\DoxyCodeLine{168                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{169                     \}}
+\DoxyCodeLine{170                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{171                         \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{172                     \}}
+\DoxyCodeLine{173         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{174                     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{175     \}}
+\DoxyCodeLine{176     EDIS;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a68b289430851d27f3066a01ce310705b}{CCR}} |= (0x7);                   \textcolor{comment}{// Char-\/Length: 8 Bits}}
+\DoxyCodeLine{179     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a250d29e8f0ed8b9ec9c1dd159dfafa93}{CTL1}} |= (0x1);                 \textcolor{comment}{// SCI receiver enabled}}
+\DoxyCodeLine{180     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a250d29e8f0ed8b9ec9c1dd159dfafa93}{CTL1}} |= (0x1 << 1);            \textcolor{comment}{// SCI transmitter enabled}}
+\DoxyCodeLine{181     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_aca765bc07355372443c4bd6a2c002d95}{PRI}} |= (0x1 << 3);              \textcolor{comment}{// Complete current receive/tansmit sequence before stop on break}}
+\DoxyCodeLine{182     BRR = (0x23BE000/((long)SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a6212b8ef2b6e26f391f2b9aabbcb0c7f}{baudrate}}*8))-\/1;     \textcolor{comment}{// Calculate baud rate}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_ad7eccd1a36dee3164ed0e015646e5416}{HBAUD}} = BRR >> 8;             \textcolor{comment}{// Configure baud rate}}
+\DoxyCodeLine{185     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a8785a689bfc8efd56a62d88eca04c2c9}{LBAUD}} = BRR\&0xFF;             \textcolor{comment}{// Configure baud rate}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a107ca8a67649484c9858869b3fec2580}{FFTX}} |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 14); \textcolor{comment}{// FIFO enabled}}
+\DoxyCodeLine{188     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a107ca8a67649484c9858869b3fec2580}{FFTX}} |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 13); \textcolor{comment}{// FIFO enabled}}
+\DoxyCodeLine{189     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a107ca8a67649484c9858869b3fec2580}{FFTX}} |= (0x1 << 5);            \textcolor{comment}{// Transmit FIFO interrupt enable}}
+\DoxyCodeLine{190     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a107ca8a67649484c9858869b3fec2580}{FFTX}} |= (0x1 << 6);            \textcolor{comment}{// Transmit FIFO interrupt clear}}
+\DoxyCodeLine{191     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a107ca8a67649484c9858869b3fec2580}{FFTX}} \&= \string~(0x1F);               \textcolor{comment}{// Transmit FIFO interrupt when Transmit Fifo empty}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a0e5eb4e68f9ca69e289d4676740d9bc5}{FFRX}} |= (0x1 << 14);           \textcolor{comment}{// Receive FIFO overflow clear}}
+\DoxyCodeLine{194     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a0e5eb4e68f9ca69e289d4676740d9bc5}{FFRX}} |= (0x1 << 13);           \textcolor{comment}{// Enable Receive FIFO}}
+\DoxyCodeLine{195     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a0e5eb4e68f9ca69e289d4676740d9bc5}{FFRX}} |= (0x1 << 5);            \textcolor{comment}{// Receive FIFO interrupt enable}}
+\DoxyCodeLine{196     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a0e5eb4e68f9ca69e289d4676740d9bc5}{FFRX}} \&= \string~(0x1F);}
+\DoxyCodeLine{197     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a0e5eb4e68f9ca69e289d4676740d9bc5}{FFRX}} |= (0x1);                 \textcolor{comment}{// Receive FIFO interrupt when there are 1 or more words in receive fifo}}
+\DoxyCodeLine{198     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a0e5eb4e68f9ca69e289d4676740d9bc5}{FFRX}} |= (0x1 << 6);            \textcolor{comment}{// Receive FIFO interrupt clear}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a250d29e8f0ed8b9ec9c1dd159dfafa93}{CTL1}} |= (0x1<<5);              \textcolor{comment}{// Enable SCI}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{203 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sci_8h_a6a17afbe8e24f2385d5b2d30899ed3e2}\label{sci_8h_a6a17afbe8e24f2385d5b2d30899ed3e2}} 
+\index{sci.h@{sci.h}!SCI\_clearRxInterruptFlag@{SCI\_clearRxInterruptFlag}}
+\index{SCI\_clearRxInterruptFlag@{SCI\_clearRxInterruptFlag}!sci.h@{sci.h}}
+\doxysubsubsection{\texorpdfstring{SCI\_clearRxInterruptFlag()}{SCI\_clearRxInterruptFlag()}}
+{\footnotesize\ttfamily void S\+C\+I\+\_\+clear\+Rx\+Interrupt\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}}]{S\+C\+I\+\_\+\+Int }\end{DoxyParamCaption})}
+
+
+
+S\+CI Interface clear Rx Interrupt flag. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) S\+C\+I\+Interface S\+C\+I\+\_\+\+Int ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 363 of file sci.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{363                                                    \{}
+\DoxyCodeLine{364     \mbox{\hyperlink{struct___t_m_s___s_c_i}{TMPS\_SCI}} SCI;}
+\DoxyCodeLine{365     \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4fd96149cf7a32e512458ced0a1cc8d8}{scirx}})\{}
+\DoxyCodeLine{366     \textcolor{keywordflow}{case} 11:    SCI=TMC\_BASE\_SCIB;}
+\DoxyCodeLine{367                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{368     \textcolor{keywordflow}{case} 15:    SCI=TMC\_BASE\_SCIB;}
+\DoxyCodeLine{369                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{370     \textcolor{keywordflow}{case} 19:    SCI=TMC\_BASE\_SCIB;}
+\DoxyCodeLine{371                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{372     \textcolor{keywordflow}{case} 23:    SCI=TMC\_BASE\_SCIB;}
+\DoxyCodeLine{373                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{374     \textcolor{keywordflow}{case} 28:    SCI=TMC\_BASE\_SCIA;}
+\DoxyCodeLine{375                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{376     \textcolor{keywordflow}{case} 62:    SCI=TMC\_BASE\_SCIC;}
+\DoxyCodeLine{377                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{378     \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{break};}
+\DoxyCodeLine{379     \}}
+\DoxyCodeLine{380     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a0e5eb4e68f9ca69e289d4676740d9bc5}{FFRX}} |= (0x1<<6);      \textcolor{comment}{//clear int}}
+\DoxyCodeLine{381 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sci_8h_a50d4630e931c9a5a51687cb9f9373fa5}\label{sci_8h_a50d4630e931c9a5a51687cb9f9373fa5}} 
+\index{sci.h@{sci.h}!SCI\_clearTxInterruptFlag@{SCI\_clearTxInterruptFlag}}
+\index{SCI\_clearTxInterruptFlag@{SCI\_clearTxInterruptFlag}!sci.h@{sci.h}}
+\doxysubsubsection{\texorpdfstring{SCI\_clearTxInterruptFlag()}{SCI\_clearTxInterruptFlag()}}
+{\footnotesize\ttfamily void S\+C\+I\+\_\+clear\+Tx\+Interrupt\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}}]{S\+C\+I\+\_\+\+Int }\end{DoxyParamCaption})}
+
+
+
+S\+CI Interface clear Tx Interrupt flag. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) S\+C\+I\+Interface S\+C\+I\+\_\+\+Int ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 388 of file sci.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{388                                                    \{}
+\DoxyCodeLine{389     \mbox{\hyperlink{struct___t_m_s___s_c_i}{TMPS\_SCI}} SCI;}
+\DoxyCodeLine{390     \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4fd96149cf7a32e512458ced0a1cc8d8}{scirx}})\{}
+\DoxyCodeLine{391     \textcolor{keywordflow}{case} 11:    SCI=TMC\_BASE\_SCIB;}
+\DoxyCodeLine{392                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{393     \textcolor{keywordflow}{case} 15:    SCI=TMC\_BASE\_SCIB;}
+\DoxyCodeLine{394                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{395     \textcolor{keywordflow}{case} 19:    SCI=TMC\_BASE\_SCIB;}
+\DoxyCodeLine{396                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{397     \textcolor{keywordflow}{case} 23:    SCI=TMC\_BASE\_SCIB;}
+\DoxyCodeLine{398                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{399     \textcolor{keywordflow}{case} 28:    SCI=TMC\_BASE\_SCIA;}
+\DoxyCodeLine{400                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{401     \textcolor{keywordflow}{case} 62:    SCI=TMC\_BASE\_SCIC;}
+\DoxyCodeLine{402                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{403     \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{break};}
+\DoxyCodeLine{404     \}}
+\DoxyCodeLine{405     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a107ca8a67649484c9858869b3fec2580}{FFTX}} |= (0x1<<6);      \textcolor{comment}{//clear int}}
+\DoxyCodeLine{406 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sci_8h_aa87c2826d9b4adcaf7d7fe891861982e}\label{sci_8h_aa87c2826d9b4adcaf7d7fe891861982e}} 
+\index{sci.h@{sci.h}!SCI\_interruptAck@{SCI\_interruptAck}}
+\index{SCI\_interruptAck@{SCI\_interruptAck}!sci.h@{sci.h}}
+\doxysubsubsection{\texorpdfstring{SCI\_interruptAck()}{SCI\_interruptAck()}}
+{\footnotesize\ttfamily void S\+C\+I\+\_\+interrupt\+Ack (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Giving interrupts acknowledge to interrupt again. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em /} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/ 
+\end{DoxyReturn}
+
+
+Definition at line 413 of file sci.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{413                        \{}
+\DoxyCodeLine{414     TMC\_BASE\_PIE-\/>ACK |= 0x180;                                             \textcolor{comment}{// Acknowledge interrupt to get more from group all interrupt groups}}
+\DoxyCodeLine{415 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sci_8h_ae62f7cafa9a9681b7012407d5a414ed4}\label{sci_8h_ae62f7cafa9a9681b7012407d5a414ed4}} 
+\index{sci.h@{sci.h}!SCI\_read@{SCI\_read}}
+\index{SCI\_read@{SCI\_read}!sci.h@{sci.h}}
+\doxysubsubsection{\texorpdfstring{SCI\_read()}{SCI\_read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} S\+C\+I\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}}]{S\+C\+I\+\_\+\+Int,  }\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+S\+CI Interface Read data from Rx F\+I\+FO. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) S\+C\+I\+Interface S\+C\+I\+\_\+\+Int ~\newline
+ 2) Pointer to rdata~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = S\+C\+I\+\_\+\+Int.\+scirx invalid value ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 334 of file sci.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{334                                                    \{}
+\DoxyCodeLine{335     \mbox{\hyperlink{struct___t_m_s___s_c_i}{TMPS\_SCI}} SCI;                                                               \textcolor{comment}{// Create variable for register-\/access}}
+\DoxyCodeLine{336     \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4fd96149cf7a32e512458ced0a1cc8d8}{scirx}})\{}
+\DoxyCodeLine{337         \textcolor{keywordflow}{case} 11:    SCI=TMC\_BASE\_SCIB;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{338                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{339         \textcolor{keywordflow}{case} 15:    SCI=TMC\_BASE\_SCIB;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{340                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{341         \textcolor{keywordflow}{case} 19:    SCI=TMC\_BASE\_SCIB;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{342                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{343         \textcolor{keywordflow}{case} 23:    SCI=TMC\_BASE\_SCIB;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{344                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{345         \textcolor{keywordflow}{case} 28:    SCI=TMC\_BASE\_SCIA;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{346                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{347         \textcolor{keywordflow}{case} 62:    SCI=TMC\_BASE\_SCIC;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{348                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{349         \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{350     \}}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352     \textcolor{keywordflow}{if}(SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a0e5eb4e68f9ca69e289d4676740d9bc5}{FFRX}} \& 0x1F00)\{                                                     \textcolor{comment}{// If Data in RXBUF}}
+\DoxyCodeLine{353         *data = SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a94dd756ef62d32a60ce0ab50f14dd9a3}{RXBUF}};                                                        \textcolor{comment}{// Read Data}}
+\DoxyCodeLine{354     \}}
+\DoxyCodeLine{355     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{356 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sci_8h_ad9bec8dac43da745ac2264b8d3d7027f}\label{sci_8h_ad9bec8dac43da745ac2264b8d3d7027f}} 
+\index{sci.h@{sci.h}!SCI\_send@{SCI\_send}}
+\index{SCI\_send@{SCI\_send}!sci.h@{sci.h}}
+\doxysubsubsection{\texorpdfstring{SCI\_send()}{SCI\_send()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} S\+C\+I\+\_\+send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}}]{S\+C\+I\+\_\+\+Int,  }\item[{char}]{data }\end{DoxyParamCaption})}
+
+
+
+S\+CI Interface Send data to Tx F\+I\+FO. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) S\+C\+I\+Interface S\+C\+I\+\_\+\+Int ~\newline
+ 2) char data (8 Bit) ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = S\+C\+I\+\_\+\+Int.\+scitx invalid value ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 305 of file sci.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{305                                                \{}
+\DoxyCodeLine{306     \mbox{\hyperlink{struct___t_m_s___s_c_i}{TMPS\_SCI}} SCI;                                                               \textcolor{comment}{// Create variable for register-\/access}}
+\DoxyCodeLine{307     \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4d54406639a7c75c69cb8ba40ebf19cd}{scitx}})\{}
+\DoxyCodeLine{308         \textcolor{keywordflow}{case} 9:     SCI=TMC\_BASE\_SCIB;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{309                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{310         \textcolor{keywordflow}{case} 14:    SCI=TMC\_BASE\_SCIB;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{311                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{312         \textcolor{keywordflow}{case} 18:    SCI=TMC\_BASE\_SCIB;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{313                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{314         \textcolor{keywordflow}{case} 22:    SCI=TMC\_BASE\_SCIB;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{315                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{316         \textcolor{keywordflow}{case} 29:    SCI=TMC\_BASE\_SCIA;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{317                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{318         \textcolor{keywordflow}{case} 63:    SCI=TMC\_BASE\_SCIC;                                          \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{319                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{320         \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{321     \}}
+\DoxyCodeLine{322     SCI-\/>\mbox{\hyperlink{struct___t_m_s___s_c_i_a7a20140b74104a70bded258d1c78917e}{TXBUF}}=data;                                                           \textcolor{comment}{// Write data to TXBUF}}
+\DoxyCodeLine{323     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{324 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sci_8h_acb20b89ef6ddc3237355224699e2c56a}\label{sci_8h_acb20b89ef6ddc3237355224699e2c56a}} 
+\index{sci.h@{sci.h}!SCI\_setInterruptRx@{SCI\_setInterruptRx}}
+\index{SCI\_setInterruptRx@{SCI\_setInterruptRx}!sci.h@{sci.h}}
+\doxysubsubsection{\texorpdfstring{SCI\_setInterruptRx()}{SCI\_setInterruptRx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} S\+C\+I\+\_\+set\+Interrupt\+Rx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}}]{S\+C\+I\+\_\+\+Int,  }\item[{void $\ast$}]{spi\+Rx\+F\+I\+F\+O\+I\+SR }\end{DoxyParamCaption})}
+
+
+
+Configure Rx Interrupt of S\+CI Interface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) S\+C\+I\+Interface S\+C\+I\+\_\+\+Int ~\newline
+ 2) Pointer to Rx-\/\+I\+SR ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = S\+C\+I\+\_\+\+Int.\+scirx invalid value ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 259 of file sci.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{259                                                                    \{}
+\DoxyCodeLine{260     DINT;                                       \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{261     TMC\_BASE\_PIE-\/>CTRL |= 0x01;                 \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{262     EALLOW;                                     \textcolor{comment}{// Allow register access}}
+\DoxyCodeLine{263     \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4fd96149cf7a32e512458ced0a1cc8d8}{scirx}})\{}
+\DoxyCodeLine{264         \textcolor{keywordflow}{case} 11:    TMC\_BASE\_INT\_REGS-\/>SCIRXINTB\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiRxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{265                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x4;                          \textcolor{comment}{// Enable SCIRXINTB\_SCI in the PIE: Group 9 interrupt 3}}
+\DoxyCodeLine{266                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{267                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{268         \textcolor{keywordflow}{case} 15:    TMC\_BASE\_INT\_REGS-\/>SCIRXINTB\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiRxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{269                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x4;                          \textcolor{comment}{// Enable SCIRXINTB\_SCI in the PIE: Group 9 interrupt 3}}
+\DoxyCodeLine{270                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{271                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{272         \textcolor{keywordflow}{case} 19:    TMC\_BASE\_INT\_REGS-\/>SCIRXINTB\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiRxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{273                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x4;                          \textcolor{comment}{// Enable SCIRXINTB\_SCI in the PIE: Group 9 interrupt 3}}
+\DoxyCodeLine{274                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{275                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{276         \textcolor{keywordflow}{case} 23:    TMC\_BASE\_INT\_REGS-\/>SCIRXINTB\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiRxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{277                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x4;                          \textcolor{comment}{// Enable SCIRXINTB\_SCI in the PIE: Group 9 interrupt 3}}
+\DoxyCodeLine{278                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{279                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{280         \textcolor{keywordflow}{case} 28:    TMC\_BASE\_INT\_REGS-\/>SCIRXINTA\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiRxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{281                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x1;                          \textcolor{comment}{// Enable SCIRXINTA\_SCI in the PIE: Group 9 interrupt 3}}
+\DoxyCodeLine{282                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{283                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{284         \textcolor{keywordflow}{case} 62:    TMC\_BASE\_INT\_REGS-\/>SCIRXINTC\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiRxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{285                     TMC\_BASE\_PIE-\/>GROUP[7].IER |= 0x10;                         \textcolor{comment}{// Enable SCIRXINTC\_SCI in the PIE: Group 8 interrupt 5}}
+\DoxyCodeLine{286                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0080;}
+\DoxyCodeLine{287                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{288         \textcolor{keywordflow}{default}:    EINT;                                                       \textcolor{comment}{// Enable Interrupts}}
+\DoxyCodeLine{289                     EDIS;                                                       \textcolor{comment}{// Protect Register}}
+\DoxyCodeLine{290                     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{291         \}}
+\DoxyCodeLine{292     EDIS;}
+\DoxyCodeLine{293     EINT;}
+\DoxyCodeLine{294     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{295 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sci_8h_a762480c1e5e924eaaffcb2b38418495e}\label{sci_8h_a762480c1e5e924eaaffcb2b38418495e}} 
+\index{sci.h@{sci.h}!SCI\_setInterruptTx@{SCI\_setInterruptTx}}
+\index{SCI\_setInterruptTx@{SCI\_setInterruptTx}!sci.h@{sci.h}}
+\doxysubsubsection{\texorpdfstring{SCI\_setInterruptTx()}{SCI\_setInterruptTx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} S\+C\+I\+\_\+set\+Interrupt\+Tx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sci_8h_a66cad29f0df4e7600e6397e153735b55}{S\+C\+I\+Interface}}}]{S\+C\+I\+\_\+\+Int,  }\item[{void $\ast$}]{spi\+Tx\+F\+I\+F\+O\+I\+SR }\end{DoxyParamCaption})}
+
+
+
+Configure Tx Interrupt of S\+CI Interface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) S\+C\+I\+Interface S\+C\+I\+\_\+\+Int ~\newline
+ 2) Pointer to Tx-\/\+I\+SR~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = S\+C\+I\+\_\+\+Int.\+scitx invalid value ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 213 of file sci.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{213                                                                    \{}
+\DoxyCodeLine{214     DINT;                                                                       \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{215     TMC\_BASE\_PIE-\/>CTRL |= 0x01;                                                 \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{216     EALLOW;                                                                     \textcolor{comment}{// Allow register access}}
+\DoxyCodeLine{217     \textcolor{keywordflow}{switch}(SCI\_Int.\mbox{\hyperlink{struct___s_c_i_interface_a4d54406639a7c75c69cb8ba40ebf19cd}{scitx}})\{}
+\DoxyCodeLine{218         \textcolor{keywordflow}{case} 9: TMC\_BASE\_INT\_REGS-\/>SCITXINTB\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiTxFIFOISR;      \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{219                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x8;                          \textcolor{comment}{// Enable SCITXINTB\_SCI in the PIE: Group 9 interrupt 4}}
+\DoxyCodeLine{220                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{221                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{222         \textcolor{keywordflow}{case} 14:    TMC\_BASE\_INT\_REGS-\/>SCITXINTB\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiTxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{223                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x8;                          \textcolor{comment}{// Enable SCITXINTB\_SCI in the PIE: Group 9 interrupt 4}}
+\DoxyCodeLine{224                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{225                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{226         \textcolor{keywordflow}{case} 18:    TMC\_BASE\_INT\_REGS-\/>SCITXINTB\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiTxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{227                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x8;                          \textcolor{comment}{// Enable SCITXINTB\_SCI in the PIE: Group 9 interrupt 4}}
+\DoxyCodeLine{228                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{229                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{230         \textcolor{keywordflow}{case} 22:    TMC\_BASE\_INT\_REGS-\/>SCITXINTB\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiTxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{231                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x8;                          \textcolor{comment}{// Enable SCITXINTB\_SCI in the PIE: Group 9 interrupt 4}}
+\DoxyCodeLine{232                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{233                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{234         \textcolor{keywordflow}{case} 29:    TMC\_BASE\_INT\_REGS-\/>SCITXINTA\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiTxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{235                     TMC\_BASE\_PIE-\/>GROUP[8].IER |= 0x2;                          \textcolor{comment}{// Enable SCITXINTA\_SCI in the PIE: Group 9 interrupt 2}}
+\DoxyCodeLine{236                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0100;}
+\DoxyCodeLine{237                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{238         \textcolor{keywordflow}{case} 63:    TMC\_BASE\_INT\_REGS-\/>SCITXINTC\_SCI = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiTxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{239                     TMC\_BASE\_PIE-\/>GROUP[7].IER |= 0x20;                         \textcolor{comment}{// Enable SCITXINTC\_SCI in the PIE: Group 8 interrupt 6}}
+\DoxyCodeLine{240                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0080;}
+\DoxyCodeLine{241                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{242         \textcolor{keywordflow}{default}:    EINT;                                                       \textcolor{comment}{// Enable Interrupts}}
+\DoxyCodeLine{243                     EDIS;                                                       \textcolor{comment}{// Protect Register}}
+\DoxyCodeLine{244                     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{245         \}}
+\DoxyCodeLine{246     EINT;}
+\DoxyCodeLine{247     EDIS;}
+\DoxyCodeLine{248     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{249 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,115 @@
+\hypertarget{adc_8h}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/adc/adc.h File Reference}
+\label{adc_8h}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/adc/adc.h@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/adc/adc.h}}
+
+
+Header file for A\+DC module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{adc_8h_a342ab07b607f3dc4efa0655ca1acd164}{init\+\_\+\+A\+DC}} ()
+\begin{DoxyCompactList}\small\item\em Init A\+DC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{adc_8h_aa18f6f68cdc88ccd2123c0b2badd7647}{A\+D\+C\+\_\+get\+Value}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em Get Value of A\+D\+C\+I\+N-\/\+Pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for A\+DC module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{adc_8h_aa18f6f68cdc88ccd2123c0b2badd7647}\label{adc_8h_aa18f6f68cdc88ccd2123c0b2badd7647}} 
+\index{adc.h@{adc.h}!ADC\_getValue@{ADC\_getValue}}
+\index{ADC\_getValue@{ADC\_getValue}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_getValue()}{ADC\_getValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} A\+D\+C\+\_\+get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{adc\+\_\+pin }\end{DoxyParamCaption})}
+
+
+
+Get Value of A\+D\+C\+I\+N-\/\+Pin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) adc\+\_\+pin -\/-\/$>$ valid value\+:A\+D\+C\+I\+N\+A0-\/\+A\+D\+C\+I\+N\+B7~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0-\/4095 = operation successful -\/-\/$>$ value of A\+D\+C-\/\+Pin ~\newline
+-\/-\/$>$ -\/1 = invalid value of adc\+\_\+pin ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 52 of file adc.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52                                   \{}
+\DoxyCodeLine{53     \textcolor{keywordflow}{switch}(adc\_pin)\{}
+\DoxyCodeLine{54     \textcolor{keywordflow}{case} 0 ... 15:  TMC\_BASE\_ADC-\/>TRL2 = 0x2000;                        \textcolor{comment}{// Start-\/of-\/conversion}}
+\DoxyCodeLine{55                     \textcolor{keywordflow}{return} (TMC\_BASE\_ADC\_RESULT-\/>RESULT[adc\_pin]);      \textcolor{comment}{// Return result value (0-\/4095)}}
+\DoxyCodeLine{56     \textcolor{keywordflow}{default}:        \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{adc_8h_a342ab07b607f3dc4efa0655ca1acd164}\label{adc_8h_a342ab07b607f3dc4efa0655ca1acd164}} 
+\index{adc.h@{adc.h}!init\_ADC@{init\_ADC}}
+\index{init\_ADC@{init\_ADC}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{init\_ADC()}{init\_ADC()}}
+{\footnotesize\ttfamily void init\+\_\+\+A\+DC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Init A\+DC. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & /~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 16 of file adc.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                \{}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{18     TMC\_BASE\_ADC-\/>TRL3 = 0x00E0;            \textcolor{comment}{// Power up ADC circuits}}
+\DoxyCodeLine{19     \textcolor{keywordflow}{for}(i=0; i<2500; i++)\{}
+\DoxyCodeLine{20         \_\_asm(\textcolor{stringliteral}{"{} RPT \#255 || NOP"{}});          \textcolor{comment}{// Provides the required delay between writes to ADCTRL1 of 5 ms}}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{comment}{// Define ADCCLK clock frequency ( less than or equal to 25 MHz )}}
+\DoxyCodeLine{24     EALLOW;                                 \textcolor{comment}{// Allow register writes}}
+\DoxyCodeLine{25     TMC\_BASE\_SCR-\/>HISPCP = 0x3;             \textcolor{comment}{// Set High-\/Speed Peripheral Clock Prescaler to 3 for High speed clock = SYSCLKOUT/14}}
+\DoxyCodeLine{26     (*ADC\_Cal) ();                          \textcolor{comment}{// ADCREFSEL and ADCOFFTRIM must be initialized}}
+\DoxyCodeLine{27     EDIS;                                   \textcolor{comment}{// protect register}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     TMC\_BASE\_ADC-\/>TRL3 |= (0x1);            \textcolor{comment}{// Setup simultaneous sampling mode}}
+\DoxyCodeLine{30     TMC\_BASE\_ADC-\/>TRL1 |= (0x1 << 4);       \textcolor{comment}{// Setup cascaded sequencer mode}}
+\DoxyCodeLine{31     TMC\_BASE\_ADC-\/>MAXCONV |= (0x0007);      \textcolor{comment}{// 8 double conv's (16 total)}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     TMC\_BASE\_ADC-\/>CHSELSEQ1 \&= \string~(0xF);      \textcolor{comment}{// Setup conv from channels ADCINA0 and ADCINB0}}
+\DoxyCodeLine{34     TMC\_BASE\_ADC-\/>CHSELSEQ1 |= (0x1 << 4);  \textcolor{comment}{// Setup conv from channels ADCINA1 and ADCINB1}}
+\DoxyCodeLine{35     TMC\_BASE\_ADC-\/>CHSELSEQ1 |= (0x2 << 8);  \textcolor{comment}{// Setup conv from channels ADCINA2 and ADCINB2}}
+\DoxyCodeLine{36     TMC\_BASE\_ADC-\/>CHSELSEQ1 |= (0x3 << 12); \textcolor{comment}{// Setup conv from channels ADCINA3 and ADCINB3}}
+\DoxyCodeLine{37     TMC\_BASE\_ADC-\/>CHSELSEQ2 |= (0x4);       \textcolor{comment}{// Setup conv from channels ADCINA4 and ADCINB4}}
+\DoxyCodeLine{38     TMC\_BASE\_ADC-\/>CHSELSEQ2 |= (0x5 << 4);  \textcolor{comment}{// Setup conv from channels ADCINA5 and ADCINB5}}
+\DoxyCodeLine{39     TMC\_BASE\_ADC-\/>CHSELSEQ2 |= (0x6 << 8);  \textcolor{comment}{// Setup conv from channels ADCINA6 and ADCINB6}}
+\DoxyCodeLine{40     TMC\_BASE\_ADC-\/>CHSELSEQ2 |= (0x7 << 12); \textcolor{comment}{// Setup conv from channels ADCINA7 and ADCINB7}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     TMC\_BASE\_ADC-\/>TRL2 = 0x2000;            \textcolor{comment}{// Start-\/of-\/conversion}}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}

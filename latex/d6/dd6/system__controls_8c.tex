@@ -1,0 +1,61 @@
+\hypertarget{system__controls_8c}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/system\+\_\+controls/system\+\_\+controls.c File Reference}
+\label{system__controls_8c}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/system\_controls/system\_controls.c@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/system\_controls/system\_controls.c}}
+
+
+Source code file for System Controls module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{set\+System\+Controls}} (void)
+\begin{DoxyCompactList}\small\item\em Configuration of system control register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source code file for System Controls module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}\label{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}} 
+\index{system\_controls.c@{system\_controls.c}!setSystemControls@{setSystemControls}}
+\index{setSystemControls@{setSystemControls}!system\_controls.c@{system\_controls.c}}
+\doxysubsubsection{\texorpdfstring{setSystemControls()}{setSystemControls()}}
+{\footnotesize\ttfamily void set\+System\+Controls (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configuration of system control register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em /} & ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 13 of file system\+\_\+controls.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     EALLOW;}
+\DoxyCodeLine{16     TMC\_BASE\_SCR-\/>WDCR = 0xE8;              \textcolor{comment}{// Watchdog Control Register    -\/-\/> Watchdog check -\/-\/> Disable the watchdog module -\/-\/> Clear Watchdog reset status flag bit}}
+\DoxyCodeLine{17     TMC\_BASE\_SCR-\/>PLLSTS |= (0x1 << 6);     \textcolor{comment}{// No external clock -\/-\/> Disable oscillator fail-\/detect logic}}
+\DoxyCodeLine{18     TMC\_BASE\_SCR-\/>PLLCR |= 0xA;             \textcolor{comment}{// Set the PLL clocking ratio}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{while}(!TMC\_BASE\_SCR-\/>PLLSTS\&0x1);       \textcolor{comment}{// Wait for PLL to complete locking (PLLSTS[PLLLOCKS] = 1) to change PLLSTS[DIVSEL]}}
+\DoxyCodeLine{21     TMC\_BASE\_SCR-\/>PLLSTS |= 0x0100;         \textcolor{comment}{// Select Divide By 2 for CLKIN}}
+\DoxyCodeLine{22     TMC\_BASE\_SCR-\/>PCLKCR0 = 0xffff;         \textcolor{comment}{// Set all Peripheral Clock Control 0 modules to be clocked by system clock}}
+\DoxyCodeLine{23     TMC\_BASE\_SCR-\/>PCLKCR1 = 0xffff;         \textcolor{comment}{// Set all Peripheral Clock Control 1 modules to be clocked by system clock}}
+\DoxyCodeLine{24     TMC\_BASE\_SCR-\/>PCLKCR3 = 0xffff;         \textcolor{comment}{// Set all Peripheral Clock Control 2 modules to be clocked by system clock}}
+\DoxyCodeLine{25     EDIS;}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}

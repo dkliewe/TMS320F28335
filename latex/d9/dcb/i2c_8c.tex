@@ -1,0 +1,496 @@
+\hypertarget{i2c_8c}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/i2c/i2c.c File Reference}
+\label{i2c_8c}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/i2c/i2c.c@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/i2c/i2c.c}}
+
+
+Source code file for I2C module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+interrupt void \mbox{\hyperlink{i2c_8c_aeba25bd2e06eea44b05e170e07e9f92a}{I2\+C\+\_\+master\+I\+SR}} (void)
+\begin{DoxyCompactList}\small\item\em I2C I\+S\+R-\/\+Routine in master mode when N\+A\+CK detected. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+interrupt void \mbox{\hyperlink{i2c_8c_a4f5bcb6b2acfddc07eb7987f10caaa58}{I2\+C\+\_\+slave\+I\+SR}} (void)
+\begin{DoxyCompactList}\small\item\em I2C I\+S\+R-\/\+Routine in slave mode when Adressed detected. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{i2c_8c_adf0f557afff0b864dc49715ed78bacfc}{init\+\_\+\+I2\+C\+Master\+Mode}} (\mbox{\hyperlink{i2c_8h_a68f406a8eaae1ae1c77d35b1be1ccebc}{I2\+C\+Interface}} I2C)
+\begin{DoxyCompactList}\small\item\em Initialization of I2C Interface master mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{i2c_8c_a71549f9746e395f68305e4b5bfd21aad}{init\+\_\+\+I2\+C\+Slave\+Mode}} (\mbox{\hyperlink{i2c_8h_a68f406a8eaae1ae1c77d35b1be1ccebc}{I2\+C\+Interface}} I2C, \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} slave\+\_\+address)
+\begin{DoxyCompactList}\small\item\em Initialization of I2C Interface slave mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{i2c_8c_a604de27c2962d36dfca6986137cae9f7}{I2\+C\+\_\+write\+Data\+As\+Master}} (\mbox{\hyperlink{i2c_8h_a2216e1356dd2b55cd77b084c76233fee}{I2\+C\+M\+S\+G\+\_\+transmit}} $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Send data in I2C master mode to slave. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{i2c_8c_a6e9a88c876470f293e8074a4bc65b4f9}{I2\+C\+\_\+read\+Data\+As\+Master}} (\mbox{\hyperlink{i2c_8h_a2216e1356dd2b55cd77b084c76233fee}{I2\+C\+M\+S\+G\+\_\+transmit}} $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Read data in I2C master mode from slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source code file for I2C module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{i2c_8c_aeba25bd2e06eea44b05e170e07e9f92a}\label{i2c_8c_aeba25bd2e06eea44b05e170e07e9f92a}} 
+\index{i2c.c@{i2c.c}!I2C\_masterISR@{I2C\_masterISR}}
+\index{I2C\_masterISR@{I2C\_masterISR}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_masterISR()}{I2C\_masterISR()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+interrupt void I2\+C\+\_\+master\+I\+SR (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+I2C I\+S\+R-\/\+Routine in master mode when N\+A\+CK detected. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & / ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 247 of file i2c.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247                                     \{}
+\DoxyCodeLine{248     \textcolor{comment}{//NACK detected -\/-\/> abort transmission and release bus}}
+\DoxyCodeLine{249     \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} i=0;}
+\DoxyCodeLine{250     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{251         TMC\_BASE\_I2C-\/>MDR \&= \string~(0x1 << 5);                                       \textcolor{comment}{// Release Bus (sets Bus Busy to 0)}}
+\DoxyCodeLine{252         TMC\_BASE\_I2C-\/>MDR |= (0x1 << 5);}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254         TMC\_BASE\_I2C-\/>FFTX \&= \string~(0x1<<14);                                       \textcolor{comment}{// Disable Transmit FIFO Mode}}
+\DoxyCodeLine{255         TMC\_BASE\_I2C-\/>FFTX \&= \string~(0x1<<13);                                       \textcolor{comment}{// Disable Transmit FIFO operation}}
+\DoxyCodeLine{256         TMC\_BASE\_I2C-\/>FFTX |= (0x1<<14);                                        \textcolor{comment}{// Enable Transmit FIFO Mode}}
+\DoxyCodeLine{257         TMC\_BASE\_I2C-\/>FFTX |= (0x1<<13);                                        \textcolor{comment}{// Enable Transmit FIFO operation}}
+\DoxyCodeLine{258         \textcolor{keywordflow}{for}(i=0; i<5000; i++)\{\};}
+\DoxyCodeLine{259     \}}
+\DoxyCodeLine{260     \textcolor{keywordflow}{while}(TMC\_BASE\_I2C-\/>STR \& 0x1000);}
+\DoxyCodeLine{261     TMC\_BASE\_PIE-\/>ACK |= 0x0080;                                                \textcolor{comment}{// Enable future I2C (PIE Group 8) interrupts}}
+\DoxyCodeLine{262 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{i2c_8c_a6e9a88c876470f293e8074a4bc65b4f9}\label{i2c_8c_a6e9a88c876470f293e8074a4bc65b4f9}} 
+\index{i2c.c@{i2c.c}!I2C\_readDataAsMaster@{I2C\_readDataAsMaster}}
+\index{I2C\_readDataAsMaster@{I2C\_readDataAsMaster}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_readDataAsMaster()}{I2C\_readDataAsMaster()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} I2\+C\+\_\+read\+Data\+As\+Master (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{i2c_8h_a2216e1356dd2b55cd77b084c76233fee}{I2\+C\+M\+S\+G\+\_\+transmit}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Read data in I2C master mode from slave. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) Pointer to I2\+C\+M\+S\+G\+\_\+transmit ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = I2C module is disabled ~\newline
+-\/-\/$>$ -\/2 = Bus busy -\/-\/$>$ another transmission still running ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 195 of file i2c.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{195                                                 \{}
+\DoxyCodeLine{196     \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     \textcolor{keywordflow}{if}(TMC\_BASE\_I2C-\/>MDR>>5 == 0)\{}
+\DoxyCodeLine{199         \textcolor{keywordflow}{return} -\/2;                                                              \textcolor{comment}{// Return -\/2 if I2C module is disabled}}
+\DoxyCodeLine{200     \}}
+\DoxyCodeLine{201                                                                                 \textcolor{comment}{// Start transmitting session, if Bus not Busy}}
+\DoxyCodeLine{202     \textcolor{keywordflow}{if} (!(TMC\_BASE\_I2C-\/>STR>>12))                                               \textcolor{comment}{// -\/-\/> The I2C module has not received or transmitted a START bit on the bus.}}
+\DoxyCodeLine{203     \{}
+\DoxyCodeLine{204         TMC\_BASE\_I2C-\/>MDR |= (0x1<<10);                                         \textcolor{comment}{// Master mode}}
+\DoxyCodeLine{205         TMC\_BASE\_I2C-\/>MDR |= (0x1<<9);                                          \textcolor{comment}{// Transmitter mode}}
+\DoxyCodeLine{206         TMC\_BASE\_I2C-\/>SAR = msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a31e4310d6a21a7e792f3ff44f2988157}{SlaveAddress}};                                  \textcolor{comment}{// Setup slave address}}
+\DoxyCodeLine{207         TMC\_BASE\_I2C-\/>CNT = msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a943a58d772a1c92474192f62154f104d}{RegisterAddressLength}};                            \textcolor{comment}{// Setup I2CCNT (number of bytes to send = Addresslength)}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209         \textcolor{keywordflow}{if}(msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a943a58d772a1c92474192f62154f104d}{RegisterAddressLength}} == 2)\{}
+\DoxyCodeLine{210             TMC\_BASE\_I2C-\/>DXR = msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a3e14126d006c1a198ad0f3f84cfd843e}{RegisterAddressHigh}};                        \textcolor{comment}{// Write Adress High to DXR}}
+\DoxyCodeLine{211         \}}
+\DoxyCodeLine{212         \textcolor{keywordflow}{if}(msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a943a58d772a1c92474192f62154f104d}{RegisterAddressLength}} >= 1)\{}
+\DoxyCodeLine{213             TMC\_BASE\_I2C-\/>DXR = msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a65532f228e5e328c98f45dc809a4061c}{RegisterAddressLow}};                      \textcolor{comment}{// Write Adress Low to DXR}}
+\DoxyCodeLine{214         \}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216         TMC\_BASE\_I2C-\/>MDR |= (0x1<<13);                                         \textcolor{comment}{// Set STT to 1 -\/-\/> I2C module generates a START-\/condition on the I2C-\/bus}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218         \textcolor{keywordflow}{while}((TMC\_BASE\_I2C-\/>FFTX \& 0x1F00) > 0);                               \textcolor{comment}{// Wait while not all Bytes have been sent (Transmit FIFO contains >0 bytes)}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220         TMC\_BASE\_I2C-\/>CNT = msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_aadac8fff2e9f76db1e552f22a68292ba}{DataLength}};                                  \textcolor{comment}{// Set up I2CCNT for Receiving bytes}}
+\DoxyCodeLine{221         TMC\_BASE\_I2C-\/>MDR \&= \string~(0x1<<9);                                         \textcolor{comment}{// Receive mode}}
+\DoxyCodeLine{222         TMC\_BASE\_I2C-\/>MDR |= (0x1<<11);                                         \textcolor{comment}{// Send STOP-\/Condition after all data has been received}}
+\DoxyCodeLine{223         TMC\_BASE\_I2C-\/>MDR |= (0x1<<13);                                         \textcolor{comment}{// Send repeated start bit}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225         \textcolor{keywordflow}{for}(i=0; i < msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_aadac8fff2e9f76db1e552f22a68292ba}{DataLength}}; i++)}
+\DoxyCodeLine{226         \{}
+\DoxyCodeLine{227             \textcolor{keywordflow}{while}(!(TMC\_BASE\_I2C-\/>FFRX \& 0x0080))\{                              \textcolor{comment}{// Wait for 1 or more byte in receive FIFO}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229             \}}
+\DoxyCodeLine{230             msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_aa0a5e0b45c479e85016ab31e85cbd612}{Data}}[i] = TMC\_BASE\_I2C-\/>DRR;                                   \textcolor{comment}{// Get Data from Receive FIFO}}
+\DoxyCodeLine{231             \_\_asm(\textcolor{stringliteral}{"{} RPT \#255 || NOP"{}});}
+\DoxyCodeLine{232             TMC\_BASE\_I2C-\/>FFRX |= (0x1 << 6);                                   \textcolor{comment}{// Clear flag}}
+\DoxyCodeLine{233         \}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{236     \}}
+\DoxyCodeLine{237     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{238         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{239     \}}
+\DoxyCodeLine{240 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{i2c_8c_a4f5bcb6b2acfddc07eb7987f10caaa58}\label{i2c_8c_a4f5bcb6b2acfddc07eb7987f10caaa58}} 
+\index{i2c.c@{i2c.c}!I2C\_slaveISR@{I2C\_slaveISR}}
+\index{I2C\_slaveISR@{I2C\_slaveISR}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_slaveISR()}{I2C\_slaveISR()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+interrupt void I2\+C\+\_\+slave\+I\+SR (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+I2C I\+S\+R-\/\+Routine in slave mode when Adressed detected. 
+
+~\newline
+receives register-\/address and values und writesv alue into register.~\newline
+sends data from requested register to I2C Bus when addressed as slave transmitter.~\newline
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & / ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 271 of file i2c.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{272 \{}
+\DoxyCodeLine{273     \mbox{\hyperlink{struct___t_m_s___i2_c___reg}{TMPS\_I2C\_Reg}} TMC\_BASE\_I2C\_register;}
+\DoxyCodeLine{274     \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} IntSource;}
+\DoxyCodeLine{275     \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}} i=0;}
+\DoxyCodeLine{276     \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} z=0;}
+\DoxyCodeLine{277     \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} register\_address = 0x0000;}
+\DoxyCodeLine{278     \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} register\_value = 0x0000;}
+\DoxyCodeLine{279     \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} stop = 0;}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281     IntSource = (TMC\_BASE\_I2C-\/>ISRC \& 0x0007);                                  \textcolor{comment}{// Read interrupt source}}
+\DoxyCodeLine{282     \textcolor{keywordflow}{if}(IntSource == 7)                                                          \textcolor{comment}{// Interrupt source = addressed as slave}}
+\DoxyCodeLine{283     \{}
+\DoxyCodeLine{284         \textcolor{keywordflow}{for}(i=0; i<2; i++)\{}
+\DoxyCodeLine{285             \textcolor{keywordflow}{while}(!(TMC\_BASE\_I2C-\/>FFRX \& 0x0080) \&\& !stop)\{                     \textcolor{comment}{// Wait, while no byte in receive FIFO}}
+\DoxyCodeLine{286                 \textcolor{keywordflow}{if}(TMC\_BASE\_I2C-\/>STR \& 0x0020)\{                                 \textcolor{comment}{// break if Stop condition detected}}
+\DoxyCodeLine{287                     stop=1;}
+\DoxyCodeLine{288                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{289                 \}}
+\DoxyCodeLine{290             \}}
+\DoxyCodeLine{291             \textcolor{keywordflow}{if}(stop)\{}
+\DoxyCodeLine{292                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{293             \}}
+\DoxyCodeLine{294             register\_address |= TMC\_BASE\_I2C-\/>DRR;                              \textcolor{comment}{// Read byte from Rx-\/FIFO}}
+\DoxyCodeLine{295             \textcolor{keywordflow}{if}(i==0)\{}
+\DoxyCodeLine{296                 register\_address = (register\_address<<8);                       \textcolor{comment}{// Shift High Address Byte}}
+\DoxyCodeLine{297             \}}
+\DoxyCodeLine{298             TMC\_BASE\_I2C-\/>FFRX |= (0x1 << 6);                                   \textcolor{comment}{// Clear Flag}}
+\DoxyCodeLine{299             \textcolor{keywordflow}{for} (z=0;z<50;z++)\{}
+\DoxyCodeLine{300                 \_\_asm(\textcolor{stringliteral}{"{} RPT \#255 || NOP"{}});}
+\DoxyCodeLine{301             \}}
+\DoxyCodeLine{302         \}}
+\DoxyCodeLine{303         TMC\_BASE\_I2C\_register = (TM\_CAST(\mbox{\hyperlink{struct___t_m_s___i2_c___reg}{TMPS\_I2C\_Reg}}) register\_address);       \textcolor{comment}{// Cast Addressbytes for register-\/access}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305         \textcolor{keywordflow}{if}(!(TMC\_BASE\_I2C-\/>STR \& 0x4000))\{                                      \textcolor{comment}{// If not Addressed as Slave Transmitter}}
+\DoxyCodeLine{306             \textcolor{keywordflow}{for}(i=0; i<2; i++)\{}
+\DoxyCodeLine{307                 \textcolor{keywordflow}{while}(!(TMC\_BASE\_I2C-\/>FFRX \& 0x0080) \&\& !stop)\{                 \textcolor{comment}{// Wait, while no byte in receive FIFO}}
+\DoxyCodeLine{308                     \textcolor{keywordflow}{if}(TMC\_BASE\_I2C-\/>STR \& 0x0020)\{                             \textcolor{comment}{// Break if Stop condition detected}}
+\DoxyCodeLine{309                         stop=1;}
+\DoxyCodeLine{310                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{311                     \}}
+\DoxyCodeLine{312                 \}}
+\DoxyCodeLine{313                 \textcolor{keywordflow}{if}(stop)\{}
+\DoxyCodeLine{314                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{315                 \}}
+\DoxyCodeLine{316                 \textcolor{keywordflow}{if}(i==0)\{}
+\DoxyCodeLine{317                     register\_value = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (TMC\_BASE\_I2C-\/>DRR);                \textcolor{comment}{// Receive first Databyte}}
+\DoxyCodeLine{318                 \}}
+\DoxyCodeLine{319                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{320                     register\_value |= ((\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) TMC\_BASE\_I2C-\/>DRR<<8);            \textcolor{comment}{// Receive second databyte}}
+\DoxyCodeLine{321                     TMC\_BASE\_I2C\_register-\/>\mbox{\hyperlink{struct___t_m_s___i2_c___reg_a6cfc41f929a780960076fac3551eadaa}{register\_adress}} = register\_value; \textcolor{comment}{// Write datavalue into register}}
+\DoxyCodeLine{322                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{323                 \}}
+\DoxyCodeLine{324                 TMC\_BASE\_I2C-\/>FFRX |= (0x1 << 6);                               \textcolor{comment}{// Clear Flag}}
+\DoxyCodeLine{325                 \textcolor{keywordflow}{for} (z=0;z<50;z++)\{}
+\DoxyCodeLine{326                     \_\_asm(\textcolor{stringliteral}{"{} RPT \#255 || NOP"{}});}
+\DoxyCodeLine{327                 \}}
+\DoxyCodeLine{328             \}}
+\DoxyCodeLine{329         \}}
+\DoxyCodeLine{330         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{331             TMC\_BASE\_I2C-\/>MDR |= (0x1<<9);                                              \textcolor{comment}{// Transmitter mode}}
+\DoxyCodeLine{332             TMC\_BASE\_I2C-\/>DXR = ((TMC\_BASE\_I2C\_register-\/>\mbox{\hyperlink{struct___t_m_s___i2_c___reg_a6cfc41f929a780960076fac3551eadaa}{register\_adress}}) >> 8);     \textcolor{comment}{// Slave writes data to bus}}
+\DoxyCodeLine{333             TMC\_BASE\_I2C-\/>DXR = (TMC\_BASE\_I2C\_register-\/>\mbox{\hyperlink{struct___t_m_s___i2_c___reg_a6cfc41f929a780960076fac3551eadaa}{register\_adress}});                \textcolor{comment}{// Slave writes data to bus}}
+\DoxyCodeLine{334             \textcolor{keywordflow}{while}(TMC\_BASE\_I2C-\/>FFTX \& 0x0080)\{                                         \textcolor{comment}{// wait, while no byte in receive FIFO}}
+\DoxyCodeLine{335                 \textcolor{keywordflow}{if}(TMC\_BASE\_I2C-\/>STR \& 0x0020)\{                                         \textcolor{comment}{// break if Stop condition detected}}
+\DoxyCodeLine{336                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{337                 \}}
+\DoxyCodeLine{338             \}}
+\DoxyCodeLine{339             TMC\_BASE\_I2C-\/>MDR \&= \string~(0x1<<9);                                             \textcolor{comment}{// Receiver mode}}
+\DoxyCodeLine{340         \}}
+\DoxyCodeLine{341     \}}
+\DoxyCodeLine{342     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{343     \{}
+\DoxyCodeLine{344         \_\_asm(\textcolor{stringliteral}{"{}   ESTOP0"{}});                                                             \textcolor{comment}{// Generate some error due to invalid interrupt source}}
+\DoxyCodeLine{345     \}}
+\DoxyCodeLine{346     TMC\_BASE\_PIE-\/>ACK |= 0x0080;                                                        \textcolor{comment}{// Enable future I2C (PIE Group 8) interrupts}}
+\DoxyCodeLine{347 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{i2c_8c_a604de27c2962d36dfca6986137cae9f7}\label{i2c_8c_a604de27c2962d36dfca6986137cae9f7}} 
+\index{i2c.c@{i2c.c}!I2C\_writeDataAsMaster@{I2C\_writeDataAsMaster}}
+\index{I2C\_writeDataAsMaster@{I2C\_writeDataAsMaster}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_writeDataAsMaster()}{I2C\_writeDataAsMaster()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} I2\+C\+\_\+write\+Data\+As\+Master (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{i2c_8h_a2216e1356dd2b55cd77b084c76233fee}{I2\+C\+M\+S\+G\+\_\+transmit}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Send data in I2C master mode to slave. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) Pointer to I2\+C\+M\+S\+G\+\_\+transmit ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = I2C module is disabled ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 145 of file i2c.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{145                                                  \{}
+\DoxyCodeLine{146     \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}} i;}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{keywordflow}{if}(!(TMC\_BASE\_I2C-\/>MDR \& 0x0020))\{}
+\DoxyCodeLine{149         \textcolor{keywordflow}{return} -\/1;                                                              \textcolor{comment}{// Return -\/1: I2C module is disabled}}
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \textcolor{keywordflow}{while}(TMC\_BASE\_I2C-\/>STR \& 0x1000);                                          \textcolor{comment}{// Wait for end of transmission}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     TMC\_BASE\_I2C-\/>MDR |= (0x1<<10);                                             \textcolor{comment}{// Master mode}}
+\DoxyCodeLine{155     TMC\_BASE\_I2C-\/>MDR |= (0x1<<9);                                              \textcolor{comment}{// Transmitter mode}}
+\DoxyCodeLine{156     TMC\_BASE\_I2C-\/>SAR = msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a31e4310d6a21a7e792f3ff44f2988157}{SlaveAddress}};                                      \textcolor{comment}{// Setup slave address}}
+\DoxyCodeLine{157     TMC\_BASE\_I2C-\/>CNT = msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_aadac8fff2e9f76db1e552f22a68292ba}{DataLength}}+msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a943a58d772a1c92474192f62154f104d}{RegisterAddressLength}};              \textcolor{comment}{// Setup I2CCNT (number of bytes to send = Datalength + Addresslength)}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{keywordflow}{if}(msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a943a58d772a1c92474192f62154f104d}{RegisterAddressLength}} == 2)\{}
+\DoxyCodeLine{161         TMC\_BASE\_I2C-\/>DXR = msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a3e14126d006c1a198ad0f3f84cfd843e}{RegisterAddressHigh}};                            \textcolor{comment}{// Write Adress High to DXR}}
+\DoxyCodeLine{162     \}}
+\DoxyCodeLine{163     \textcolor{keywordflow}{if}(msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a943a58d772a1c92474192f62154f104d}{RegisterAddressLength}} >= 1)\{}
+\DoxyCodeLine{164         TMC\_BASE\_I2C-\/>DXR = msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_a65532f228e5e328c98f45dc809a4061c}{RegisterAddressLow}};                          \textcolor{comment}{// Write Adress Low to DXR}}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166     \textcolor{keywordflow}{for} (i=0; i<msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_aadac8fff2e9f76db1e552f22a68292ba}{DataLength}}; i++)}
+\DoxyCodeLine{167     \{}
+\DoxyCodeLine{168         TMC\_BASE\_I2C-\/>DXR = *(msg-\/>\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_aa0a5e0b45c479e85016ab31e85cbd612}{Data}}+i);                                     \textcolor{comment}{// Write Data to DXR}}
+\DoxyCodeLine{169     \}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     TMC\_BASE\_I2C-\/>MDR |= (0x1<<11);                                             \textcolor{comment}{// Setup STOP-\/Condition Bit}}
+\DoxyCodeLine{172     TMC\_BASE\_I2C-\/>MDR |= (0x1<<13);                                             \textcolor{comment}{// Generate START-\/condition on the I2C-\/bus and send data from DXR}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     \textcolor{keywordflow}{for}(i=0; i<5000; i++)\{\};                                                    \textcolor{comment}{// Wait for transmission}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \textcolor{keywordflow}{while}(TMC\_BASE\_I2C-\/>STR \& 0x1000);                                          \textcolor{comment}{// While BB -\/-\/> Wait for end of transmission}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{keywordflow}{if}(TMC\_BASE\_I2C-\/>FFTX \& 0x1F00)\{                                            \textcolor{comment}{// If Transmit FIFO not empty}}
+\DoxyCodeLine{179         TMC\_BASE\_I2C-\/>FFTX \&= \string~(0x1<<14);                                       \textcolor{comment}{// Disable Transmit Fifo Mode}}
+\DoxyCodeLine{180         TMC\_BASE\_I2C-\/>FFTX \&= \string~(0x1<<13);                                       \textcolor{comment}{// Disable Transmit Fifo operation}}
+\DoxyCodeLine{181         TMC\_BASE\_I2C-\/>FFTX |= (0x1<<14);                                        \textcolor{comment}{// Enable Transmit Fifo Mode}}
+\DoxyCodeLine{182         TMC\_BASE\_I2C-\/>FFTX |= (0x1<<13);                                        \textcolor{comment}{// Enable Transmit Fifo operation}}
+\DoxyCodeLine{183     \}}
+\DoxyCodeLine{184     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{185 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{i2c_8c_adf0f557afff0b864dc49715ed78bacfc}\label{i2c_8c_adf0f557afff0b864dc49715ed78bacfc}} 
+\index{i2c.c@{i2c.c}!init\_I2CMasterMode@{init\_I2CMasterMode}}
+\index{init\_I2CMasterMode@{init\_I2CMasterMode}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{init\_I2CMasterMode()}{init\_I2CMasterMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+\+I2\+C\+Master\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{i2c_8h_a68f406a8eaae1ae1c77d35b1be1ccebc}{I2\+C\+Interface}}}]{I2C }\end{DoxyParamCaption})}
+
+
+
+Initialization of I2C Interface master mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) I2\+C\+Interface I2C ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = I2\+C.\+sda invalid value ~\newline
+-\/-\/$>$ -\/2 = I2\+C.\+scl invalid value ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 23 of file i2c.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                                           \{}
+\DoxyCodeLine{24     \textcolor{keywordflow}{switch}(I2C.\mbox{\hyperlink{struct___i2_c_interface_aba06cdb5ccefd2b403a9a38f79677bc3}{sda}})\{}
+\DoxyCodeLine{25         \textcolor{keywordflow}{case} 32:    \textcolor{keywordflow}{switch}(I2C.\mbox{\hyperlink{struct___i2_c_interface_ae6148cfe299466975673087143fdef8d}{scl}})\{}
+\DoxyCodeLine{26                         \textcolor{keywordflow}{case} 33:    EALLOW;}
+\DoxyCodeLine{27                                     TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~(0x1);         \textcolor{comment}{// Enable pull-\/up for GPIO32 (SDAA)}}
+\DoxyCodeLine{28                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL1 \&= \string~(0x3<<0);    \textcolor{comment}{// Asynch input GPIO32 (SDAA)}}
+\DoxyCodeLine{29                                     TMC\_BASE\_PIO-\/>CTL[1].MUX1 |= (0x1<<0);      \textcolor{comment}{// Configure GPIO32 to SDAA}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31                                     TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~(0x1);         \textcolor{comment}{// Enable pull-\/up for GPIO33 (SCLA)}}
+\DoxyCodeLine{32                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL1 \&= \string~(0x3<<2);    \textcolor{comment}{// Asynch input GPIO33 (SCLA)}}
+\DoxyCodeLine{33                                     TMC\_BASE\_PIO-\/>CTL[1].MUX1 |= (0x1<<2);      \textcolor{comment}{// Configure GPIO33 to SCLA}}
+\DoxyCodeLine{34                                     EDIS;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36                                     TMC\_BASE\_I2C-\/>MDR \&= \string~(0x0020);             \textcolor{comment}{// Put module in reset}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38                                     TMC\_BASE\_I2C-\/>PSC = 0xE;                    \textcolor{comment}{// Configure module clock to 10 MHz}}
+\DoxyCodeLine{39                                     TMC\_BASE\_I2C-\/>CLKL = 35;                    \textcolor{comment}{// Clock low-\/time divide-\/down value -\/-\/> 100 kHz on SCL}}
+\DoxyCodeLine{40                                     TMC\_BASE\_I2C-\/>CLKH  = 55;                   \textcolor{comment}{// Clock high-\/time divide-\/down value -\/-\/> 100 kHz on SCL}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42                                     TMC\_BASE\_I2C-\/>IER = (0x1 << 1);             \textcolor{comment}{// Enable NACK interrupts}}
+\DoxyCodeLine{43                                     TMC\_BASE\_I2C-\/>MDR |= (0x1<<10);             \textcolor{comment}{// Set master mode}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45                                     TMC\_BASE\_I2C-\/>FFTX |= (0x1<<14);            \textcolor{comment}{// Enable Transmit Fifo Mode}}
+\DoxyCodeLine{46                                     TMC\_BASE\_I2C-\/>FFTX |= (0x1<<13);            \textcolor{comment}{// Enable Transmit Fifo operation}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49                                     TMC\_BASE\_I2C-\/>FFRX |= (0x1<<13);            \textcolor{comment}{// Enable Receive FIFO Operation}}
+\DoxyCodeLine{50                                     TMC\_BASE\_I2C-\/>FFRX |= (0x1);                \textcolor{comment}{// Set Flag when there is 1 or more Byte in Receive FIFO}}
+\DoxyCodeLine{51                                     TMC\_BASE\_I2C-\/>FFRX |= (0x1 << 6);           \textcolor{comment}{// clear RXFFINT Flag}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53                                     DINT;                                                       \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{54                                     EALLOW;                                                     \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{55                                     TMC\_BASE\_INT\_REGS-\/>I2CINT1A = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})\&\mbox{\hyperlink{i2c_8c_aeba25bd2e06eea44b05e170e07e9f92a}{I2C\_masterISR}};        \textcolor{comment}{// Configure interrupt}}
+\DoxyCodeLine{56                                     EDIS;                                                       \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{57                                     TMC\_BASE\_PIE-\/>CTRL |= 0x01;                                 \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{58                                     TMC\_BASE\_PIE-\/>GROUP[7].IER |= 0x1;                          \textcolor{comment}{// Enable I2CINT1A in the PIE: Group 8 interrupt 1}}
+\DoxyCodeLine{59                                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0080;                                               \textcolor{comment}{// Enable IER Block}}
+\DoxyCodeLine{60                                     EINT;                                                       \textcolor{comment}{// Enable Interrupts}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62                                     TMC\_BASE\_I2C-\/>MDR |= (0x1 << 5);                            \textcolor{comment}{// Release I2C from reset -\/-\/> I2C module is enabled.}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{65                         \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{66                     \}}
+\DoxyCodeLine{67                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{68         \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{71 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{i2c_8c_a71549f9746e395f68305e4b5bfd21aad}\label{i2c_8c_a71549f9746e395f68305e4b5bfd21aad}} 
+\index{i2c.c@{i2c.c}!init\_I2CSlaveMode@{init\_I2CSlaveMode}}
+\index{init\_I2CSlaveMode@{init\_I2CSlaveMode}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{init\_I2CSlaveMode()}{init\_I2CSlaveMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+\+I2\+C\+Slave\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{i2c_8h_a68f406a8eaae1ae1c77d35b1be1ccebc}{I2\+C\+Interface}}}]{I2C,  }\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{slave\+\_\+address }\end{DoxyParamCaption})}
+
+
+
+Initialization of I2C Interface slave mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) I2\+C\+Interface I2C ~\newline
+ 2) Uint16 slave\+\_\+address ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = I2\+C.\+sda invalid value ~\newline
+-\/-\/$>$ -\/2 = I2\+C.\+scl invalid value ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 82 of file i2c.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                                                                \{}
+\DoxyCodeLine{83     \textcolor{keywordflow}{switch}(I2C.\mbox{\hyperlink{struct___i2_c_interface_aba06cdb5ccefd2b403a9a38f79677bc3}{sda}})\{}
+\DoxyCodeLine{84         \textcolor{keywordflow}{case} 32:    \textcolor{keywordflow}{switch}(I2C.\mbox{\hyperlink{struct___i2_c_interface_ae6148cfe299466975673087143fdef8d}{scl}})\{}
+\DoxyCodeLine{85                         \textcolor{keywordflow}{case} 33:    EALLOW;}
+\DoxyCodeLine{86                                     TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~(0x1);         \textcolor{comment}{// Enable pull-\/up for GPIO32 (SDAA)}}
+\DoxyCodeLine{87                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL1 |= (0x3<<0);     \textcolor{comment}{// Asynch input GPIO32 (SDAA)}}
+\DoxyCodeLine{88                                     TMC\_BASE\_PIO-\/>CTL[1].MUX1 |= (0x1<<0);      \textcolor{comment}{// Configure GPIO32 to SDAA}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90                                     TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~(0x1<<1);      \textcolor{comment}{// Enable pull-\/up for GPIO33 (SCLA)}}
+\DoxyCodeLine{91                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL1 |= (0x3<<2);     \textcolor{comment}{// Asynch input GPIO33 (SCLA)}}
+\DoxyCodeLine{92                                     TMC\_BASE\_PIO-\/>CTL[1].MUX1 |= (0x1<<2);      \textcolor{comment}{// Configure GPIO33 to SCLA}}
+\DoxyCodeLine{93                                     EDIS;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96                                     TMC\_BASE\_I2C-\/>MDR \&= \string~(0x0020);             \textcolor{comment}{// Put module in reset}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98                                     TMC\_BASE\_I2C-\/>PSC = 0xE;                    \textcolor{comment}{// Configure module clock to 10 MHz}}
+\DoxyCodeLine{99                                     TMC\_BASE\_I2C-\/>CLKL = 35;                    \textcolor{comment}{// Clock low-\/time divide-\/down value -\/-\/> 100 kHz on SCL}}
+\DoxyCodeLine{100                                     TMC\_BASE\_I2C-\/>CLKH  = 55;                   \textcolor{comment}{// Clock high-\/time divide-\/down value -\/-\/> 100 kHz on SCL}}
+\DoxyCodeLine{101                                     TMC\_BASE\_I2C-\/>IER = (0x1 << 6);             \textcolor{comment}{// Enable Adressed as Slave Interrupt}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103                                     TMC\_BASE\_I2C-\/>FFTX |= (0x1<<14);            \textcolor{comment}{// Enable Transmit Fifo Mode}}
+\DoxyCodeLine{104                                     TMC\_BASE\_I2C-\/>FFTX |= (0x1<<13);            \textcolor{comment}{// Enable Transmit Fifo operation}}
+\DoxyCodeLine{105                                     TMC\_BASE\_I2C-\/>FFTX \&= \string~(0x1F);              \textcolor{comment}{// Set Flag when Transmit FIFO is empty}}
+\DoxyCodeLine{106                                     TMC\_BASE\_I2C-\/>FFTX |= (0x1 << 6);           \textcolor{comment}{// clear TXFFINT Flag}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108                                     TMC\_BASE\_I2C-\/>FFRX |= (0x1<<13);            \textcolor{comment}{// Enable Receive FIFO Operation}}
+\DoxyCodeLine{109                                     TMC\_BASE\_I2C-\/>FFRX |= (0x1);                \textcolor{comment}{// Set Flag when there is 1 or more Byte in Receive FIFO}}
+\DoxyCodeLine{110                                     TMC\_BASE\_I2C-\/>FFRX |= (0x1 << 6);           \textcolor{comment}{// clear RXFFINT Flag}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112                                     TMC\_BASE\_I2C-\/>OAR = slave\_address;          \textcolor{comment}{// 7 Bit slave address}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114                                     TMC\_BASE\_I2C-\/>MDR \&= \string~(0x1<<3);             \textcolor{comment}{// Free data format disabled}}
+\DoxyCodeLine{115                                     TMC\_BASE\_I2C-\/>MDR \&= \string~(0x1<<8);             \textcolor{comment}{// 7 bit address-\/mode}}
+\DoxyCodeLine{116                                     TMC\_BASE\_I2C-\/>MDR \&= \string~(0x1<<10);            \textcolor{comment}{// Slave mode}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118                                     DINT;                                                           \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{119                                     EALLOW;                                                         \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{120                                     TMC\_BASE\_INT\_REGS-\/>I2CINT1A = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})\&\mbox{\hyperlink{i2c_8c_a4f5bcb6b2acfddc07eb7987f10caaa58}{I2C\_slaveISR}};          \textcolor{comment}{// Configure interrupt}}
+\DoxyCodeLine{121                                     EDIS;                                                           \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{122                                     TMC\_BASE\_PIE-\/>CTRL |= 0x01;                                     \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{123                                     TMC\_BASE\_PIE-\/>GROUP[7].IER |= 0x1;                              \textcolor{comment}{// Enable I2CINT1A in the PIE: Group 8 interrupt 1}}
+\DoxyCodeLine{124                                     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0080;                                                   \textcolor{comment}{// Enable IER Block}}
+\DoxyCodeLine{125                                     EINT;                                                           \textcolor{comment}{// Enable Interrupts}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127                                     TMC\_BASE\_I2C-\/>MDR |= 0x0020;                \textcolor{comment}{// Release I2C from reset -\/-\/> I2C module is enabled.}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{130                         \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{131                     \}}
+\DoxyCodeLine{132                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{133         \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{134     \}}
+\DoxyCodeLine{135     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{136 \}}
+
+\end{DoxyCode}

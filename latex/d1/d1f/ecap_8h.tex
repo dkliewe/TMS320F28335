@@ -1,0 +1,732 @@
+\hypertarget{ecap_8h}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/ecap/ecap.h File Reference}
+\label{ecap_8h}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/ecap/ecap.h@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/ecap/ecap.h}}
+
+
+Header file for e\+C\+AP module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{ecap_8h_a2b033a0f031a87b2c724431161f59c70}{init\+\_\+e\+C\+AP}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em Init e\+C\+A\+P-\/\+Pin . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a4ca2d97e571b049be6f4cdcfaa1ab946}{int32}} \mbox{\hyperlink{ecap_8h_afe5402e8d7661ddddf9aa3a6896a9c9e}{e\+C\+A\+P\+\_\+get\+Frequency}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em Applied frequency on e\+C\+A\+P-\/\+Pin . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{ecap_8h_aff6c20f1e9eac4ab9dcc059aef1039ca}{e\+C\+A\+P\+\_\+configure\+Interrupt}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}, void $\ast$, \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em Interrupt on e\+C\+A\+P-\/\+Pin . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{ecap_8h_a16ea09006fc6dc34068320d68d675d3f}{e\+C\+A\+P\+\_\+pwm\+Output}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}, \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}}, \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em P\+W\+M-\/\+Output on e\+C\+A\+P-\/\+Pin . \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{ecap_8h_aa7f00cd8aefee598695a33ea27edf227}{e\+C\+A\+P\+\_\+force\+Timer\+Overflow\+Interrupt}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em Force e\+C\+AP Timer overflow for setting frequency to 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for e\+C\+AP module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ecap_8h_aff6c20f1e9eac4ab9dcc059aef1039ca}\label{ecap_8h_aff6c20f1e9eac4ab9dcc059aef1039ca}} 
+\index{ecap.h@{ecap.h}!eCAP\_configureInterrupt@{eCAP\_configureInterrupt}}
+\index{eCAP\_configureInterrupt@{eCAP\_configureInterrupt}!ecap.h@{ecap.h}}
+\doxysubsubsection{\texorpdfstring{eCAP\_configureInterrupt()}{eCAP\_configureInterrupt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} e\+C\+A\+P\+\_\+configure\+Interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{gpio,  }\item[{void $\ast$}]{isr,  }\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Interrupt on e\+C\+A\+P-\/\+Pin . 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 1, 3, 5, 7, 9, 11, 24, 25, 26, 27, 34, 37, 48, 49~\newline
+ 2) Pointer to I\+SR~\newline
+ 3) event -\/-\/$>$ valid value\+: 1-\/7 (\href{../doc_documents/Technical_Reference_Manual.pdf\#page=383}{\texttt{ See Technical\+\_\+\+Reference\+\_\+\+Manual}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin~\newline
+-\/-\/$>$ -\/2 = invalid value of event~\newline
+-\/-\/$>$ -\/3 = requested e\+C\+A\+P-\/module is not configured 
+\end{DoxyReturn}
+
+
+Definition at line 289 of file ecap.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{289                                                                     \{}
+\DoxyCodeLine{290     DINT;                                       \textcolor{comment}{// Disable CPU interrupts}}
+\DoxyCodeLine{291     \textcolor{keywordflow}{if}(event > 0 \&\& event <= 7)\{                \textcolor{comment}{// check event}}
+\DoxyCodeLine{292         EALLOW;}
+\DoxyCodeLine{293         \textcolor{keywordflow}{switch}(gpio)\{}
+\DoxyCodeLine{294             \textcolor{keywordflow}{case} 1:     \textcolor{keywordflow}{if}(g\_ecap6\_in\_use)\{}
+\DoxyCodeLine{295                             TMC\_BASE\_ECAP6-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{296                             TMC\_BASE\_INT\_REGS-\/>ECAP6\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{297                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x20;                     \textcolor{comment}{// Enable eCAP6 in the PIE: Group 4 interrupt 6}}
+\DoxyCodeLine{298                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{299                         \}}
+\DoxyCodeLine{300                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{301                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{302                         \}}
+\DoxyCodeLine{303             \textcolor{keywordflow}{case} 3:     \textcolor{keywordflow}{if}(g\_ecap5\_in\_use)\{}
+\DoxyCodeLine{304                             TMC\_BASE\_ECAP5-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{305                             TMC\_BASE\_INT\_REGS-\/>ECAP5\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{306                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x10;                     \textcolor{comment}{// Enable eCAP5 in the PIE: Group 4 interrupt 5}}
+\DoxyCodeLine{307                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{308                         \}}
+\DoxyCodeLine{309                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{310                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{311                         \}}
+\DoxyCodeLine{312             \textcolor{keywordflow}{case} 5:     \textcolor{keywordflow}{if}(g\_ecap1\_in\_use)\{}
+\DoxyCodeLine{313                             TMC\_BASE\_ECAP1-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{314                             TMC\_BASE\_INT\_REGS-\/>ECAP1\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{315                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x1;                      \textcolor{comment}{// Enable eCAP1 in the PIE: Group 4 interrupt 1}}
+\DoxyCodeLine{316                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{317                         \}}
+\DoxyCodeLine{318                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{319                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{320                         \}}
+\DoxyCodeLine{321             \textcolor{keywordflow}{case} 7:     \textcolor{keywordflow}{if}(g\_ecap2\_in\_use)\{}
+\DoxyCodeLine{322                             TMC\_BASE\_ECAP2-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{323                             TMC\_BASE\_INT\_REGS-\/>ECAP2\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{324                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x2;                      \textcolor{comment}{// Enable eCAP2 in the PIE: Group 4 interrupt 2}}
+\DoxyCodeLine{325                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{326                         \}}
+\DoxyCodeLine{327                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{328                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{329                         \}}
+\DoxyCodeLine{330             \textcolor{keywordflow}{case} 9:     \textcolor{keywordflow}{if}(g\_ecap3\_in\_use)\{}
+\DoxyCodeLine{331                             TMC\_BASE\_ECAP3-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{332                             TMC\_BASE\_INT\_REGS-\/>ECAP3\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{333                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x4;                      \textcolor{comment}{// Enable eCAP3 in the PIE: Group 4 interrupt 3}}
+\DoxyCodeLine{334                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{335                         \}}
+\DoxyCodeLine{336                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{337                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{338                         \}}
+\DoxyCodeLine{339             \textcolor{keywordflow}{case} 11:    \textcolor{keywordflow}{if}(g\_ecap4\_in\_use)\{}
+\DoxyCodeLine{340                             TMC\_BASE\_ECAP4-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{341                             TMC\_BASE\_INT\_REGS-\/>ECAP4\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{342                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x8;                      \textcolor{comment}{// Enable eCAP4 in the PIE: Group 4 interrupt 4}}
+\DoxyCodeLine{343                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{344                         \}}
+\DoxyCodeLine{345                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{346                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{347                         \}}
+\DoxyCodeLine{348             \textcolor{keywordflow}{case} 24:    \textcolor{keywordflow}{if}(g\_ecap1\_in\_use)\{}
+\DoxyCodeLine{349                             TMC\_BASE\_ECAP1-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{350                             TMC\_BASE\_INT\_REGS-\/>ECAP1\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{351                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x1;                      \textcolor{comment}{// Enable eCAP1 in the PIE: Group 4 interrupt 1}}
+\DoxyCodeLine{352                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{353                         \}}
+\DoxyCodeLine{354                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{355                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{356                         \}}
+\DoxyCodeLine{357             \textcolor{keywordflow}{case} 25:    \textcolor{keywordflow}{if}(g\_ecap2\_in\_use)\{}
+\DoxyCodeLine{358                             TMC\_BASE\_ECAP2-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{359                             TMC\_BASE\_INT\_REGS-\/>ECAP2\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{360                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x2;                      \textcolor{comment}{// Enable eCAP2 in the PIE: Group 4 interrupt 2}}
+\DoxyCodeLine{361                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{362                         \}}
+\DoxyCodeLine{363                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{364                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{365                         \}}
+\DoxyCodeLine{366             \textcolor{keywordflow}{case} 26:    \textcolor{keywordflow}{if}(g\_ecap3\_in\_use)\{}
+\DoxyCodeLine{367                             TMC\_BASE\_ECAP3-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{368                             TMC\_BASE\_INT\_REGS-\/>ECAP3\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{369                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x4;                      \textcolor{comment}{// Enable eCAP3 in the PIE: Group 4 interrupt 3}}
+\DoxyCodeLine{370                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{371                         \}}
+\DoxyCodeLine{372                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{373                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{374                         \}}
+\DoxyCodeLine{375             \textcolor{keywordflow}{case} 27:    \textcolor{keywordflow}{if}(g\_ecap4\_in\_use)\{}
+\DoxyCodeLine{376                             TMC\_BASE\_ECAP4-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{377                             TMC\_BASE\_INT\_REGS-\/>ECAP4\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{378                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x8;                      \textcolor{comment}{// Enable eCAP4 in the PIE: Group 4 interrupt 4}}
+\DoxyCodeLine{379                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{380                         \}}
+\DoxyCodeLine{381                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{382                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{383                         \}}
+\DoxyCodeLine{384             \textcolor{keywordflow}{case} 34:    \textcolor{keywordflow}{if}(g\_ecap1\_in\_use)\{}
+\DoxyCodeLine{385                             TMC\_BASE\_ECAP1-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{386                             TMC\_BASE\_INT\_REGS-\/>ECAP1\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{387                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x1;                      \textcolor{comment}{// Enable eCAP1 in the PIE: Group 4 interrupt 1}}
+\DoxyCodeLine{388                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{389                         \}}
+\DoxyCodeLine{390                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{391                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{392                         \}}
+\DoxyCodeLine{393             \textcolor{keywordflow}{case} 37:    \textcolor{keywordflow}{if}(g\_ecap2\_in\_use)\{}
+\DoxyCodeLine{394                             TMC\_BASE\_ECAP2-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{395                             TMC\_BASE\_INT\_REGS-\/>ECAP2\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{396                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x2;                      \textcolor{comment}{// Enable eCAP2 in the PIE: Group 4 interrupt 2}}
+\DoxyCodeLine{397                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{398                         \}}
+\DoxyCodeLine{399                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{400                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{401                         \}}
+\DoxyCodeLine{402             \textcolor{keywordflow}{case} 48:    \textcolor{keywordflow}{if}(g\_ecap5\_in\_use)\{}
+\DoxyCodeLine{403                             TMC\_BASE\_ECAP5-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{404                             TMC\_BASE\_INT\_REGS-\/>ECAP5\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{405                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x10;                     \textcolor{comment}{// Enable eCAP5 in the PIE: Group 4 interrupt 5}}
+\DoxyCodeLine{406                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{407                         \}}
+\DoxyCodeLine{408                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{409                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{410                         \}}
+\DoxyCodeLine{411             \textcolor{keywordflow}{case} 49:    \textcolor{keywordflow}{if}(g\_ecap6\_in\_use)\{}
+\DoxyCodeLine{412                             TMC\_BASE\_ECAP6-\/>ECEINT |= (0x1 << event);               \textcolor{comment}{// Enable eCAP-\/Interrupt for requested event on requested Pin}}
+\DoxyCodeLine{413                             TMC\_BASE\_INT\_REGS-\/>ECAP6\_INT = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;               \textcolor{comment}{// assign ISR}}
+\DoxyCodeLine{414                             TMC\_BASE\_PIE-\/>GROUP[3].IER |= 0x20;                     \textcolor{comment}{// Enable eCAP6 in the PIE: Group 4 interrupt 6}}
+\DoxyCodeLine{415                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{416                         \}}
+\DoxyCodeLine{417                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{418                             \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{419                         \}}
+\DoxyCodeLine{420             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{421                         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{422         \}}
+\DoxyCodeLine{423         EDIS;}
+\DoxyCodeLine{424     \}}
+\DoxyCodeLine{425     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{426         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{427     \}}
+\DoxyCodeLine{428     TMC\_BASE\_PIE-\/>CTRL |= 0x01;                 \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{429     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0008;                               \textcolor{comment}{// Enable CPU INT4 which is connected to ECAP1-\/4 INT}}
+\DoxyCodeLine{430     EINT;                                       \textcolor{comment}{// Enable Global interrupt INTM}}
+\DoxyCodeLine{431     ERTM;                                       \textcolor{comment}{// Enable Global realtime interrupt DBGM}}
+\DoxyCodeLine{432     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{433 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ecap_8h_aa7f00cd8aefee598695a33ea27edf227}\label{ecap_8h_aa7f00cd8aefee598695a33ea27edf227}} 
+\index{ecap.h@{ecap.h}!eCAP\_forceTimerOverflowInterrupt@{eCAP\_forceTimerOverflowInterrupt}}
+\index{eCAP\_forceTimerOverflowInterrupt@{eCAP\_forceTimerOverflowInterrupt}!ecap.h@{ecap.h}}
+\doxysubsubsection{\texorpdfstring{eCAP\_forceTimerOverflowInterrupt()}{eCAP\_forceTimerOverflowInterrupt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} e\+C\+A\+P\+\_\+force\+Timer\+Overflow\+Interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{gpio }\end{DoxyParamCaption})}
+
+
+
+Force e\+C\+AP Timer overflow for setting frequency to 0. 
+
+~\newline
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 1, 3, 5, 7, 9, 11, 24, 25, 26, 27, 34, 37, 48, 49~\newline
+~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = invalid input parameter 
+\end{DoxyReturn}
+
+
+Definition at line 736 of file ecap.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{736                                                    \{}
+\DoxyCodeLine{737     \textcolor{keywordflow}{switch}(gpio)\{}
+\DoxyCodeLine{738         \textcolor{keywordflow}{case} 1:     TMC\_BASE\_ECAP6-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{739                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{740         \textcolor{keywordflow}{case} 3:     TMC\_BASE\_ECAP5-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{741                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{742         \textcolor{keywordflow}{case} 5:     TMC\_BASE\_ECAP1-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{743                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{744         \textcolor{keywordflow}{case} 7:     TMC\_BASE\_ECAP2-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{745                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{746         \textcolor{keywordflow}{case} 9:     TMC\_BASE\_ECAP3-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{747                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{748         \textcolor{keywordflow}{case} 11:    TMC\_BASE\_ECAP4-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{749                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{750         \textcolor{keywordflow}{case} 24:    TMC\_BASE\_ECAP1-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{751                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{752         \textcolor{keywordflow}{case} 25:    TMC\_BASE\_ECAP2-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{753                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{754         \textcolor{keywordflow}{case} 26:    TMC\_BASE\_ECAP3-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{755                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{756         \textcolor{keywordflow}{case} 27:    TMC\_BASE\_ECAP4-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{757                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{758         \textcolor{keywordflow}{case} 34:    TMC\_BASE\_ECAP1-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{759                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{760         \textcolor{keywordflow}{case} 37:    TMC\_BASE\_ECAP2-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{761                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{762         \textcolor{keywordflow}{case} 48:    TMC\_BASE\_ECAP5-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{763                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{764         \textcolor{keywordflow}{case} 49:    TMC\_BASE\_ECAP6-\/>ECFRC |= (0x1 << 5);}
+\DoxyCodeLine{765                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{766         \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{767     \}}
+\DoxyCodeLine{768     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{769 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ecap_8h_afe5402e8d7661ddddf9aa3a6896a9c9e}\label{ecap_8h_afe5402e8d7661ddddf9aa3a6896a9c9e}} 
+\index{ecap.h@{ecap.h}!eCAP\_getFrequency@{eCAP\_getFrequency}}
+\index{eCAP\_getFrequency@{eCAP\_getFrequency}!ecap.h@{ecap.h}}
+\doxysubsubsection{\texorpdfstring{eCAP\_getFrequency()}{eCAP\_getFrequency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a4ca2d97e571b049be6f4cdcfaa1ab946}{int32}} e\+C\+A\+P\+\_\+get\+Frequency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{gpio }\end{DoxyParamCaption})}
+
+
+
+Applied frequency on e\+C\+A\+P-\/\+Pin . 
+
+~\newline
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 1, 3, 5, 7, 9, 11, 24, 25, 26, 27, 34, 37, 48, 49~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the frequency of a signal on respective pin~\newline
+-\/-\/$>$ 0-\/x = operation successful -\/-\/$>$ returns frequency ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin -\/-\/$>$ -\/2 = e\+C\+AP module not configured 
+\end{DoxyReturn}
+
+
+Definition at line 507 of file ecap.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{507                                     \{}
+\DoxyCodeLine{508     \textcolor{keywordflow}{switch}(gpio)\{}
+\DoxyCodeLine{509         \textcolor{keywordflow}{case} 1:     \textcolor{keywordflow}{if}(g\_ecap6\_in\_use)\{}
+\DoxyCodeLine{510                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_a30bd09521ee67611e1722d6035b28bb4}{g\_time\_ecap6}});}
+\DoxyCodeLine{511                     \}}
+\DoxyCodeLine{512                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{513                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{514                     \}}
+\DoxyCodeLine{515         \textcolor{keywordflow}{case} 3:     \textcolor{keywordflow}{if}(g\_ecap5\_in\_use)\{}
+\DoxyCodeLine{516                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_a3cd0e69f60c4325b8126c8da32674209}{g\_time\_ecap5}});}
+\DoxyCodeLine{517                     \}}
+\DoxyCodeLine{518                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{519                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{520                     \}}
+\DoxyCodeLine{521         \textcolor{keywordflow}{case} 5:     \textcolor{keywordflow}{if}(g\_ecap1\_in\_use)\{}
+\DoxyCodeLine{522                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_aaa6e9a45ae6ef2967a56120c8e7e33ed}{g\_time\_ecap1}});}
+\DoxyCodeLine{523                     \}}
+\DoxyCodeLine{524                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{525                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{526                     \}}
+\DoxyCodeLine{527         \textcolor{keywordflow}{case} 7:     \textcolor{keywordflow}{if}(g\_ecap2\_in\_use)\{}
+\DoxyCodeLine{528                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_a89f655c2d346d74a73fa9c87f63c7f2b}{g\_time\_ecap2}});}
+\DoxyCodeLine{529                     \}}
+\DoxyCodeLine{530                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{531                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{532                     \}}
+\DoxyCodeLine{533         \textcolor{keywordflow}{case} 9:     \textcolor{keywordflow}{if}(g\_ecap3\_in\_use)\{}
+\DoxyCodeLine{534                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_abd900544bcb02ab19f51a940b64e7815}{g\_time\_ecap3}});}
+\DoxyCodeLine{535                     \}}
+\DoxyCodeLine{536                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{537                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{538                     \}}
+\DoxyCodeLine{539         \textcolor{keywordflow}{case} 11:        \textcolor{keywordflow}{if}(g\_ecap4\_in\_use)\{}
+\DoxyCodeLine{540                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_a0a3b65777a1dc835a5e41a14794fecdd}{g\_time\_ecap4}});}
+\DoxyCodeLine{541                     \}}
+\DoxyCodeLine{542                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{543                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{544                     \}}
+\DoxyCodeLine{545         \textcolor{keywordflow}{case} 24:    \textcolor{keywordflow}{if}(g\_ecap1\_in\_use)\{}
+\DoxyCodeLine{546                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_aaa6e9a45ae6ef2967a56120c8e7e33ed}{g\_time\_ecap1}});}
+\DoxyCodeLine{547                     \}}
+\DoxyCodeLine{548                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{549                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{550                     \}}
+\DoxyCodeLine{551         \textcolor{keywordflow}{case} 25:        \textcolor{keywordflow}{if}(g\_ecap2\_in\_use)\{}
+\DoxyCodeLine{552                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_a89f655c2d346d74a73fa9c87f63c7f2b}{g\_time\_ecap2}});}
+\DoxyCodeLine{553                     \}}
+\DoxyCodeLine{554                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{555                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{556                     \}}
+\DoxyCodeLine{557         \textcolor{keywordflow}{case} 26:        \textcolor{keywordflow}{if}(g\_ecap3\_in\_use)\{}
+\DoxyCodeLine{558                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_abd900544bcb02ab19f51a940b64e7815}{g\_time\_ecap3}});}
+\DoxyCodeLine{559                     \}}
+\DoxyCodeLine{560                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{561                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{562                     \}}
+\DoxyCodeLine{563         \textcolor{keywordflow}{case} 27:    \textcolor{keywordflow}{if}(g\_ecap4\_in\_use)\{}
+\DoxyCodeLine{564                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_a0a3b65777a1dc835a5e41a14794fecdd}{g\_time\_ecap4}});}
+\DoxyCodeLine{565                     \}}
+\DoxyCodeLine{566                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{567                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{568                     \}}
+\DoxyCodeLine{569         \textcolor{keywordflow}{case} 34:    \textcolor{keywordflow}{if}(g\_ecap1\_in\_use)\{}
+\DoxyCodeLine{570                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_aaa6e9a45ae6ef2967a56120c8e7e33ed}{g\_time\_ecap1}});}
+\DoxyCodeLine{571                     \}}
+\DoxyCodeLine{572                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{573                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{574                     \}}
+\DoxyCodeLine{575         \textcolor{keywordflow}{case} 37:    \textcolor{keywordflow}{if}(g\_ecap2\_in\_use)\{}
+\DoxyCodeLine{576                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_a89f655c2d346d74a73fa9c87f63c7f2b}{g\_time\_ecap2}});}
+\DoxyCodeLine{577                     \}}
+\DoxyCodeLine{578                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{579                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{580                     \}}
+\DoxyCodeLine{581         \textcolor{keywordflow}{case} 48:    \textcolor{keywordflow}{if}(g\_ecap5\_in\_use)\{}
+\DoxyCodeLine{582                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_a3cd0e69f60c4325b8126c8da32674209}{g\_time\_ecap5}});}
+\DoxyCodeLine{583                     \}}
+\DoxyCodeLine{584                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{585                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{586                     \}}
+\DoxyCodeLine{587         \textcolor{keywordflow}{case} 49:    \textcolor{keywordflow}{if}(g\_ecap6\_in\_use)\{}
+\DoxyCodeLine{588                         \textcolor{keywordflow}{return} (F\_CPU/\mbox{\hyperlink{ecap_8c_a30bd09521ee67611e1722d6035b28bb4}{g\_time\_ecap6}});}
+\DoxyCodeLine{589                     \}}
+\DoxyCodeLine{590                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{591                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{592                     \}}
+\DoxyCodeLine{593         \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{594     \}}
+\DoxyCodeLine{595 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ecap_8h_a16ea09006fc6dc34068320d68d675d3f}\label{ecap_8h_a16ea09006fc6dc34068320d68d675d3f}} 
+\index{ecap.h@{ecap.h}!eCAP\_pwmOutput@{eCAP\_pwmOutput}}
+\index{eCAP\_pwmOutput@{eCAP\_pwmOutput}!ecap.h@{ecap.h}}
+\doxysubsubsection{\texorpdfstring{eCAP\_pwmOutput()}{eCAP\_pwmOutput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} e\+C\+A\+P\+\_\+pwm\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{gpio,  }\item[{\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}}}]{frequency,  }\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{dutycycle }\end{DoxyParamCaption})}
+
+
+
+P\+W\+M-\/\+Output on e\+C\+A\+P-\/\+Pin . 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 1, 3, 5, 7, 9, 11, 24, 25, 26, 27, 34, 37, 48, 49~\newline
+ 2) frequency~\newline
+ 3) dutycycle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin -\/-\/$>$ -\/2 = invalid value of frequency -\/-\/$>$ -\/3 = invalid value of dutycycle 
+\end{DoxyReturn}
+
+
+Definition at line 446 of file ecap.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{446                                                                      \{}
+\DoxyCodeLine{447     \mbox{\hyperlink{struct___t_m_s___e_c_a_p}{TMPS\_ECAP}} ECAP;}
+\DoxyCodeLine{448     \textcolor{keywordflow}{if}((frequency > 10000000) || (frequency < 2))\{}
+\DoxyCodeLine{449         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{450     \}}
+\DoxyCodeLine{451     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(dutycycle > 100)\{}
+\DoxyCodeLine{452         \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{453     \}}
+\DoxyCodeLine{454     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{455         \textcolor{keywordflow}{switch}(gpio)\{}
+\DoxyCodeLine{456             \textcolor{keywordflow}{case} 1:     ECAP = TMC\_BASE\_ECAP6;}
+\DoxyCodeLine{457                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{458             \textcolor{keywordflow}{case} 3:     ECAP = TMC\_BASE\_ECAP5;}
+\DoxyCodeLine{459                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{460             \textcolor{keywordflow}{case} 5:     ECAP = TMC\_BASE\_ECAP1;}
+\DoxyCodeLine{461                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{462             \textcolor{keywordflow}{case} 7:     ECAP = TMC\_BASE\_ECAP2;}
+\DoxyCodeLine{463                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{464             \textcolor{keywordflow}{case} 9:     ECAP = TMC\_BASE\_ECAP3;}
+\DoxyCodeLine{465                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{466             \textcolor{keywordflow}{case} 11:    ECAP = TMC\_BASE\_ECAP4;}
+\DoxyCodeLine{467                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{468             \textcolor{keywordflow}{case} 24:    ECAP = TMC\_BASE\_ECAP1;}
+\DoxyCodeLine{469                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{470             \textcolor{keywordflow}{case} 25:    ECAP = TMC\_BASE\_ECAP2;}
+\DoxyCodeLine{471                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{472             \textcolor{keywordflow}{case} 26:    ECAP = TMC\_BASE\_ECAP3;}
+\DoxyCodeLine{473                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{474             \textcolor{keywordflow}{case} 27:    ECAP = TMC\_BASE\_ECAP4;}
+\DoxyCodeLine{475                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{476             \textcolor{keywordflow}{case} 34:    ECAP = TMC\_BASE\_ECAP1;}
+\DoxyCodeLine{477                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{478             \textcolor{keywordflow}{case} 37:    ECAP = TMC\_BASE\_ECAP2;}
+\DoxyCodeLine{479                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{480             \textcolor{keywordflow}{case} 48:    ECAP = TMC\_BASE\_ECAP5;}
+\DoxyCodeLine{481                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{482             \textcolor{keywordflow}{case} 49:    ECAP = TMC\_BASE\_ECAP6;}
+\DoxyCodeLine{483                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{484             \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{485         \}}
+\DoxyCodeLine{486         \textcolor{comment}{// Setup APWM mode on CAP-\/Pin, set period and compare registers}}
+\DoxyCodeLine{487         ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} |= (0x1 << 9);                           \textcolor{comment}{// Enable APWM mode}}
+\DoxyCodeLine{488         ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a919647cb5b99663359a7cd74b0b6fcaa}{CAP1}} |= (F\_CPU/frequency);                    \textcolor{comment}{// Set Period value}}
+\DoxyCodeLine{489         ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_ab842d9487f5716e53a4aa416b43989b4}{CAP2}} |= ((ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a919647cb5b99663359a7cd74b0b6fcaa}{CAP1}} * dutycycle) / 100);     \textcolor{comment}{// Set Compare value}}
+\DoxyCodeLine{490         ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_abe4305c34361e064f5c4829d8f8b5396}{CTRPHS}} \&= \string~(0x1);                               \textcolor{comment}{// No phase control synchronization}}
+\DoxyCodeLine{491         ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} \&= \string~(0x1 << 10);                     \textcolor{comment}{// Output is active high (Compare value defines high time)}}
+\DoxyCodeLine{492         ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} \&= \string~(0x1 << 5);                      \textcolor{comment}{// Disable sync-\/in option}}
+\DoxyCodeLine{493         ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} |= (0x1 << 6);                           \textcolor{comment}{// Select CTR = PRD event to be the sync-\/out signal}}
+\DoxyCodeLine{494         ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} |= (0x1 << 4);                           \textcolor{comment}{// Start counter}}
+\DoxyCodeLine{495     \}}
+\DoxyCodeLine{496     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{497 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ecap_8h_a2b033a0f031a87b2c724431161f59c70}\label{ecap_8h_a2b033a0f031a87b2c724431161f59c70}} 
+\index{ecap.h@{ecap.h}!init\_eCAP@{init\_eCAP}}
+\index{init\_eCAP@{init\_eCAP}!ecap.h@{ecap.h}}
+\doxysubsubsection{\texorpdfstring{init\_eCAP()}{init\_eCAP()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+e\+C\+AP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{gpio }\end{DoxyParamCaption})}
+
+
+
+Init e\+C\+A\+P-\/\+Pin . 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 1, 3, 5, 7, 9, 11, 24, 25, 26, 27, 34, 37, 48, 49~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin -\/-\/$>$ -\/2 = requested e\+C\+A\+P-\/module is already in use 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file ecap.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45                             \{}
+\DoxyCodeLine{46     \mbox{\hyperlink{struct___t_m_s___e_c_a_p}{TMPS\_ECAP}} ECAP;                                \textcolor{comment}{// Create variable for register-\/access}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{switch}(gpio)\{}
+\DoxyCodeLine{48     \textcolor{keywordflow}{case} 1:     \textcolor{keywordflow}{if}(!g\_ecap6\_in\_use)\{}
+\DoxyCodeLine{49                     g\_ecap6\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO as eCAP6}}
+\DoxyCodeLine{50                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{51                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << 1);                \textcolor{comment}{// Enable pull-\/up on GPIO1 (CAP6)}}
+\DoxyCodeLine{52                     TMC\_BASE\_PIO-\/>CTL[0].QSEL1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 2);    \textcolor{comment}{// Synch to SYSCLKOUT GPIO1 (CAP6)}}
+\DoxyCodeLine{53                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 2);          \textcolor{comment}{// Configure GPIO1 as CAP6}}
+\DoxyCodeLine{54                     ECAP = TMC\_BASE\_ECAP6;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{55                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a2612086bb7ea74f78503c8b4b04bec9f}{eCAP6\_isr}}, 1);           \textcolor{comment}{// Configure GPIO1 to call ISR on Capture Event 1}}
+\DoxyCodeLine{56                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{57                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{58                 \}}
+\DoxyCodeLine{59                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{60                     \textcolor{keywordflow}{return} -\/2;                  \textcolor{comment}{// eCAP6 already in use}}
+\DoxyCodeLine{61                 \}}
+\DoxyCodeLine{62     \textcolor{keywordflow}{case} 3:     \textcolor{keywordflow}{if}(!g\_ecap5\_in\_use)\{}
+\DoxyCodeLine{63                     g\_ecap5\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO3 as eCAP5}}
+\DoxyCodeLine{64                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{65                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << 3);                \textcolor{comment}{// Enable pull-\/up on GPIO3 (CAP5)}}
+\DoxyCodeLine{66                     TMC\_BASE\_PIO-\/>CTL[0].QSEL1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 6);    \textcolor{comment}{// Synch to SYSCLKOUT GPIO3 (CAP5)}}
+\DoxyCodeLine{67                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 6);          \textcolor{comment}{// Configure GPIO3 as CAP5}}
+\DoxyCodeLine{68                     ECAP = TMC\_BASE\_ECAP5;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{69                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a998fa98b16b031aa643da07af50b13e1}{eCAP5\_isr}}, 1);           \textcolor{comment}{// Configure GPIO3 to call ISR on Capture Event 1}}
+\DoxyCodeLine{70                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{71                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{72                 \}}
+\DoxyCodeLine{73                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{74                     \textcolor{keywordflow}{return} -\/2;                  \textcolor{comment}{// eCAP5 already in use}}
+\DoxyCodeLine{75                 \}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{case} 5:     \textcolor{keywordflow}{if}(!g\_ecap1\_in\_use)\{}
+\DoxyCodeLine{77                     g\_ecap1\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO5 as eCAP1}}
+\DoxyCodeLine{78                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{79                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << 5);                \textcolor{comment}{// Enable pull-\/up on GPIO5 (CAP1)}}
+\DoxyCodeLine{80                     TMC\_BASE\_PIO-\/>CTL[0].QSEL1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 10);       \textcolor{comment}{// Synch to SYSCLKOUT GPIO5 (CAP1)}}
+\DoxyCodeLine{81                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 10);     \textcolor{comment}{// Configure GPIO5 as CAP1}}
+\DoxyCodeLine{82                     ECAP = TMC\_BASE\_ECAP1;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{83                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a1a9eef7e1088c6b7b81d73c40f583d38}{eCAP1\_isr}}, 1);           \textcolor{comment}{// Configure GPIO5 to call ISR on Capture Event 1}}
+\DoxyCodeLine{84                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{85                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{86                 \}}
+\DoxyCodeLine{87                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{88                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP1 already in use}}
+\DoxyCodeLine{89                 \}}
+\DoxyCodeLine{90     \textcolor{keywordflow}{case} 7:     \textcolor{keywordflow}{if}(!g\_ecap2\_in\_use)\{}
+\DoxyCodeLine{91                     g\_ecap2\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO7 as eCAP2}}
+\DoxyCodeLine{92                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{93                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 7);      \textcolor{comment}{// Enable pull-\/up on GPIO7 (CAP2)}}
+\DoxyCodeLine{94                     TMC\_BASE\_PIO-\/>CTL[0].QSEL1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 14);   \textcolor{comment}{// Synch to SYSCLKOUT GPIO7 (CAP2)}}
+\DoxyCodeLine{95                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 14);     \textcolor{comment}{// Configure GPIO7 as CAP2}}
+\DoxyCodeLine{96                     ECAP = TMC\_BASE\_ECAP2;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{97                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a1c35bb616250abf361f34d0ed0d5c076}{eCAP2\_isr}}, 1);           \textcolor{comment}{// Configure GPIO7 to call ISR on Capture Event 1}}
+\DoxyCodeLine{98                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{99                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{100                 \}}
+\DoxyCodeLine{101                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{102                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP2 already in use}}
+\DoxyCodeLine{103                 \}}
+\DoxyCodeLine{104     \textcolor{keywordflow}{case} 9:     \textcolor{keywordflow}{if}(!g\_ecap3\_in\_use)\{}
+\DoxyCodeLine{105                     g\_ecap3\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO9 as eCAP3}}
+\DoxyCodeLine{106                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{107                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 9);      \textcolor{comment}{// Enable pull-\/up on GPIO9 (CAP3)}}
+\DoxyCodeLine{108                     TMC\_BASE\_PIO-\/>CTL[0].QSEL1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 18);   \textcolor{comment}{// Synch to SYSCLKOUT GPIO9 (CAP3)}}
+\DoxyCodeLine{109                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 18);     \textcolor{comment}{// Configure GPIO9 as CAP3}}
+\DoxyCodeLine{110                     ECAP = TMC\_BASE\_ECAP3;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{111                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a7013d42f150aa120000cb44d2525d1fa}{eCAP3\_isr}}, 1);           \textcolor{comment}{// Configure GPIO9 to call ISR on Capture Event 1}}
+\DoxyCodeLine{112                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{113                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{114                 \}}
+\DoxyCodeLine{115                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{116                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP3 already in use}}
+\DoxyCodeLine{117                 \}}
+\DoxyCodeLine{118     \textcolor{keywordflow}{case} 11:    \textcolor{keywordflow}{if}(!g\_ecap4\_in\_use)\{}
+\DoxyCodeLine{119                     g\_ecap4\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO11 as eCAP4}}
+\DoxyCodeLine{120                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{121                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << 11);               \textcolor{comment}{// Enable pull-\/up on GPIO11 (CAP4)}}
+\DoxyCodeLine{122                     TMC\_BASE\_PIO-\/>CTL[0].QSEL1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 22);   \textcolor{comment}{// Synch to SYSCLKOUT GPIO11 (CAP4)}}
+\DoxyCodeLine{123                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 22);         \textcolor{comment}{// Configure GPIO11 as CAP4}}
+\DoxyCodeLine{124                     ECAP = TMC\_BASE\_ECAP4;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{125                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_acc7cde2818cb274397ab6145445eb04c}{eCAP4\_isr}}, 1);           \textcolor{comment}{// Configure GPIO11 to call ISR on Capture Event 1}}
+\DoxyCodeLine{126                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{127                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{128                 \}}
+\DoxyCodeLine{129                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{130                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP4 already in use}}
+\DoxyCodeLine{131                 \}}
+\DoxyCodeLine{132     \textcolor{keywordflow}{case} 24:    \textcolor{keywordflow}{if}(!g\_ecap1\_in\_use)\{}
+\DoxyCodeLine{133                     g\_ecap1\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO24 as eCAP1}}
+\DoxyCodeLine{134                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{135                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 24);     \textcolor{comment}{// Enable pull-\/up on GPIO24 (CAP1)}}
+\DoxyCodeLine{136                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 16);   \textcolor{comment}{// Synch to SYSCLKOUT GPIO24 (CAP1)}}
+\DoxyCodeLine{137                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 16);     \textcolor{comment}{// Configure GPIO24 as CAP1}}
+\DoxyCodeLine{138                     ECAP = TMC\_BASE\_ECAP1;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{139                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a1a9eef7e1088c6b7b81d73c40f583d38}{eCAP1\_isr}}, 1);           \textcolor{comment}{// Configure GPIO24 to call ISR on Capture Event 1}}
+\DoxyCodeLine{140                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{141                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{142                 \}}
+\DoxyCodeLine{143                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{144                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP1 already in use}}
+\DoxyCodeLine{145                 \}}
+\DoxyCodeLine{146     \textcolor{keywordflow}{case} 25:    \textcolor{keywordflow}{if}(!g\_ecap2\_in\_use)\{}
+\DoxyCodeLine{147                     g\_ecap2\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO25 as eCAP2}}
+\DoxyCodeLine{148                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{149                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 25);     \textcolor{comment}{// Enable pull-\/up on GPIO25 (CAP2)}}
+\DoxyCodeLine{150                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 18);   \textcolor{comment}{//Synch to SYSCLKOUT GPIO25 (CAP2)}}
+\DoxyCodeLine{151                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 18);     \textcolor{comment}{// Configure GPIO25 as CAP2}}
+\DoxyCodeLine{152                     ECAP = TMC\_BASE\_ECAP2;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{153                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a1c35bb616250abf361f34d0ed0d5c076}{eCAP2\_isr}}, 1);           \textcolor{comment}{// Configure GPIO25 to call ISR on Capture Event 1}}
+\DoxyCodeLine{154                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{155                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{156                 \}}
+\DoxyCodeLine{157                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{158                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP2 already in use}}
+\DoxyCodeLine{159                 \}}
+\DoxyCodeLine{160     \textcolor{keywordflow}{case} 26:    \textcolor{keywordflow}{if}(!g\_ecap3\_in\_use)\{}
+\DoxyCodeLine{161                     g\_ecap3\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO26 as eCAP3}}
+\DoxyCodeLine{162                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{163                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 26);     \textcolor{comment}{// Enable pull-\/up on GPIO26 (CAP3)}}
+\DoxyCodeLine{164                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 20);   \textcolor{comment}{// Synch to SYSCLKOUT GPIO26 (CAP3)}}
+\DoxyCodeLine{165                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 20);     \textcolor{comment}{// Configure GPIO26 as CAP3}}
+\DoxyCodeLine{166                     ECAP = TMC\_BASE\_ECAP3;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{167                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a7013d42f150aa120000cb44d2525d1fa}{eCAP3\_isr}}, 4);           \textcolor{comment}{// Configure GPIO26 to call ISR on Capture Event 1}}
+\DoxyCodeLine{168                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{169                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{170                 \}}
+\DoxyCodeLine{171                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{172                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP3 already in use}}
+\DoxyCodeLine{173                 \}}
+\DoxyCodeLine{174     \textcolor{keywordflow}{case} 27:    \textcolor{keywordflow}{if}(!g\_ecap4\_in\_use)\{}
+\DoxyCodeLine{175                     g\_ecap4\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO27 as eCAP4}}
+\DoxyCodeLine{176                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{177                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 27);     \textcolor{comment}{// Enable pull-\/up on GPIO27 (CAP4)}}
+\DoxyCodeLine{178                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 22);   \textcolor{comment}{// Synch to SYSCLKOUT GPIO27 (CAP4)}}
+\DoxyCodeLine{179                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 22);         \textcolor{comment}{// Configure GPIO27 as CAP4}}
+\DoxyCodeLine{180                     ECAP = TMC\_BASE\_ECAP4;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{181                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_acc7cde2818cb274397ab6145445eb04c}{eCAP4\_isr}}, 1);           \textcolor{comment}{// Configure GPIO27 to call ISR on Capture Event 1}}
+\DoxyCodeLine{182                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{183                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{184                 \}}
+\DoxyCodeLine{185                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{186                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP4 already in use}}
+\DoxyCodeLine{187                 \}}
+\DoxyCodeLine{188     \textcolor{keywordflow}{case} 34:    \textcolor{keywordflow}{if}(!g\_ecap1\_in\_use)\{}
+\DoxyCodeLine{189                     g\_ecap1\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO34 as eCAP1}}
+\DoxyCodeLine{190                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{191                     TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~(0x1 << 2);                \textcolor{comment}{// Enable pull-\/up on GPIO34 (CAP1)}}
+\DoxyCodeLine{192                     TMC\_BASE\_PIO-\/>CTL[1].QSEL1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 4);    \textcolor{comment}{//Synch to SYSCLKOUT GPIO34 (CAP1)}}
+\DoxyCodeLine{193                     TMC\_BASE\_PIO-\/>CTL[1].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 4);          \textcolor{comment}{// Configure GPIO34 as CAP1}}
+\DoxyCodeLine{194                     ECAP = TMC\_BASE\_ECAP1;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{195                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a1a9eef7e1088c6b7b81d73c40f583d38}{eCAP1\_isr}}, 1);           \textcolor{comment}{// Configure GPIO34 to call ISR on Capture Event 1}}
+\DoxyCodeLine{196                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{197                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{198                 \}}
+\DoxyCodeLine{199                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{200                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP1 already in use}}
+\DoxyCodeLine{201                 \}}
+\DoxyCodeLine{202     \textcolor{keywordflow}{case} 37:    \textcolor{keywordflow}{if}(!g\_ecap2\_in\_use)\{}
+\DoxyCodeLine{203                     g\_ecap2\_in\_use=1;                                       \textcolor{comment}{// Configuring GPIO37 as eCAP2}}
+\DoxyCodeLine{204                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{205                     TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~(0x1 << 5);                \textcolor{comment}{// Enable pull-\/up on GPIO37 (CAP2)}}
+\DoxyCodeLine{206                     TMC\_BASE\_PIO-\/>CTL[1].QSEL1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 10);   \textcolor{comment}{// Synch to SYSCLKOUT GPIO37 (CAP2)}}
+\DoxyCodeLine{207                     TMC\_BASE\_PIO-\/>CTL[1].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 10);     \textcolor{comment}{// Configure GPIO37 as CAP2}}
+\DoxyCodeLine{208                     ECAP = TMC\_BASE\_ECAP2;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{209                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a1c35bb616250abf361f34d0ed0d5c076}{eCAP2\_isr}}, 1);           \textcolor{comment}{// Configure GPIO37 to call ISR on Capture Event 1}}
+\DoxyCodeLine{210                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{211                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{212                 \}}
+\DoxyCodeLine{213                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{214                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP2 already in use}}
+\DoxyCodeLine{215                 \}}
+\DoxyCodeLine{216     \textcolor{keywordflow}{case} 48:    \textcolor{keywordflow}{if}(!g\_ecap5\_in\_use)\{}
+\DoxyCodeLine{217                     g\_ecap5\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO48 as eCAP5}}
+\DoxyCodeLine{218                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{219                     TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 16);     \textcolor{comment}{// Enable pull-\/up on GPIO48 (CAP5)}}
+\DoxyCodeLine{220                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3);             \textcolor{comment}{// Synch to SYSCLKOUT GPIO48 (CAP5)}}
+\DoxyCodeLine{221                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1);           \textcolor{comment}{// Configure GPIO48 as CAP5}}
+\DoxyCodeLine{222                     ECAP = TMC\_BASE\_ECAP5;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{223                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a998fa98b16b031aa643da07af50b13e1}{eCAP5\_isr}}, 1);           \textcolor{comment}{// Configure GPIO48 to call ISR on Capture Event 1}}
+\DoxyCodeLine{224                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{225                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{226                 \}}
+\DoxyCodeLine{227                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{228                     \textcolor{keywordflow}{return} -\/2;                      \textcolor{comment}{// eCAP5 already in use}}
+\DoxyCodeLine{229                 \}}
+\DoxyCodeLine{230     \textcolor{keywordflow}{case} 49:    \textcolor{keywordflow}{if}(!g\_ecap6\_in\_use)\{}
+\DoxyCodeLine{231                     g\_ecap6\_in\_use = 1;                                     \textcolor{comment}{// Configuring GPIO49 as eCAP6}}
+\DoxyCodeLine{232                     EALLOW;                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{233                     TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 17);     \textcolor{comment}{// Enable pull-\/up on GPIO49 (CAP6)}}
+\DoxyCodeLine{234                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 2);        \textcolor{comment}{// Synch to SYSCLKOUT GPIO49 (CAP6)}}
+\DoxyCodeLine{235                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 2);          \textcolor{comment}{// Configure GPIO49 as CAP6}}
+\DoxyCodeLine{236                     ECAP = TMC\_BASE\_ECAP6;                                  \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{237                     \mbox{\hyperlink{ecap_8c_a414d735315e35ba2a3fcb772acaeb80f}{eCAP\_configureInterrupt}}(gpio, \&\mbox{\hyperlink{ecap_8c_a2612086bb7ea74f78503c8b4b04bec9f}{eCAP6\_isr}}, 1);           \textcolor{comment}{// Configure GPIO48 to call ISR on Capture Event 1}}
+\DoxyCodeLine{238                     EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{239                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{240                 \}}
+\DoxyCodeLine{241                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{242                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{243                 \}}
+\DoxyCodeLine{244     \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{245     \}}
+\DoxyCodeLine{246     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_addb6c8443d35aabdfc55de2993dae1d4}{ECEINT}} \&= \string~(0xFFFF);            \textcolor{comment}{// Disable all capture interrupts}}
+\DoxyCodeLine{247     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_af17ded63fc6ad95a791bfcd1bb502dc0}{ECCLR}} |= 0xFFFF;             \textcolor{comment}{// Clear all CAP interrupt flags}}
+\DoxyCodeLine{248     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} \&= \string~(0x1 << 8);      \textcolor{comment}{// Disable CAP1-\/CAP4 register loads}}
+\DoxyCodeLine{249     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} \&= \string~(0x1 << 4);      \textcolor{comment}{// Make sure the counter is stopped}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251     \textcolor{comment}{// Configure peripheral registers}}
+\DoxyCodeLine{252     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} \&= \string~(0x3E00);            \textcolor{comment}{// Event Prescaler: bypass}}
+\DoxyCodeLine{253     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} |= (0x1);                \textcolor{comment}{// operate in one-\/shot mode}}
+\DoxyCodeLine{254     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} |= (0x3 << 1);           \textcolor{comment}{// stop after capture event 4 in one-\/shot mode}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} \&= \string~(0x1);               \textcolor{comment}{// Capture Event 1 triggered on a rising edge (RE)}}
+\DoxyCodeLine{257     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} \&= \string~(0x1 << 2);      \textcolor{comment}{// Capture Event 2 triggered on a rising edge (RE)}}
+\DoxyCodeLine{258     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} \&= \string~(0x1 << 4);      \textcolor{comment}{// Capture Event 3 triggered on a rising edge (RE)}}
+\DoxyCodeLine{259     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} \&= \string~(0x1 << 6);      \textcolor{comment}{// Capture Event 4 triggered on a rising edge (RE)}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} |= (0x1 << 1);           \textcolor{comment}{// Reset counter after Event 1 time-\/stamp has been captured}}
+\DoxyCodeLine{262     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} |= (0x1 << 3);           \textcolor{comment}{// Reset counter after Event 2 time-\/stamp has been captured}}
+\DoxyCodeLine{263     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} |= (0x1 << 5);           \textcolor{comment}{// Reset counter after Event 3 time-\/stamp has been captured}}
+\DoxyCodeLine{264     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} |= (0x1 << 7);           \textcolor{comment}{// Reset counter after Event 4 time-\/stamp has been captured}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} \&= \string~(0x1 << 5);      \textcolor{comment}{// Disable sync in}}
+\DoxyCodeLine{267     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} |= (0x3 << 6);           \textcolor{comment}{// Disable sync out}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_a0d0e6dc87534a3e479e093eda185a72d}{ECCTL1}} |= (0x1 << 8);           \textcolor{comment}{// Enable Loading of CAP1-\/4 registers on a capture event}}
+\DoxyCodeLine{270     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} |= (0x1 << 4);           \textcolor{comment}{// Start Counter}}
+\DoxyCodeLine{271     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_aae3a8594fa17c6feb129f65132fba262}{ECCTL2}} |= (0x1 << 3);           \textcolor{comment}{// re arm counter}}
+\DoxyCodeLine{272     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_addb6c8443d35aabdfc55de2993dae1d4}{ECEINT}} |= (0x1 << 4);           \textcolor{comment}{// Capture Event 4 Interrupt Enable}}
+\DoxyCodeLine{273     ECAP-\/>\mbox{\hyperlink{struct___t_m_s___e_c_a_p_addb6c8443d35aabdfc55de2993dae1d4}{ECEINT}} |= (0x1 << 5);           \textcolor{comment}{// Capture Counter overflow Interrupt Enable}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{276 \}}
+
+\end{DoxyCode}

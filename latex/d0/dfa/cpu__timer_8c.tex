@@ -1,0 +1,256 @@
+\hypertarget{cpu__timer_8c}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/cpu\+\_\+timer/cpu\+\_\+timer.c File Reference}
+\label{cpu__timer_8c}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/cpu\_timer/cpu\_timer.c@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/cpu\_timer/cpu\_timer.c}}
+
+
+Source code file for C\+P\+U-\/\+Timer module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{cpu__timer_8c_ad3d045a53b2976fed95270395bc109c7}{init\+\_\+\+C\+P\+U\+Timer}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} cpu\+\_\+timer, void $\ast$isr)
+\begin{DoxyCompactList}\small\item\em Init C\+P\+U-\/\+Timer 0/1/2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{cpu__timer_8c_a143dae9b51852dac6792334586757db8}{C\+P\+U\+Timer\+\_\+start}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} cpu\+\_\+timer, long Period)
+\begin{DoxyCompactList}\small\item\em Start C\+P\+U-\/\+Timer 0/1/2 $\vert$$\vert$ make sure C\+P\+U-\/\+Timer has been initialized. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{cpu__timer_8c_a3d51abbc4d59b426fe4699fb89c80795}{C\+P\+U\+Timer\+\_\+stop}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} cpu\+\_\+timer)
+\begin{DoxyCompactList}\small\item\em Stop C\+P\+U-\/\+Timer 0/1/2 $\vert$$\vert$ make sure C\+P\+U-\/\+Timer has been initialized. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu__timer_8c_ae32db5adda5ea8759d1dc913e4e069d1}{C\+P\+U\+Timer\+\_\+interrupt\+Ack}} (void)
+\begin{DoxyCompactList}\small\item\em Set Acknowledge to receive another interrupt from C\+P\+U-\/\+Timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source code file for C\+P\+U-\/\+Timer module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cpu__timer_8c_ae32db5adda5ea8759d1dc913e4e069d1}\label{cpu__timer_8c_ae32db5adda5ea8759d1dc913e4e069d1}} 
+\index{cpu\_timer.c@{cpu\_timer.c}!CPUTimer\_interruptAck@{CPUTimer\_interruptAck}}
+\index{CPUTimer\_interruptAck@{CPUTimer\_interruptAck}!cpu\_timer.c@{cpu\_timer.c}}
+\doxysubsubsection{\texorpdfstring{CPUTimer\_interruptAck()}{CPUTimer\_interruptAck()}}
+{\footnotesize\ttfamily void C\+P\+U\+Timer\+\_\+interrupt\+Ack (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set Acknowledge to receive another interrupt from C\+P\+U-\/\+Timer. 
+
+
+
+Definition at line 164 of file cpu\+\_\+timer.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{164                                 \{}
+\DoxyCodeLine{165     TMC\_BASE\_PIE-\/>ACK |= 0x1;       \textcolor{comment}{// Acknowledge interrupt to get more from group 1}}
+\DoxyCodeLine{166 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cpu__timer_8c_a143dae9b51852dac6792334586757db8}\label{cpu__timer_8c_a143dae9b51852dac6792334586757db8}} 
+\index{cpu\_timer.c@{cpu\_timer.c}!CPUTimer\_start@{CPUTimer\_start}}
+\index{CPUTimer\_start@{CPUTimer\_start}!cpu\_timer.c@{cpu\_timer.c}}
+\doxysubsubsection{\texorpdfstring{CPUTimer\_start()}{CPUTimer\_start()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} C\+P\+U\+Timer\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{cpu\+\_\+timer,  }\item[{long}]{Period }\end{DoxyParamCaption})}
+
+
+
+Start C\+P\+U-\/\+Timer 0/1/2 $\vert$$\vert$ make sure C\+P\+U-\/\+Timer has been initialized. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+P\+U-\/\+Timer as Uint16 -\/-\/$>$ valid value\+: 0-\/2~\newline
+ 2) Period for Timer-\/\+Interrupt in microseconds~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of C\+P\+U-\/\+Timer ~\newline
+-\/-\/$>$ -\/2 = requested C\+P\+U-\/\+Timer not configured ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 82 of file cpu\+\_\+timer.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                                                    \{}
+\DoxyCodeLine{83         \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}}  temp;}
+\DoxyCodeLine{84         temp = (long) ((\textcolor{keywordtype}{float})150 * Period);        \textcolor{comment}{//calculate microseconds to frequency}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{keywordflow}{switch} (cpu\_timer)\{}
+\DoxyCodeLine{87             \textcolor{keywordflow}{case} 0:     \textcolor{keywordflow}{if}(g\_cpu\_timer\_0\_in\_use)\{}
+\DoxyCodeLine{88                             TMC\_BASE\_TIMER0-\/>PRD = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})(temp\&0xFFFF);     \textcolor{comment}{// Set Period Low for Timer}}
+\DoxyCodeLine{89                             TMC\_BASE\_TIMER0-\/>PRDH = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})(temp >> 16);     \textcolor{comment}{// Set Period High for Timer}}
+\DoxyCodeLine{90                             TMC\_BASE\_TIMER0-\/>TPR = 0;                           \textcolor{comment}{// Disable Prescaler}}
+\DoxyCodeLine{91                             TMC\_BASE\_TIMER0-\/>TPRH = 0;                          \textcolor{comment}{// Disable Prescaler}}
+\DoxyCodeLine{92                             TMC\_BASE\_TIMER0-\/>TCR |= (0x1 << 4);                 \textcolor{comment}{// Stop timer}}
+\DoxyCodeLine{93                             TMC\_BASE\_TIMER0-\/>TCR |= (0x1 << 5);                 \textcolor{comment}{// reload timer}}
+\DoxyCodeLine{94                             TMC\_BASE\_TIMER0-\/>TCR |= (0x2 << 10);                \textcolor{comment}{// Run in Free mode}}
+\DoxyCodeLine{95                             TMC\_BASE\_TIMER0-\/>TCR |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 14);      \textcolor{comment}{// Enable Timer Interrupt}}
+\DoxyCodeLine{96                             TMC\_BASE\_TIMER0-\/>TCR \&= \string~(0x1 << 4);                \textcolor{comment}{// Start/Restart Timer}}
+\DoxyCodeLine{97                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{98                         \}}
+\DoxyCodeLine{99                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{100                             \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{101                         \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103             \textcolor{keywordflow}{case} 1:     \textcolor{keywordflow}{if}(g\_cpu\_timer\_1\_in\_use)\{}
+\DoxyCodeLine{104                             TMC\_BASE\_TIMER1-\/>PRD = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})(temp\&0xFFFF);     \textcolor{comment}{// Set Period Low for Timer}}
+\DoxyCodeLine{105                             TMC\_BASE\_TIMER1-\/>PRDH = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})(temp >> 16);     \textcolor{comment}{// Set Period High for Timer}}
+\DoxyCodeLine{106                             TMC\_BASE\_TIMER1-\/>TPR = 0;                           \textcolor{comment}{// Disable Prescaler}}
+\DoxyCodeLine{107                             TMC\_BASE\_TIMER1-\/>TPRH = 0;                          \textcolor{comment}{// Disable Prescaler}}
+\DoxyCodeLine{108                             TMC\_BASE\_TIMER1-\/>TCR |= (0x1 << 4);                 \textcolor{comment}{// Stop timer}}
+\DoxyCodeLine{109                             TMC\_BASE\_TIMER1-\/>TCR |= (0x1 << 5);                 \textcolor{comment}{// Reload timer}}
+\DoxyCodeLine{110                             TMC\_BASE\_TIMER1-\/>TCR |= (0x2 << 10);                \textcolor{comment}{// Run in Free mode}}
+\DoxyCodeLine{111                             TMC\_BASE\_TIMER1-\/>TCR |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 14);      \textcolor{comment}{// Enable Timer Interrupt}}
+\DoxyCodeLine{112                             TMC\_BASE\_TIMER1-\/>TCR \&= \string~(0x1 << 4);                \textcolor{comment}{// Start/Restart Timer}}
+\DoxyCodeLine{113                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{114                         \}}
+\DoxyCodeLine{115                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{116                             \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{117                         \}}
+\DoxyCodeLine{118             \textcolor{keywordflow}{case} 2:     \textcolor{keywordflow}{if}(g\_cpu\_timer\_2\_in\_use)\{}
+\DoxyCodeLine{119                             TMC\_BASE\_TIMER2-\/>PRD = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})(temp\&0xFFFF);     \textcolor{comment}{// Set Period Low for Timer}}
+\DoxyCodeLine{120                             TMC\_BASE\_TIMER2-\/>PRDH = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})(temp >> 16);     \textcolor{comment}{// Set Period High for Timer}}
+\DoxyCodeLine{121                             TMC\_BASE\_TIMER2-\/>TPR = 0;                           \textcolor{comment}{// Disable Prescaler}}
+\DoxyCodeLine{122                             TMC\_BASE\_TIMER2-\/>TPRH = 0;                          \textcolor{comment}{// Disable Prescaler}}
+\DoxyCodeLine{123                             TMC\_BASE\_TIMER2-\/>TCR |= (0x1 << 4);                 \textcolor{comment}{// Stop timer}}
+\DoxyCodeLine{124                             TMC\_BASE\_TIMER2-\/>TCR |= (0x1 << 5);                 \textcolor{comment}{// reload timer}}
+\DoxyCodeLine{125                             TMC\_BASE\_TIMER2-\/>TCR |= (0x2 << 10);                \textcolor{comment}{// Run in Free mode}}
+\DoxyCodeLine{126                             TMC\_BASE\_TIMER2-\/>TCR |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 14);      \textcolor{comment}{// Enable Timer Interrupt}}
+\DoxyCodeLine{127                             TMC\_BASE\_TIMER2-\/>TCR \&= \string~(0x1 << 4);                \textcolor{comment}{// Start/Restart Timer}}
+\DoxyCodeLine{128                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{129                         \}}
+\DoxyCodeLine{130                         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{131                             \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{132                         \}}
+\DoxyCodeLine{133             \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{134         \}}
+\DoxyCodeLine{135         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{136 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cpu__timer_8c_a3d51abbc4d59b426fe4699fb89c80795}\label{cpu__timer_8c_a3d51abbc4d59b426fe4699fb89c80795}} 
+\index{cpu\_timer.c@{cpu\_timer.c}!CPUTimer\_stop@{CPUTimer\_stop}}
+\index{CPUTimer\_stop@{CPUTimer\_stop}!cpu\_timer.c@{cpu\_timer.c}}
+\doxysubsubsection{\texorpdfstring{CPUTimer\_stop()}{CPUTimer\_stop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} C\+P\+U\+Timer\+\_\+stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{cpu\+\_\+timer }\end{DoxyParamCaption})}
+
+
+
+Stop C\+P\+U-\/\+Timer 0/1/2 $\vert$$\vert$ make sure C\+P\+U-\/\+Timer has been initialized. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+P\+U-\/\+Timer as Uint16 -\/-\/$>$ valid value\+: 0-\/2~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of C\+P\+U-\/\+Timer ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 145 of file cpu\+\_\+timer.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{145                                      \{}
+\DoxyCodeLine{146     \textcolor{keywordflow}{switch} (cpu\_timer)\{}
+\DoxyCodeLine{147         \textcolor{keywordflow}{case} 0: TMC\_BASE\_TIMER0-\/>TCR \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 14); \textcolor{comment}{// Disable Interrupt}}
+\DoxyCodeLine{148                 TMC\_BASE\_TIMER0-\/>TCR |= (0x1 << 4);             \textcolor{comment}{// Stop timer}}
+\DoxyCodeLine{149                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{150         \textcolor{keywordflow}{case} 1: TMC\_BASE\_TIMER1-\/>TCR \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 14); \textcolor{comment}{// Disable Interrupt}}
+\DoxyCodeLine{151                 TMC\_BASE\_TIMER1-\/>TCR |= (0x1 << 4);             \textcolor{comment}{// Stop timer}}
+\DoxyCodeLine{152                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{153         \textcolor{keywordflow}{case} 2: TMC\_BASE\_TIMER2-\/>TCR \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 14); \textcolor{comment}{// Disable Interrupt}}
+\DoxyCodeLine{154                 TMC\_BASE\_TIMER2-\/>TCR |= (0x1 << 4);             \textcolor{comment}{// Stop timer}}
+\DoxyCodeLine{155                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{156         \textcolor{keywordflow}{default}: \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{157     \}}
+\DoxyCodeLine{158     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{159 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cpu__timer_8c_ad3d045a53b2976fed95270395bc109c7}\label{cpu__timer_8c_ad3d045a53b2976fed95270395bc109c7}} 
+\index{cpu\_timer.c@{cpu\_timer.c}!init\_CPUTimer@{init\_CPUTimer}}
+\index{init\_CPUTimer@{init\_CPUTimer}!cpu\_timer.c@{cpu\_timer.c}}
+\doxysubsubsection{\texorpdfstring{init\_CPUTimer()}{init\_CPUTimer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+\+C\+P\+U\+Timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{cpu\+\_\+timer,  }\item[{void $\ast$}]{isr }\end{DoxyParamCaption})}
+
+
+
+Init C\+P\+U-\/\+Timer 0/1/2. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+P\+U-\/\+Timer as Uint16 -\/-\/$>$ valid value\+: 0-\/2~\newline
+ 2) Interrupt Service routine~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of C\+P\+U-\/\+Timer ~\newline
+-\/-\/$>$ -\/2 = all C\+P\+U-\/\+Timer in use ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 27 of file cpu\+\_\+timer.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27                                                  \{}
+\DoxyCodeLine{28     \textcolor{keywordflow}{switch} (cpu\_timer)\{}
+\DoxyCodeLine{29     \textcolor{keywordflow}{case} 0 ... 2:   \textcolor{keywordflow}{if}(!g\_cpu\_timer\_0\_in\_use)\{}
+\DoxyCodeLine{30                         g\_cpu\_timer\_0\_in\_use=1;                         \textcolor{comment}{// Set flag for in\_use}}
+\DoxyCodeLine{31                         DINT;                                           \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{32                         EALLOW;                                         \textcolor{comment}{// Allow Register writes}}
+\DoxyCodeLine{33                         TMC\_BASE\_INT\_REGS-\/>CPU\_TIMER0 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{34                         EDIS;                                           \textcolor{comment}{// Protect registers}}
+\DoxyCodeLine{35                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                     \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{36                         TMC\_BASE\_PIE-\/>GROUP[0].IER |= 0x40;             \textcolor{comment}{// Enable TINT0 in the PIE: Group 1 interrupt 7}}
+\DoxyCodeLine{37                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0001;                                   \textcolor{comment}{// Enable CPU int1 which is connected to CPU-\/Timer 0}}
+\DoxyCodeLine{38                         EINT;                                           \textcolor{comment}{// Enable Interrupts}}
+\DoxyCodeLine{39                         TMC\_BASE\_TIMER0-\/>TCR = (0x1 << 4);              \textcolor{comment}{// Timer is stopped}}
+\DoxyCodeLine{40                     \}}
+\DoxyCodeLine{41                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(g\_cpu\_timer\_0\_in\_use \&\& !g\_cpu\_timer\_1\_in\_use)\{}
+\DoxyCodeLine{42                         g\_cpu\_timer\_1\_in\_use=1;                         \textcolor{comment}{// Set flag for in\_use}}
+\DoxyCodeLine{43                         DINT;                                           \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{44                         EALLOW;                                         \textcolor{comment}{// Allow Register writes}}
+\DoxyCodeLine{45                         TMC\_BASE\_INT\_REGS2-\/>CPU\_TIMER1 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr; \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{46                         EDIS;                                           \textcolor{comment}{// Protect registers}}
+\DoxyCodeLine{47                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                     \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{48                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x1000;                                   \textcolor{comment}{// Enable CPU int13 which is connected to CPU-\/Timer 1}}
+\DoxyCodeLine{49                         EINT;                                           \textcolor{comment}{// Enable Interrupts}}
+\DoxyCodeLine{50                         TMC\_BASE\_TIMER1-\/>TCR = (0x1 << 4);              \textcolor{comment}{// Make sure timer is stopped}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52                     \}}
+\DoxyCodeLine{53                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(g\_cpu\_timer\_0\_in\_use \&\& g\_cpu\_timer\_1\_in\_use \&\& !g\_cpu\_timer\_2\_in\_use)\{}
+\DoxyCodeLine{54                         g\_cpu\_timer\_2\_in\_use=1;                         \textcolor{comment}{// Set flag for in\_use}}
+\DoxyCodeLine{55                         DINT;                                           \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{56                         EALLOW;                                         \textcolor{comment}{// Allow Register writes}}
+\DoxyCodeLine{57                         TMC\_BASE\_INT\_REGS2-\/>CPU\_TIMER2 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr; \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{58                         EDIS;                                           \textcolor{comment}{// Protect registers}}
+\DoxyCodeLine{59                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                     \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{60                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x2000;                                   \textcolor{comment}{// Enable CPU int14 which is connected to CPU-\/Timer 2}}
+\DoxyCodeLine{61                         EINT;                                           \textcolor{comment}{// Enable Interrupts}}
+\DoxyCodeLine{62                         TMC\_BASE\_TIMER2-\/>TCR = (0x1 << 4);              \textcolor{comment}{// Make sure timer is stopped}}
+\DoxyCodeLine{63                     \}}
+\DoxyCodeLine{64                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{65                         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{66                     \}}
+\DoxyCodeLine{67                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{68     \textcolor{keywordflow}{default}:        \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{71 \}}
+
+\end{DoxyCode}

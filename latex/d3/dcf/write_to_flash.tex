@@ -1,0 +1,70 @@
+~\newline
+
+
+This section describes how to program and execute code from the on-\/chip flash memory. Using the on-\/chip flash eliminates the need for external non-\/volatile memory or a host processor from which to bootload.
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Link Initialized Sections to On-\/\+Chip-\/\+Flash}}
+
+
+\begin{DoxyEnumerate}
+\item Click your Project with the right Mouse Button -\/-\/$>$ Open Properties Properties
+\item Navigate to General -\/-\/$>$ Select the Linker command file\+: F28335.\+cmd
+
+
+
+Apply and Close -\/-\/$>$ F28335.\+cmd is created in Project Folder
+\item Open file F28335.\+cmd and replace code by \href{../doc_documents/F28335.cmd}{\texttt{ this~code}} ~\newline
+
+\end{DoxyEnumerate}
+
+Initialized Sections are now linked to Flash for standalone operation
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Executing from Flash after Reset}}
+
+
+\begin{DoxyEnumerate}
+\item Click your Project with the right Mouse Button -\/-\/$>$ New -\/-\/$>$ File
+\item Name your file \char`\"{}\+T\+M\+S320\+F28335\+\_\+\+Startupcode.\+asm\char`\"{} -\/ Ensure that it is an assembly file with ending .asm
+
+
+\item Open file T\+M\+S320\+F28335\+\_\+\+Startupcode.\+asm and replace code by \href{../doc_documents/TMS320F28335_Startupcode.asm}{\texttt{ this code}} ~\newline
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Check your configuration}}
+
+
+\begin{DoxyEnumerate}
+\item Click Build Project
+\item Click Debug Button -\/-\/$>$ Erasing Flash Sectors appears
+
+
+\item Click Reset C\+PU Button 
+
+-\/-\/$>$ Disassembly window opens
+
+-\/-\/$>$ Click View Disassembly... 
+\end{DoxyEnumerate}
+
+You can see the start of the bootloader in the bootram now
+
+
+\begin{DoxyEnumerate}
+\item You can now single step through the bootloader, to understand the operations of the bootloader $\vert$ Or you click on Run -\/-\/$>$ Go Main to skip the single steps
+
+
+\end{DoxyEnumerate}
+
+-\/-\/$>$ When code jumps to your main() function, it confirms that your flash has been programmed properly and that the bootloader is properly configured to jump to flash. ~\newline
+
+
+{\bfseries{Flash has been successfully programmed and your code runs in standalone operation on the T\+M\+S320\+F28335 when it is powered.}} 

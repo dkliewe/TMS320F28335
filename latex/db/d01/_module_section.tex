@@ -1,0 +1,933 @@
+\label{_module_section_md_doc_pages_modules}%
+\Hypertarget{_module_section_md_doc_pages_modules}%
+
+
+ Modules of the T\+M\+S320\+F28335 Library with brief descriptions\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\mbox{\hyperlink{system_controls}{System Controls}}  &The System Controls module configures the clocks of peripheral modules, the watchdog and the P\+LL status register. Therefore this function {\bfseries{needs to be called first}} to ensure the functionality of other modules.  \\\cline{1-2}
+\mbox{\hyperlink{general_output_pin}{General Output}}  &The General Output module can be used to configure a G\+P\+IO as a general output pin with two possible states\+: H\+I\+GH (3,3 V) and L\+OW (0 V).  \\\cline{1-2}
+\mbox{\hyperlink{general_input_pin}{General Input}}  &The General Input module can be used to configure a G\+P\+IO as a general input pin. It enables to read the signal value of the input pin and to generate interrupts on different input events.  \\\cline{1-2}
+\mbox{\hyperlink{adc}{A\+DC}}  &The Analog-\/to-\/\+Digital Converter (A\+DC) module enables to convert an analog value of 0 V -\/ 3 V into a digital value of 0-\/4095 on 16 channels.  \\\cline{1-2}
+\mbox{\hyperlink{can}{C\+AN}}  &The two Controller-\/\+Area-\/\+Network (C\+AN) Interfaces C\+A\+N\+\_\+A and C\+A\+N\+\_\+B offer up to 32 mailboxes each. Mailboxes can be configured with different identifiers and can be used for transmit-\/ and receive-\/operations.\+The max. message-\/length for each operation is 8 byte.  \\\cline{1-2}
+\mbox{\hyperlink{cpu_timer}{C\+P\+U-\/\+Timer}}  &The C\+P\+U-\/\+Timer module provides the usage of 32-\/Bit C\+P\+U-\/\+Timer 0/1/2.  \\\cline{1-2}
+\mbox{\hyperlink{ecap}{e\+C\+AP}}  &The enhanced capture (e\+C\+AP) module, can be used in systems where accurate timing of external events is important or to provide a single-\/channel P\+WM output.  \\\cline{1-2}
+\mbox{\hyperlink{epwm}{e\+P\+WM}}  &The enhanced Pulse Width Modulator (e\+P\+WM) module provides the configuration of a P\+WM output signal with specific frequency and dutycycle on specific pins.  \\\cline{1-2}
+\mbox{\hyperlink{eqep}{e\+Q\+EP}}  &The enhanced Quadrature Encoder Pulse (e\+Q\+EP) module can be used to read information about speed and direction from an encoder for rotary machines.  \\\cline{1-2}
+\mbox{\hyperlink{i2c}{I2C}} &The Inter-\/\+Integrated-\/\+Circuit (I2C) module of T\+M\+S320\+F28335 provides I2\+C-\/\+Master and I2\+C-\/\+Slave operations. In Master-\/mode, user can send data to different I2\+C-\/slaves via I2C Bus.   \\\cline{1-2}
+\mbox{\hyperlink{sci}{S\+CI}}  &The Serial Communications Interface (S\+CI)can be used for serial communication with configurable baud rates. Messages of 8 Bit can be transferred via up to three S\+C\+I-\/\+Modules\+: S\+C\+I\+\_\+A, S\+C\+I\+\_\+B, S\+C\+I\+\_\+C.  \\\cline{1-2}
+\mbox{\hyperlink{spi}{S\+PI}}  &The Serial Peripheral Interface (S\+PI) can be used for serial communication with configurable baud rates. Messages of 16 Bit can be transferred via S\+PI. T\+M\+S320\+F28335 can operate in master and slave mode.   \\\cline{1-2}
+\mbox{\hyperlink{delay}{Delay}}  &Describes how to implement files for usage of Delay()-\/function.  \\\cline{1-2}
+\end{longtabu}
+  \hypertarget{system_controls}{}\doxysection{System Controls}\label{system_controls}
+The System Controls module configures the clock of the device. It sets the watchdog, the phase-\/locked loop (P\+LL) status register and configures the clocking of peripheral modules. This function {\bfseries{needs to be called first}} to ensure the functionality of other modules.
+
+\DoxyHorRuler{0}
+\hypertarget{system_controls_autotoc_md98}{}\doxyparagraph{Code example}\label{system_controls_autotoc_md98}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}             \textcolor{comment}{//Include global\_defines}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls.h}}"{}}            \textcolor{comment}{//Include system controls module}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                \textcolor{comment}{//Call setSystemControls() function in your main function}}
+\DoxyCodeLine{                                        \textcolor{comment}{//Call other (init-\/) functions and write program}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{system_controls_autotoc_md100}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{system_controls_autotoc_md100}
+\href{dir_d6d493f58fb291616d6d9bc3c45686a0.html}{\texttt{ system\+\_\+controls}}
+
+\DoxyHorRuler{0}
+\hypertarget{system_controls_autotoc_md102}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{system_controls_autotoc_md102}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=59}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{general_output_pin}{}\doxysection{General Output}\label{general_output_pin}
+This module can be used to configure a G\+P\+IO as a general output pin with two possible states\+: H\+I\+GH (3,3 V) and L\+OW (0 V). ~\newline
+ Possible G\+P\+I\+O-\/values as input parameter are defined in \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}} and can also be seen in \href{../html/db/dea/first_steps.html}{\texttt{ this overview table}}.
+
+\DoxyHorRuler{0}
+\hypertarget{general_output_pin_autotoc_md72}{}\doxyparagraph{Code example}\label{general_output_pin_autotoc_md72}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                             \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{general__output_8h}{general\_output.h}}"{}}                             \textcolor{comment}{//Include module of general\_output}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls.h}}"{}}                            \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                     \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{general__output_8c_a25b794e0a5e98baa50a7c14eca903cfc}{init\_generalOutputPin}}(GPIO0)               \textcolor{comment}{//Configures GPIO0 as general output pin. Returns result of operation}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{general__output_8c_a93f0d864238e52884f19b9026aee1a05}{generalOutputPin\_setPinHigh}}(GPIO0);        \textcolor{comment}{//Set output pin high (3,3 V). Returns result of operation}}
+\DoxyCodeLine{    DELAY\_US(150000);                                   \textcolor{comment}{//Delay of 150 milliseconds}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{general__output_8c_a1f8eac197d11d8d6dcd5e999686344a1}{generalOutputPin\_setPinLow}}(GPIO0);         \textcolor{comment}{//Set output pin low (0 V). Returns result of operation}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{general_output_pin_autotoc_md74}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{general_output_pin_autotoc_md74}
+\href{dir_d69eb471f4b1060fd0ede99694f9c60e.html}{\texttt{ general\+\_\+output}}
+
+\DoxyHorRuler{0}
+\hypertarget{general_output_pin_autotoc_md76}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{general_output_pin_autotoc_md76}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=92}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{general_input_pin}{}\doxysection{General Input}\label{general_input_pin}
+This module can be used to configure a G\+P\+IO as a general input pin. Possible G\+P\+I\+O-\/values as input parameter are defined in \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}} and can also be seen in \href{../html/db/dea/first_steps.html}{\texttt{ this overview table}}. ~\newline
+ The module allows to read the applied signal-\/value of the input pin (high=1/low=0). ~\newline
+ Furthermore an interrupt can be configured for an input pin at different events\+: 0=falling edge, 1=rising edge, 2=falling and rising edge. ~\newline
+ The function interrupt\+\_\+ack() needs to be called at the end of an interrupt service routine, to acknowledge more interrupts. ~\newline
+
+
+For {\bfseries{G\+P\+I\+O0 -\/ G\+P\+I\+O31}}\+: Two external interrupts can be configured (X\+I\+N\+T1 -\/ X\+I\+N\+T2) ~\newline
+ For {\bfseries{G\+P\+I\+O32 -\/ G\+P\+I\+O63}}\+: Five external interrupts can be configured (X\+I\+N\+T3 -\/ X\+I\+N\+T7)
+
+\DoxyHorRuler{0}
+\hypertarget{general_input_pin_autotoc_md66}{}\doxyparagraph{Code example}\label{general_input_pin_autotoc_md66}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                                                     \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{general__input_8h}{general\_input/general\_input.h}}"{}}                                        \textcolor{comment}{//Include module of general\_input}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}                                    \textcolor{comment}{//Include module of system\_controls}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} isr(\textcolor{keywordtype}{void});                                                     \textcolor{comment}{//Function prototype for interrupt service routine}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                                             \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                                        \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{general__input_8c_a428a2b7b464fa1f80f1cba1f6461004f}{init\_generalInputPin}}(GPIO0);                                       \textcolor{comment}{//Configures GPIO0 as general input pin. Returns result of operation}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{general__input_8c_a9dc850372b03fa33143af7dc360bd006}{generalInputPin\_getValue}}(GPIO0);                                   \textcolor{comment}{//Get value of input pin. Returns value of applied signal on input pin (0=low/1=high) or -\/1 for invalid input parameter}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{general__input_8c_aa6bfc9290a5936b2b6152aa397befc0b}{generalInputPin\_configureExternalInterrupt}}(GPIO0, \&xint1\_isr, 0);  \textcolor{comment}{//Configuring GPIO0 to listen for falling edge and to call function xint1\_isr on interrupt. Returns result of operation}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{}
+\DoxyCodeLine{                                                                                \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} isr(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keyword}{static} \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{    i++;}
+\DoxyCodeLine{    \mbox{\hyperlink{general__input_8c_a15ab763c07ce5fcbed2c3069a13d2b16}{generalInputPin\_interruptAck}}();                                             \textcolor{comment}{//Acknowledgement to get more interrupts}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{general_input_pin_autotoc_md68}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{general_input_pin_autotoc_md68}
+\href{dir_696933bb00f0c12773530015290c1c27.html}{\texttt{ general\+\_\+input}}
+
+\DoxyHorRuler{0}
+\hypertarget{general_input_pin_autotoc_md70}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{general_input_pin_autotoc_md70}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=92}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{adc}{}\doxysection{A\+DC}\label{adc}
+The Analog-\/to-\/\+Digital Converter (A\+DC) module enables to convert an analog value of 0 V -\/ 3 V into a digital value of 0-\/4095 on 16 channels. ~\newline
+ Possible A\+D\+C-\/\+Channels as input parameter are defined in \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}} and can also be seen in \href{../html/db/dea/first_steps.html}{\texttt{ this overview table}}.
+
+\DoxyHorRuler{0}
+\hypertarget{adc_autotoc_md19}{}\doxyparagraph{Code example}\label{adc_autotoc_md19}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                     \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}    \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{adc_8h}{adc/adc.h}}"{}}                            \textcolor{comment}{//Include module of ADC}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} adc\_value = 0;                          \textcolor{comment}{//Variable to store returned ADC-\/Value}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                        \textcolor{comment}{//Call setSystemControls() function     }}
+\DoxyCodeLine{    \mbox{\hyperlink{adc_8c_a342ab07b607f3dc4efa0655ca1acd164}{init\_ADC}}();                                 \textcolor{comment}{//Call init\_ADC() function to configure all 16 ADC channels}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{                                   \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{        adc\_value = \mbox{\hyperlink{adc_8c_a46eed8e83cec60c30eec5428805f2ade}{ADC\_getValue}}(ADCINA0);      \textcolor{comment}{//Get Value of ADC Channel A0. Function returns ADC value of 0-\/4095 or -\/1 for invalid input parameter}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{adc_autotoc_md21}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{adc_autotoc_md21}
+\href{dir_4dab8a2dc4741d147a951a94aaa47ae7.html}{\texttt{ adc}}
+
+\DoxyHorRuler{0}
+\hypertarget{adc_autotoc_md23}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{adc_autotoc_md23}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=445}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{can}{}\doxysection{C\+AN}\label{can}
+The T\+M\+S302\+F28335 offers two C\+A\+N-\/\+Interfaces\+: C\+A\+N\+\_\+A and C\+A\+N\+\_\+B. Each Interface needs one RX and one TX Pin for receive and transmit operations. Each Interface can only be used one time.
+
+Each C\+A\+N-\/\+Module can use up to 32 mailboxes, which can be configured as Rx-\/ or Tx-\/mailboxes.
+
+For configuration of mailboxes, user needs to create an object of type Can\+Mailbox and assign values for Identifier, extended Identifier, message\+Length, direction and active/inactive to respective object.
+
+For extended Identifier = 0, the Identifier-\/length will be 11 bit. Identifier values are valid from 0x00 to 0x7\+FF. ~\newline
+ For extended Identifier = 1, the Identifier-\/length will be 29 bit. Identifier values are valid from 0x00 to 0x1\+F\+FF F\+F\+FF. ~\newline
+ Messages are priorized by lowest identifier first
+
+Amount of data-\/bytes that will be sent or received via a mailbox, needs to be configured by assigning a value to message\+Length attribute of Can\+Mailbox object. The maximal length for receive and transmit operations is 8 byte. Variable msg for C\+A\+N-\/operations in example code is of type Uint64. Using a variable of Uint64 for receive and transmit operations enables the module to read and write all bytes (in case of message\+Length = 8).
+
+\DoxyHorRuler{0}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ RX  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ TX   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ RX  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ TX   }\\\cline{1-3}
+\endhead
+{\bfseries{C\+A\+N\+\_\+A}}  &G\+P\+I\+O18 / G\+P\+I\+O30  &G\+P\+I\+O19 / G\+P\+I\+O31   \\\cline{1-3}
+{\bfseries{C\+A\+N\+\_\+B}}  &G\+P\+I\+O10 / G\+P\+I\+O13 / G\+P\+I\+O17 / G\+P\+I\+O21  &G\+P\+I\+O8 / G\+P\+I\+O12 / G\+P\+I\+O16 / G\+P\+I\+O20   \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{can_autotoc_md26}{}\doxyparagraph{Code example}\label{can_autotoc_md26}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                                 \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}                \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{can_8h}{can/can.h}}"{}}                                        \textcolor{comment}{//Include module of CAN}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} runProgram=1;                                        \textcolor{comment}{//Declaration of global variable}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___can_interface}{CanInterface}} CAN\_A = \{GPIO30, GPIO31\};                      \textcolor{comment}{//Instantiate CANInterface and assign GPIO30 and GPIO31 to CAN\_A}}
+\DoxyCodeLine{\mbox{\hyperlink{struct___can_mailbox}{CanMailbox}} CAN\_MB\_0 = \{0x00, 0, 0, \mbox{\hyperlink{can_8h_acbaf3bd7840aef6761b8bc6b9b25aa5ba88cd0d05173db0a38b0ec204b7d0a045}{CAN\_Rx}}, 1\};              \textcolor{comment}{//Instantiate CAN-\/Mailbox: Identifier 0x00, extended 0 (no), messageLength in Byte (0), direction CAN\_Rx (receive), active (1) as CAN\_MB\_0}}
+\DoxyCodeLine{\mbox{\hyperlink{struct___can_mailbox}{CanMailbox}} CAN\_MB\_1 = \{0x01, 0, 4, \mbox{\hyperlink{can_8h_acbaf3bd7840aef6761b8bc6b9b25aa5ba88cd0d05173db0a38b0ec204b7d0a045}{CAN\_Rx}}, 1\};              \textcolor{comment}{//Instantiate CAN-\/Mailbox: Identifier 0x01, extended 0 (no), messageLength in Byte (4), direction CAN\_Rx (receive), active (1) as CAN\_MB\_1}}
+\DoxyCodeLine{\mbox{\hyperlink{struct___can_mailbox}{CanMailbox}} CAN\_MB\_2 = \{0x02, 0, 2, \mbox{\hyperlink{can_8h_acbaf3bd7840aef6761b8bc6b9b25aa5bacebff6e9719da3828edc77e993ccb239}{CAN\_Tx}}, 1\};              \textcolor{comment}{//Instantiate CAN-\/Mailbox: Identifier 0x02, extended 0 (no), messageLength in Byte (2), direction CAN\_Tx (transmit), active (1) as CAN\_MB\_2}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                         \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}{Uint64}} msg = 0;                                         \textcolor{comment}{//Create variables for CAN-\/operations}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} mBYTES[4];}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                    \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{can_8c_afbd627fc452b01712d35768a34951597}{init\_CAN}}(CAN\_A, 100000);                       \textcolor{comment}{//Init CAN\_A peripheral with baudrate of 100 kHz. Returns result of operation}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{can_8c_a79cccc4f7bc882cdbee8397111b6ef84}{CAN\_setupMailbox}}(CAN\_A, 0, \&CAN\_MB\_0);                  \textcolor{comment}{//Setup mailbox CAN\_MB\_0 and assign mailbox-\/number 0 to Mailbox CAN\_MB\_0}}
+\DoxyCodeLine{    \mbox{\hyperlink{can_8c_a79cccc4f7bc882cdbee8397111b6ef84}{CAN\_setupMailbox}}(CAN\_A, 1, \&CAN\_MB\_1);                  \textcolor{comment}{//Setup mailbox CAN\_MB\_1 and assign mailbox-\/number 1 to Mailbox CAN\_MB\_1}}
+\DoxyCodeLine{    \mbox{\hyperlink{can_8c_a79cccc4f7bc882cdbee8397111b6ef84}{CAN\_setupMailbox}}(CAN\_A, 2, \&CAN\_MB\_2);                  \textcolor{comment}{//Setup mailbox CAN\_MB\_2 and assign mailbox-\/number 2 to Mailbox CAN\_MB\_2}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(runProgram)\{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{can_8c_a3e2eca89c17c2821cca192d9d09b050c}{CAN\_dataAvailableAtMailbox}}(CAN\_A, 0))\{           \textcolor{comment}{//Check if mailbox message available at CAN\_A mailbox0}}
+\DoxyCodeLine{            \mbox{\hyperlink{can_8c_a04bf72a4fdb9c57dce07f2017db437a8}{CAN\_get}}(CAN\_A, 0, \&msg, CAN\_MB\_0.\mbox{\hyperlink{struct___can_mailbox_af487fc530cbeeb9acc36e4fd7521e6ed}{messageLength}}); \textcolor{comment}{//Save message from CAN\_A mailbox 0 in variable msg}}
+\DoxyCodeLine{            \mbox{\hyperlink{can_8c_aad939fea62d76186174632eec487324d}{CAN\_resetMailbox}}(CAN\_A, 0);                      \textcolor{comment}{//Clear mailbox 0 at CAN\_A}}
+\DoxyCodeLine{            runProgram=\mbox{\hyperlink{global__defines_8h_a7c6368b321bd9acd0149b030bb8275edaf9d46b7804d93a4fcde88489a1b68c24}{False}};                                \textcolor{comment}{//Stop program, because of received message on CAN\_A mailbox 0}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\mbox{\hyperlink{can_8c_a3e2eca89c17c2821cca192d9d09b050c}{CAN\_dataAvailableAtMailbox}}(CAN\_A, 1))\{       \textcolor{comment}{//Check if mailbox message available at CAN\_A mailbox 1}}
+\DoxyCodeLine{            \mbox{\hyperlink{can_8c_a04bf72a4fdb9c57dce07f2017db437a8}{CAN\_get}}(CAN\_A, 1, \&msg, CAN\_MB\_1.\mbox{\hyperlink{struct___can_mailbox_af487fc530cbeeb9acc36e4fd7521e6ed}{messageLength}}); \textcolor{comment}{//Save message from CAN\_A mailbox 0 in variable msg}}
+\DoxyCodeLine{            \mbox{\hyperlink{can_8c_aad939fea62d76186174632eec487324d}{CAN\_resetMailbox}}(CAN\_A, 1);                      \textcolor{comment}{//Clear mailbox 1 at CAN\_A}}
+\DoxyCodeLine{}
+\DoxyCodeLine{            mBYTES[0] = (msg >> 0) \& 0xFF;                   \textcolor{comment}{//Copy CAN message byte 0 in mBytes[0]}}
+\DoxyCodeLine{            mBYTES[1] = (msg >> 8) \& 0xFF;                   \textcolor{comment}{//Copy CAN message byte 1 in mBytes[1]}}
+\DoxyCodeLine{            mBYTES[2] = (msg >> 16) \& 0xFF;                  \textcolor{comment}{//Copy CAN message byte 2 in mBytes[2]}}
+\DoxyCodeLine{            mBYTES[3] = (msg >> 24) \& 0xFF;                  \textcolor{comment}{//Copy CAN message byte 3 in mBytes[3]}}
+\DoxyCodeLine{            msg = 0;                                         \textcolor{comment}{//Clean msg data}}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        msg = 0x1122;                                        \textcolor{comment}{//Setup Data for transmission}}
+\DoxyCodeLine{        \mbox{\hyperlink{can_8c_ace70c4ffa3494841c801e1b6b484f5e0}{CAN\_send}}(CAN\_A, 2, \&msg, CAN\_MB\_2.\mbox{\hyperlink{struct___can_mailbox_af487fc530cbeeb9acc36e4fd7521e6ed}{messageLength}});    \textcolor{comment}{//Send Data msg on Tx mailbox-\/number 2}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{can_autotoc_md28}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{can_autotoc_md28}
+\href{dir_3fb58befa5a5aac34aab8587948ccb58.html}{\texttt{ C\+AN}}
+
+\DoxyHorRuler{0}
+\hypertarget{can_autotoc_md30}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{can_autotoc_md30}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=773}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{cpu_timer}{}\doxysection{C\+P\+U-\/\+Timer}\label{cpu_timer}
+Usage of 32-\/Bit C\+P\+U-\/\+Timer 0/1/2. Timer will be configured in microseconds.
+
+C\+P\+U-\/\+Timer 0 and C\+P\+U-\/\+Timer 1 can be used in user applications. C\+P\+U-\/\+Timer 2 is reserved for D\+S\+P/\+B\+I\+OS. If the application is not using D\+S\+P/\+B\+I\+OS, then C\+P\+U-\/\+Timer 2 can be used in the application.
+
+\DoxyHorRuler{0}
+\hypertarget{cpu_timer_autotoc_md32}{}\doxyparagraph{Code example}\label{cpu_timer_autotoc_md32}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                     \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cpu__timer_8h}{cpu\_timer/cpu\_timer.h}}"{}}                \textcolor{comment}{//Include module of cpu\_timer}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{general__output_8h}{general\_output/general\_output.h}}"{}}      \textcolor{comment}{//Include module of general\_output}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}    \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} isr(\textcolor{keywordtype}{void});                     \textcolor{comment}{//Function prototype for interrupt service routine}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                             \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                        \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{general__output_8c_a25b794e0a5e98baa50a7c14eca903cfc}{init\_generalOutputPin}}(GPIO22);     \textcolor{comment}{//Configure GPIO as general output}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{cpu__timer_8c_ad3d045a53b2976fed95270395bc109c7}{init\_CPUTimer}}(0, \&isr);            \textcolor{comment}{//Configure CPU-\/Timer 0 to call function isr on interrupt. Returns result of operation}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{cpu__timer_8c_a143dae9b51852dac6792334586757db8}{CPUTimer\_start}}(0, 1000000);        \textcolor{comment}{//Starts CPU-\/Timer 0 with 1000000 microSec <=> 1 sec. Returns result of operation}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{}
+\DoxyCodeLine{                                                \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{cpu__timer_8c_a3d51abbc4d59b426fe4699fb89c80795}{CPUTimer\_stop}}(0);                  \textcolor{comment}{//Stops CPU-\/Timer 0. Returns result of operation}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} isr(\textcolor{keywordtype}{void})\{                     \textcolor{comment}{//Changes value on GPIO22 on every interrupt (every second)}}
+\DoxyCodeLine{    \textcolor{keyword}{static} \textcolor{keywordtype}{int} led\_on=0;}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}(!led\_on)\{}
+\DoxyCodeLine{        \mbox{\hyperlink{general__output_8c_a93f0d864238e52884f19b9026aee1a05}{generalOutputPin\_setPinHigh}}(GPIO22);}
+\DoxyCodeLine{        led\_on = 1;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{        \mbox{\hyperlink{general__output_8c_a1f8eac197d11d8d6dcd5e999686344a1}{generalOutputPin\_setPinLow}}(GPIO22);}
+\DoxyCodeLine{        led\_on = 0;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \mbox{\hyperlink{cpu__timer_8c_ae32db5adda5ea8759d1dc913e4e069d1}{CPUTimer\_interruptAck}}();                    \textcolor{comment}{//Acknowledgement to get more interrupts}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{cpu_timer_autotoc_md34}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{cpu_timer_autotoc_md34}
+\href{dir_798623b0749830126911e1dfdad5d0c6.html}{\texttt{ cpu\+\_\+timer}}
+
+\DoxyHorRuler{0}
+\hypertarget{cpu_timer_autotoc_md36}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{cpu_timer_autotoc_md36}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=81}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{ecap}{}\doxysection{e\+C\+AP}\label{ecap}
+The enhanced capture (e\+C\+AP) module, can be used in systems where accurate timing of external events is important. The e\+C\+AP module provides 6 e\+C\+AP channels, where one e\+C\+AP channel provides 4 x 32-\/bit time-\/stamp capture registers. e\+C\+AP channels also can be configured to provide a single-\/channel P\+WM output. ~\newline
+ Each e\+C\+A\+P-\/\+Module (e\+C\+A\+P1-\/e\+C\+A\+P6) can only be used once.
+
+\DoxyHorRuler{0}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Pin}}   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Pin}}   }\\\cline{1-2}
+\endhead
+{\bfseries{e\+C\+A\+P1}}  &G\+P\+I\+O5 / G\+P\+I\+O24 / G\+P\+I\+O34   \\\cline{1-2}
+{\bfseries{e\+C\+A\+P2}}  &G\+P\+I\+O7 / G\+P\+I\+O25   \\\cline{1-2}
+{\bfseries{e\+C\+A\+P3}}  &G\+P\+I\+O9 / G\+P\+I\+O26   \\\cline{1-2}
+{\bfseries{e\+C\+A\+P4}}  &G\+P\+I\+O11 / G\+P\+I\+O27   \\\cline{1-2}
+{\bfseries{e\+C\+A\+P5}}  &G\+P\+I\+O3 / G\+P\+I\+O48   \\\cline{1-2}
+{\bfseries{e\+C\+A\+P6}}  &G\+P\+I\+O1 / G\+P\+I\+O49   \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{ecap_autotoc_md42}{}\doxyparagraph{Code example 1 (\+Capture mode)}\label{ecap_autotoc_md42}
+In this example, e\+C\+A\+P1 is configured on G\+P\+I\+O24. As default, e\+C\+A\+Px is configured with an Interrupt-\/\+Service-\/\+Routine (I\+SR) that calculates the applied frequency on respective pin.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                                 \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}                \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ecap_8h}{ecap/ecap.h}}"{}}                                      \textcolor{comment}{//Include module of eCAP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                         \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} frequency\_ecap = 0;   }
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                    \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{ecap_8c_a8f97af57724c24ffac7999dbf072dd93}{init\_eCAP}}(GPIO24);                             \textcolor{comment}{//Configures GPIO24 as eCAP pin. Returns result of operation}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{                                               \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{        frequency\_ecap = \mbox{\hyperlink{ecap_8c_a8614df8d67e34de75a46204811daa1e0}{eCAP\_getFrequency}}(GPIO24);         \textcolor{comment}{//Get frequency on GPIO24. Function returns frequency or negative value for invalid input-\/parameter or missing configuration  }}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{ecap_autotoc_md44}{}\doxyparagraph{Code example 2 (\+P\+W\+M mode)}\label{ecap_autotoc_md44}
+An e\+C\+A\+P-\/\+Module can also be used to generate a P\+W\+M-\/signal with specific frequency and specific dutycycle on configured pin \+:
+
+{\bfseries{Min. frequency\+:}} 2 Hz ~\newline
+ {\bfseries{Max. frequency\+:}} 10 M\+Hz
+
+{\bfseries{Min. dutycycle\+:}} 0 ~\newline
+ {\bfseries{Max. dutycycle\+:}} 100
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                                 \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}                \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ecap_8h}{ecap/ecap.h}}"{}}                                      \textcolor{comment}{//Include module of eCAP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                         \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                    \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{ecap_8c_a8f97af57724c24ffac7999dbf072dd93}{init\_eCAP}}(GPIO24);                             \textcolor{comment}{//Configures GPIO24 as eCAP pin. Returns result of operation}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{ecap_8c_a056d814769246f629edcf97c5ec12cc4}{eCAP\_pwmOutput}}(GPIO24, 10000, 50);             \textcolor{comment}{//Call function to generate a PWM-\/signal with frequency of 10 kHz and Dutycycle of 50 \% on GPIO24. Returns result of operation}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{}
+\DoxyCodeLine{                                                            \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{ecap_autotoc_md46}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{ecap_autotoc_md46}
+\href{dir_19d118a85527f637ceaaf5d079ae5c69.html}{\texttt{ e\+C\+AP}}
+
+\DoxyHorRuler{0}
+\hypertarget{ecap_autotoc_md48}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{ecap_autotoc_md48}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=349}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{epwm}{}\doxysection{e\+P\+WM}\label{epwm}
+Configure a G\+P\+IO pin as e\+P\+WM. Set frequency and start P\+WM signal with specific dutycycle. ~\newline
+
+
+{\bfseries{Min. frequency\+:}} 1145 Hz ~\newline
+ {\bfseries{Max. frequency\+:}} 10 M\+Hz
+
+{\bfseries{Min. dutycycle\+:}} 0 ~\newline
+ {\bfseries{Max. dutycycle\+:}} 100
+
+\DoxyHorRuler{0}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ e\+P\+W\+MxA  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ e\+P\+W\+MxB   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ e\+P\+W\+MxA  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ e\+P\+W\+MxB   }\\\cline{1-3}
+\endhead
+{\bfseries{e\+P\+W\+M1}}  &G\+P\+I\+O0  &G\+P\+I\+O1   \\\cline{1-3}
+{\bfseries{e\+P\+W\+M2}}  &G\+P\+I\+O2  &G\+P\+I\+O3   \\\cline{1-3}
+{\bfseries{e\+P\+W\+M3}}  &G\+P\+I\+O4  &G\+P\+I\+O5   \\\cline{1-3}
+{\bfseries{e\+P\+W\+M4}}  &G\+P\+I\+O6  &G\+P\+I\+O7   \\\cline{1-3}
+{\bfseries{e\+P\+W\+M5}}  &G\+P\+I\+O8  &G\+P\+I\+O9   \\\cline{1-3}
+{\bfseries{e\+P\+W\+M6}}  &G\+P\+I\+O10  &G\+P\+I\+O01   \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{epwm_autotoc_md51}{}\doxyparagraph{Initialisation of e\+P\+W\+M Pins}\label{epwm_autotoc_md51}
+
+\begin{DoxyItemize}
+\item e\+P\+W\+MxA and e\+P\+W\+MxB pins can be configured and signals can be set independently. ~\newline
+
+\item e\+P\+W\+MxA and e\+P\+W\+MxB pins can be driven with different dutycycles but {\bfseries{not with different frequencies}}. ~\newline
+ -\/-\/$>$ Configuring a pin as e\+P\+WM output with a frequency will affect both pins of the respective P\+W\+M-\/module\+: e\+P\+W\+MxA and e\+P\+W\+MxB. ~\newline
+
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{epwm_8c_adb125e0a008d1daad741856b13114d4e}{init\_ePWM}}(GPIO0, 125000);   \textcolor{comment}{//configuring ePWM1A with 125 kHZ}}
+\DoxyCodeLine{\mbox{\hyperlink{epwm_8c_adb125e0a008d1daad741856b13114d4e}{init\_ePWM}}(GPIO1, 100000);   \textcolor{comment}{//configuring ePWM1B with 100 kHz}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item e\+P\+W\+M1A and e\+P\+W\+M1B will both run at 100 k\+Hz because they belong to one P\+W\+M-\/module (which was configured with 100 k\+Hz)
+\item first configuration is overwritten
+\item both pins need to be configured to ensure their configuration as e\+P\+WM pins
+\end{DoxyItemize}
+
+If you want to use both e\+P\+WM pins of one module, e\+P\+W\+MxA and e\+P\+W\+MxB, configure both with the same frequency to prevent misconfiguration\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{epwm_8c_adb125e0a008d1daad741856b13114d4e}{init\_ePWM}}(GPIO0, 100000);   \textcolor{comment}{//configuring ePWM1A with 100 kHZ}}
+\DoxyCodeLine{\mbox{\hyperlink{epwm_8c_adb125e0a008d1daad741856b13114d4e}{init\_ePWM}}(GPIO1, 100000);   \textcolor{comment}{//configuring ePWM1B with 100 kHz}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{epwm_autotoc_md53}{}\doxyparagraph{Code example}\label{epwm_autotoc_md53}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                     \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}    \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{epwm_8h}{epwm/epwm.h}}"{}}                          \textcolor{comment}{//Include module of epwm}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                             \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                        \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{epwm_8c_adb125e0a008d1daad741856b13114d4e}{init\_ePWM}}(GPIO0, 100000);          \textcolor{comment}{//Init GPIO0 pin as ePWM1A pin with a frequency of 100 kHz. Returns result of operation}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{epwm_8c_ab9af78516cc257ab3baed7ef739d2b81}{ePWM\_start}}(GPIO0, 50);             \textcolor{comment}{//Start ePWM1A output signal on GPIO0 with a Dutycycle of 50\%. Returns result of operation}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{}
+\DoxyCodeLine{                                                \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{epwm_8c_afa1450021b779a0334db255627e0eed4}{ePWM\_stop}}(GPIO0);                  \textcolor{comment}{//Stop ePWM1A output signal on GPIO0. GPIO0 is set to low. Returns result of operation}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{epwm_autotoc_md55}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{epwm_autotoc_md55}
+\href{dir_df5f356de0723df4fb4c9c590c71ccd9.html}{\texttt{ epwm}}
+
+\DoxyHorRuler{0}
+\hypertarget{epwm_autotoc_md57}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{epwm_autotoc_md57}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=218}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{eqep}{}\doxysection{e\+Q\+EP}\label{eqep}
+The enhanced Quadrature Encoder Pulse (e\+Q\+EP) module can be used to read information about speed and direction from an encoder for rotary machines. Therefore, the encoder needs to provide two signals that are shifted 90° out of phase from each other\+: Q\+E\+PA and Q\+E\+PB. Furthermore the amount of lines for rotary detection of the encoder needs to be known. ~\newline
+ The T\+M\+S302\+F28335 offers two e\+Q\+E\+P-\/\+Interfaces\+: e\+Q\+E\+P1 and e\+Q\+E\+P2. Each Interface supports up to 4 Pins\+: Q\+E\+PA, Q\+E\+PB, Q\+E\+PI, Q\+E\+PS. The implementation of e\+Q\+EP in this library only uses Q\+E\+PA and Q\+E\+PB of one module.
+
+\mbox{\hyperlink{eqep_8c_a8cab7634296e13e9da8f5079d73739f6}{e\+Q\+E\+P\+\_\+get\+Direction()}} returns 0 for Counter-\/clockwise rotation (or reverse movement) and 1 for Clockwise rotation (or forward movement). ~\newline
+ \mbox{\hyperlink{eqep_8c_a7c15c1c3368f3871012eda8b554b5e54}{e\+Q\+E\+P\+\_\+get\+Rpm()}} returns the speed in revolution per minute.
+
+\DoxyHorRuler{0}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Q\+E\+PA  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Q\+E\+PB   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Q\+E\+PA  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Q\+E\+PB   }\\\cline{1-3}
+\endhead
+{\bfseries{e\+Q\+E\+P1}}  &G\+P\+I\+O20  &G\+P\+I\+O21   \\\cline{1-3}
+{\bfseries{e\+Q\+E\+P2}}  &G\+P\+I\+O24  &G\+P\+I\+O25   \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{eqep_autotoc_md60}{}\doxyparagraph{Code example}\label{eqep_autotoc_md60}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                     \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}    \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{eqep_8h}{eqep/eqep.h}}"{}}                          \textcolor{comment}{//Include module of eQEP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct__e_q_e_p_interface}{eQEPInterface}} eQEP\_1 = \{GPIO20, GPIO21, 300\};   \textcolor{comment}{//Instantiate eQEP Module1 with QEPA on GPIO20, QEPB on GPIO21 and 300 lines for rotary detection of the encoder}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                             \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} direction = 0;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} eqep\_rpm = 0;}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                        \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{eqep_8c_adb788bca2127af6733d7b514fd34fbea}{init\_eQEP}}(eQEP\_1);                 \textcolor{comment}{//Configures eQEP1 module. Returns result of operation}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{                                   \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{        direction = \mbox{\hyperlink{eqep_8c_a8cab7634296e13e9da8f5079d73739f6}{eQEP\_getDirection}}(eQEP\_1);  \textcolor{comment}{//Returns the direction of rotary machine/encoder plugged to eQEP1. Returns negative value for invalid input parameter}}
+\DoxyCodeLine{        eqep\_rpm = \mbox{\hyperlink{eqep_8c_a7c15c1c3368f3871012eda8b554b5e54}{eQEP\_getRpm}}(eQEP\_1);         \textcolor{comment}{//Returns the speed of rotary machine/encoder plugged to eQEP1 in revolution per minute. Returns negative value for invalid input parameter   }}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{eqep_autotoc_md62}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{eqep_autotoc_md62}
+\href{dir_3f97004f7146f2ff37b8e6d1b0cfcac4.html}{\texttt{ e\+Q\+EP}}
+
+\DoxyHorRuler{0}
+\hypertarget{eqep_autotoc_md64}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{eqep_autotoc_md64}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=389}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{i2c}{}\doxysection{I2C}\label{i2c}
+I2C is an Interface for serial communication between different devices. Therefore, one device acts as a master, other participants of the I2\+C-\/\+Bus act as slaves. Each slave has it\textquotesingle{}s own, unique slave address. The master can address the slaves via this address. ~\newline
+
+
+The Microcontroller offers one I2\+C-\/\+Interface, which is on G\+P\+I\+O32 and G\+P\+I\+O33. G\+P\+I\+O32 can be configured as I2\+C-\/\+S\+D\+A-\/\+Pin for Datatransmission, G\+P\+I\+O33 can be configured as I2\+C-\/\+S\+C\+L-\/\+Pin for sending or receiving the Clock-\/\+Signal for I2\+C-\/operations. The T\+M\+S320\+F28335 can operate in I2\+C-\/\+Master and in I2\+C-\/\+Slave mode. In master mode, the Microcontroller can send data actively, in slave mode, all operations for receiving and sending data are managed via interrupts.
+
+Slave-\/\+Address-\/\+Length is configured to 7 Bit. ~\newline
+ Valid values are from 0x01 to 0x3F. Address 0x00 is used for broadcast to send data to all slaves on I2\+C-\/\+Bus.
+
+For Rx-\/ and Tx-\/operations, I2\+C\+M\+S\+G\+\_\+transmit type can be used by assigning values for slave address, Register-\/\+Address-\/\+Length, Register-\/\+Address-\/\+High-\/ and -\/Low-\/\+Byte, Data-\/\+Length and Databytes to each object. ~\newline
+
+
+In Master Mode, T\+M\+S320\+F28335 provides I2\+C-\/operations with 100 Kbit per second with 100 k\+Hz on S\+CL. The maximal length of databytes per transmission is 16 byte.
+
+When T\+M\+S320\+F28335 is configured as I2\+C-\/\+Slave, Master always has to send 2 Registerbytes and 2 Databytes for successful Tx-\/communication. Make sure that the exact Register-\/address of I2\+C-\/\+Slave is used to prevent misconfiguration. For successful Rx-\/communication, Master has to send two Registerbytes to T\+M\+S320\+F28335 -\/I2\+C-\/\+Slave. Slave will write the value of requested register to I2\+C-\/\+Bus then.
+
+\DoxyHorRuler{0}
+\hypertarget{i2c_autotoc_md78}{}\doxyparagraph{Code examples}\label{i2c_autotoc_md78}
+Configuration as I2\+C-\/\+Master
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                             \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}            \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{i2c_8h}{i2c/i2c.h}}"{}}                                    \textcolor{comment}{//Include module of I2C}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___i2_c_interface}{I2CInterface}} I2C = \{GPIO32, GPIO33\};                    \textcolor{comment}{//Instantiate I2CInterface and assign GPIO32 and GPIO33 to I2C}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___i2_c_m_s_g__transmit}{I2CMSG\_transmit}} Example\_write1 =\{}
+\DoxyCodeLine{    0x21,                                               \textcolor{comment}{//Slave Address}}
+\DoxyCodeLine{    0x01,                                               \textcolor{comment}{//Register Length in Byte}}
+\DoxyCodeLine{    0x00,                                               \textcolor{comment}{//Register Address High}}
+\DoxyCodeLine{    0x05,                                               \textcolor{comment}{//Register Address Low}}
+\DoxyCodeLine{    0x03,                                               \textcolor{comment}{//Data Length in Byte}}
+\DoxyCodeLine{    0x61,                                               \textcolor{comment}{//Data Byte 0}}
+\DoxyCodeLine{    0x62,                                               \textcolor{comment}{//Data Byte 1}}
+\DoxyCodeLine{    0x63                                                \textcolor{comment}{//Data Byte 2}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___i2_c_m_s_g__transmit}{I2CMSG\_transmit}} Example\_write2 =\{}
+\DoxyCodeLine{    0x21,                                               \textcolor{comment}{//Slave Address}}
+\DoxyCodeLine{    0x00,                                               \textcolor{comment}{//Register Length in Byte}}
+\DoxyCodeLine{    0x00,                                               \textcolor{comment}{//Register Address High}}
+\DoxyCodeLine{    0x00,                                               \textcolor{comment}{//Register Address Low}}
+\DoxyCodeLine{    0x02,                                               \textcolor{comment}{//Data Length in Byte}}
+\DoxyCodeLine{    0x00                                                \textcolor{comment}{//Data}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___i2_c_m_s_g__transmit}{I2CMSG\_transmit}} Example\_read1 =\{}
+\DoxyCodeLine{    0x21,                                               \textcolor{comment}{//Slave Address}}
+\DoxyCodeLine{    0x02,                                               \textcolor{comment}{//Register Length in Byte}}
+\DoxyCodeLine{    0x68,                                               \textcolor{comment}{//Register Address High}}
+\DoxyCodeLine{    0x44,                                               \textcolor{comment}{//Register Address Low}}
+\DoxyCodeLine{    0x02,                                               \textcolor{comment}{//Data Length in Byte}}
+\DoxyCodeLine{    0x00                                                \textcolor{comment}{//Data}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                     \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{i2c_8c_adf0f557afff0b864dc49715ed78bacfc}{init\_I2CMasterMode}}(I2C);                   \textcolor{comment}{//Configures GPIO32 and GPIO33 as I2C SDA and I2C SCL. Returns result of operation      }}
+\DoxyCodeLine{    result = \mbox{\hyperlink{i2c_8c_a604de27c2962d36dfca6986137cae9f7}{I2C\_writeDataAsMaster}}(\&Example\_write1);    \textcolor{comment}{//Addresses Slave 0x21 and sends 1 Registerbyte and 3 Databytes to Bus. Returns result of operation     }}
+\DoxyCodeLine{    Example\_write2.\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_aa0a5e0b45c479e85016ab31e85cbd612}{Data}}[0] = 0x61;                      \textcolor{comment}{//Setting up data for Example\_write2}}
+\DoxyCodeLine{    Example\_write2.\mbox{\hyperlink{struct___i2_c_m_s_g__transmit_aa0a5e0b45c479e85016ab31e85cbd612}{Data}}[1] = 0x62;                      \textcolor{comment}{//Setting up data for Example\_write2}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{i2c_8c_a604de27c2962d36dfca6986137cae9f7}{I2C\_writeDataAsMaster}}(\&Example\_write2);    \textcolor{comment}{//Addresses Slave 0x21 and sends 2 Databytes to Bus. Returns result of operation        }}
+\DoxyCodeLine{    result = \mbox{\hyperlink{i2c_8c_a6e9a88c876470f293e8074a4bc65b4f9}{I2C\_readDataAsMaster}}(\&Example\_read1);      \textcolor{comment}{//Addresses Slave 0x21 and asks for data in Register 0x6844. Expects to receive 2 Databytes from Slave. Received Data is stored in Example\_read1.Data[]. Returns result of operation            }}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Configuration as I2\+C-\/\+Slave
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                             \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}            \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___i2_c_interface}{I2CInterface}} I2C = \{GPIO32, GPIO33\};                    \textcolor{comment}{//Define Interface and assign GPIOs}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                     \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{i2c_8c_a71549f9746e395f68305e4b5bfd21aad}{init\_I2CSlaveMode}}(I2C, 0x3);               \textcolor{comment}{//Configures GPIO32 and GPIO33 as I2C SDA and I2C SCL. Sets slave adress of Device to 0x3. Returns result of operation              }}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{}
+\DoxyCodeLine{                                                        \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{i2c_autotoc_md80}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{i2c_autotoc_md80}
+\href{dir_4c25b4c2861b8c1e9e0cda0ff69bb2a5.html}{\texttt{ I2C}}
+
+\DoxyHorRuler{0}
+\hypertarget{i2c_autotoc_md82}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{i2c_autotoc_md82}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=616}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{sci}{}\doxysection{S\+CI}\label{sci}
+The Serial Communications Interface (S\+CI), also known as Universal Asynchronous Receiver Transmitter (U\+A\+RT) can be used for serial communication. Messages of 8 Bit can be transferred via up to three S\+C\+I-\/\+Modules\+: S\+C\+I\+\_\+A, S\+C\+I\+\_\+B, S\+C\+I\+\_\+C. Each module can only be used once.
+
+For the configuration of one of the S\+C\+I-\/modules, user needs to create an instance of S\+C\+I\+Interface and assign the G\+P\+I\+Os of desired S\+C\+I-\/\+Module to it (see table below). ~\newline
+
+
+With Tx and Rx Pin, the S\+C\+I-\/\+Module can use full-\/duplex communication with specific baud rate, that also needs to be assigned to S\+C\+I\+Interface instance. Standard baud rates for S\+CI are 110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 128000 and 256000 bits per second.
+
+\DoxyHorRuler{0}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rx  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tx   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rx  }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tx   }\\\cline{1-3}
+\endhead
+{\bfseries{S\+C\+I\+\_\+A}}  &G\+P\+I\+O28  &G\+P\+I\+O29   \\\cline{1-3}
+{\bfseries{S\+C\+I\+\_\+B}}  &G\+P\+I\+O11 / G\+P\+IO 15 / G\+P\+I\+O19 / G\+P\+I\+O23  &G\+P\+I\+O9 / G\+P\+I\+O14 / G\+P\+I\+O18 / G\+P\+I\+O22   \\\cline{1-3}
+{\bfseries{S\+C\+I\+\_\+C}}  &G\+P\+I\+O62  &G\+P\+I\+O63   \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{sci_autotoc_md85}{}\doxyparagraph{Code example}\label{sci_autotoc_md85}
+Use S\+C\+I-\/module without interrupts
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                     \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}    \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sci_8h}{sci/sci.h}}"{}}                            \textcolor{comment}{//Include module of SCI}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___s_c_i_interface}{SCIInterface}} SCI\_B = \{GPIO11, GPIO9, 115200\};   \textcolor{comment}{//Instantiate SCIInterface and assign GPIO11 (scirx) and GPIO9 (scitx) to SCI\_B with baudrate 115200}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} sci\_sdata = 0x66;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} sci\_rdata = 0;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                             \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                        \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{sci_8c_ac22046a0c629dfa01f4bdf58a1600ff9}{init\_SCI}}(SCI\_B);                   \textcolor{comment}{//Configures SCI\_B. Returns result of operation }}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{                                   \textcolor{comment}{//Endless Loop}}
+\DoxyCodeLine{        result = \mbox{\hyperlink{sci_8c_ad438b419ff674e07b07eb49fac264260}{SCI\_send}}(SCI\_B, sci\_sdata);    \textcolor{comment}{//Sends 8 Bit via SCI\_B Interface in ox pin. Returns result of operation }}
+\DoxyCodeLine{        result = \mbox{\hyperlink{sci_8c_a1d46b26d18997657bb07c1520b0f1acd}{SCI\_read}}(SCI\_B, \&sci\_rdata);   \textcolor{comment}{//Reads 8-\/Bit-\/Data via SCI\_B Interface on rx pin. Returns result of operation }}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Use S\+C\+I-\/module with interrupts
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                             \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}            \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sci_8h}{sci/sci.h}}"{}}                                    \textcolor{comment}{//Include module of SCI}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___s_c_i_interface}{SCIInterface}} SCI\_B = \{GPIO11, GPIO9, 115200\};           \textcolor{comment}{//Instantiate SCIInterface and assign GPIO11 (scirx) and GPIO9 (scitx) to SCI\_B with baudrate 115200}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} sciTxFIFOISR(\textcolor{keywordtype}{void});                    \textcolor{comment}{//Declare Tx Interrupt function}}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} sciRxFIFOISR(\textcolor{keywordtype}{void});                    \textcolor{comment}{//Declare Rx Interrupt function}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{char} sci\_sdata;}
+\DoxyCodeLine{\textcolor{keywordtype}{char} sci\_rdata;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    sci\_rdata = 0;}
+\DoxyCodeLine{    sci\_sdata = 0x66;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                     \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{sci_8c_ac22046a0c629dfa01f4bdf58a1600ff9}{init\_SCI}}(SCI\_B);                           \textcolor{comment}{//Configures SCI\_B. Returns result of operation }}
+\DoxyCodeLine{    result = \mbox{\hyperlink{sci_8c_a56c4c063a7dbee2572d237c4e175f591}{SCI\_setInterruptRx}}(SCI\_B, \&sciRxFIFOISR);  \textcolor{comment}{//Assign Rx-\/ISR to SCI-\/module B. Rx-\/ISR will be called when there is one or more byte in Rx-\/FIFO. Returns result of operation}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{sci_8c_aa8471a92641d13f33d5fc8f3815a9824}{SCI\_setInterruptTx}}(SCI\_B, \&sciTxFIFOISR);  \textcolor{comment}{//Assign Tx-\/ISR to SCI-\/module B. Tx-\/ISR will be called when Tx-\/FIFO is empty. Returns result of operation}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{}
+\DoxyCodeLine{                                                        \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} sciTxFIFOISR(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;}
+\DoxyCodeLine{    result = \mbox{\hyperlink{sci_8c_ad438b419ff674e07b07eb49fac264260}{SCI\_send}}(SCI\_B, sci\_sdata);                \textcolor{comment}{//Send data}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{sci_8c_aa1a4dd2b303a79d1531656b1a4cf9721}{SCI\_clearTxInterruptFlag}}(SCI\_B);           \textcolor{comment}{//Clear Interrupt Flag}}
+\DoxyCodeLine{    \mbox{\hyperlink{sci_8c_ae61196d024b8d20aa542dad13f79e1ed}{SCI\_interruptAck}}();                                 \textcolor{comment}{//Acknowledgement for future interrupts}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} sciRxFIFOISR(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;}
+\DoxyCodeLine{    result = \mbox{\hyperlink{sci_8c_a1d46b26d18997657bb07c1520b0f1acd}{SCI\_read}}(SCI\_B, \&sci\_rdata);               \textcolor{comment}{//Receive data}}
+\DoxyCodeLine{    \mbox{\hyperlink{sci_8c_a123ab8648beaced46742b11ad28e4f28}{SCI\_clearRxInterruptFlag}}(SCI\_B);                    \textcolor{comment}{//Clear Interrupt Flag}}
+\DoxyCodeLine{    \mbox{\hyperlink{sci_8c_ae61196d024b8d20aa542dad13f79e1ed}{SCI\_interruptAck}}();                                 \textcolor{comment}{//Acknowledgement for future interrupts}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{sci_autotoc_md87}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{sci_autotoc_md87}
+\href{dir_abd9d75bd53711dcc65e38733baa2f85.html}{\texttt{ S\+CI}}
+
+\DoxyHorRuler{0}
+\hypertarget{sci_autotoc_md89}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{sci_autotoc_md89}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=581}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{spi}{}\doxysection{S\+PI}\label{spi}
+The T\+M\+S320\+F28335 provides one Serial Peripheral Interface (S\+PI) module. The device can operate in S\+P\+I-\/\+Master or in S\+P\+I-\/\+Slave mode. For the configuration of the S\+P\+I-\/module, user needs to create an instance of S\+P\+I\+Interface and assign the G\+P\+I\+Os of S\+P\+I-\/module to it (see table below).
+
+User can also configure the length in bit to be sent and received by one message via S\+PI. The max. length is 16 bit.
+
+To address different slaves, user has to configure different G\+P\+I\+Os as outputs and connect these pins to slave-\/select pins of slave. When starting communication with a slave, the respective G\+P\+IO output signal for this slave needs to be set to low. After communication, the respective G\+P\+IO output signal for this slave needs to be set to high again. The Slave-\/\+Select pin of S\+P\+I-\/\+Master is not connected in this case.
+
+When communicating to a slave, master sends data via S\+I\+MO to the slave and equal amount of databits is sent back from slave to master via S\+O\+MI.
+
+For data communication, there are 3 possibilities\+:
+
+1) Master sends valid data to slave and gets back valid data from slave (valid communication in both ways) ~\newline
+ 2) Master sends dummy data to slave and gets back valid data from slave (valid communication from slave to master) ~\newline
+ 3) Master sends valid data to slave and gets back dummy data from slave (valid communication from master to slave)
+
+-\/-\/$>$ Master only gets back data from slave (valid or not), when Master sends data to slave (valid or not)
+
+\DoxyHorRuler{0}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pin   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pin   }\\\cline{1-2}
+\endhead
+{\bfseries{Slave In Master Out (S\+I\+MO)}}  &G\+P\+I\+O16   \\\cline{1-2}
+{\bfseries{Slave Out Master In (S\+O\+MI)}}  &G\+P\+I\+O17   \\\cline{1-2}
+{\bfseries{Clock}}  &G\+P\+I\+O18   \\\cline{1-2}
+{\bfseries{Slave-\/\+Select}}  &G\+P\+I\+O19   \\\cline{1-2}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{spi_autotoc_md92}{}\doxyparagraph{Code example}\label{spi_autotoc_md92}
+Configuration as S\+P\+I-\/\+Master without interrupt
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                                 \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}                \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{spi_8h}{spi/spi.h}}"{}}                                        \textcolor{comment}{//Include module of SPI}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___s_p_i_interface}{SPIInterface}} SPI\_A = \{GPIO16, GPIO17, GPIO18, GPIO19, 16\};  \textcolor{comment}{//Instantiate SPIInterface and assign GPIO16, GPIO17, GPIO18 and GPIO19 to SPI\_A with a wordlength of 16 Bit}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} spi\_sdata = 0xF6F6;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} spi\_rdata = 0;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                         \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                    \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{spi_8c_a822ea761e61142122be27516846a3730}{init\_SPIMasterMode}}(SPI\_A, 1500000);            \textcolor{comment}{//Init SPI\_A with a baudrate of 1,5 MHz. Return result of operation}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{                                               \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{        \mbox{\hyperlink{spi_8c_a4138fa89f174ce3fa1b5117a9a031ce0}{SPI\_send}}(spi\_sdata);                                \textcolor{comment}{//SPI send data to TX-\/FIFO}}
+\DoxyCodeLine{        \mbox{\hyperlink{spi_8c_a890e6e4bc94330d30a9f449ca9192fbe}{SPI\_read}}(\&spi\_rdata);                               \textcolor{comment}{//SPI read data from RX-\/FIFO}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Configuration as S\+P\+I-\/\+Master with interrupt
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                                 \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}                \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{spi_8h}{spi/spi.h}}"{}}                                        \textcolor{comment}{//Include module of SPI}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___s_p_i_interface}{SPIInterface}} SPI\_A = \{GPIO16, GPIO17, GPIO18, GPIO19, 16\};  \textcolor{comment}{//Instantiate SPIInterface and assign GPIO16, GPIO17, GPIO18 and GPIO19 to SPI\_A with a wordlength of 16 Bit}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} spiTxFIFOISR(\textcolor{keywordtype}{void});                        \textcolor{comment}{//Declare ISR for Tx}}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} spiRxFIFOISR(\textcolor{keywordtype}{void});                        \textcolor{comment}{//Declare ISR for Rx}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} spi\_sdata;                                           \textcolor{comment}{//Send data }}
+\DoxyCodeLine{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} spi\_rdata;                                           \textcolor{comment}{//Receive data }}
+\DoxyCodeLine{    }
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                         \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    spi\_rdata = 0;}
+\DoxyCodeLine{    spi\_sdata = 0x1234;                                     \textcolor{comment}{//Setup data for slave}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                    \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{spi_8c_a822ea761e61142122be27516846a3730}{init\_SPIMasterMode}}(SPI\_A, 1500000);            \textcolor{comment}{//Init SPI\_A with a baudrate of 1,5 MHz. Return result of operation}}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_adde31e5a5cc62ce8b9fb2eba2616add6}{SPI\_setTxInterrupt}}(\&spiTxFIFOISR);                      \textcolor{comment}{//Assign Tx-\/ISR to SPI-\/module. Tx-\/ISR will be called when Tx-\/FIFO is empty. No return value}}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a0844a80a1a2494fcf9894c4610c664ff}{SPI\_setRxInterrupt}}(\&spiRxFIFOISR);                      \textcolor{comment}{//Assign Rx-\/ISR to SPI-\/module. Rx-\/ISR will be called when there are one or more words (word = 16 Bit) in Rx-\/FIFO. No return value}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{}
+\DoxyCodeLine{                                                            \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} spiTxFIFOISR(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a4138fa89f174ce3fa1b5117a9a031ce0}{SPI\_send}}(spi\_sdata);                                    \textcolor{comment}{//SPI send data to TX-\/FIFO -\/ data will be sent to slave}}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a3d8df677d633bdda2d8e4b791f3dc085}{SPI\_clearTxInterruptFlag}}();}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a10f8a229cc350a50cd7e77a556efd10c}{SPI\_interruptAck}}();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} spiRxFIFOISR(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a890e6e4bc94330d30a9f449ca9192fbe}{SPI\_read}}(\&spi\_rdata);                                   \textcolor{comment}{//SPI read data from RX-\/FIFO}}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_ad614188624f95f80292aafcd97229c79}{SPI\_clearRxInterruptFlag}}();}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a10f8a229cc350a50cd7e77a556efd10c}{SPI\_interruptAck}}();}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Configuration as S\+P\+I-\/\+Slave without interrupt
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                                 \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}                \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{spi_8h}{spi/spi.h}}"{}}                                        \textcolor{comment}{//Include module of SPI}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___s_p_i_interface}{SPIInterface}} SPI\_A = \{GPIO16, GPIO17, GPIO18, GPIO19, 16\};  \textcolor{comment}{//Instantiate SPIInterface and assign GPIO16, GPIO17, GPIO18 and GPIO19 to SPI\_A with a wordlength of 16 Bit}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} spi\_sdata = 0xF6F6;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} spi\_rdata = 0;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                         \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                    \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{spi_8c_ae6bd0e32460f99dfc631141865162e89}{init\_SPISlaveMode}}(SPI\_A);                      \textcolor{comment}{//Init SPI\_A. Return result of operation}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{                                               \textcolor{comment}{//Endless Loop}}
+\DoxyCodeLine{        \mbox{\hyperlink{spi_8c_a4138fa89f174ce3fa1b5117a9a031ce0}{SPI\_send}}(spi\_sdata);                                \textcolor{comment}{//SPI send data to TX-\/FIFO. Data will only be shifted out when master sends data to slave}}
+\DoxyCodeLine{        \mbox{\hyperlink{spi_8c_a890e6e4bc94330d30a9f449ca9192fbe}{SPI\_read}}(\&spi\_rdata);                               \textcolor{comment}{//SPI read data from RX-\/FIFO}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Configuration as S\+P\+I-\/\+Slave with interrupt
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                                 \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}                \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{spi_8h}{spi/spi.h}}"{}}                                        \textcolor{comment}{//Include module of SPI}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{struct___s_p_i_interface}{SPIInterface}} SPI\_A = \{GPIO16, GPIO17, GPIO18, GPIO19, 16\};  \textcolor{comment}{//Instantiate SPIInterface and assign GPIO16, GPIO17, GPIO18 and GPIO19 to SPI\_A with a wordlength of 16 Bit}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} spiTxFIFOISR(\textcolor{keywordtype}{void});                        \textcolor{comment}{//Declare ISR for Tx}}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} spiRxFIFOISR(\textcolor{keywordtype}{void});                        \textcolor{comment}{//Declare ISR for Rx}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} spi\_sdata;                                           \textcolor{comment}{//Send data }}
+\DoxyCodeLine{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} spi\_rdata;                                           \textcolor{comment}{//Receive data }}
+\DoxyCodeLine{    }
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} result = 0;                                         \textcolor{comment}{//Optional: can be used to check return values of functions}}
+\DoxyCodeLine{    spi\_rdata = 0;}
+\DoxyCodeLine{    spi\_sdata = 0x1234;                                     \textcolor{comment}{//Setup data for slave}}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                                    \textcolor{comment}{//Call setSystemControls() function}}
+\DoxyCodeLine{    result = \mbox{\hyperlink{spi_8c_ae6bd0e32460f99dfc631141865162e89}{init\_SPISlaveMode}}(SPI\_A, 1500000);             \textcolor{comment}{//Init SPI\_A with a baudrate of 1,5 MHz. Return result of operation}}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_adde31e5a5cc62ce8b9fb2eba2616add6}{SPI\_setTxInterrupt}}(\&spiTxFIFOISR);                      \textcolor{comment}{//Assign Tx-\/ISR to SPI-\/module. Tx-\/ISR will be called when Tx-\/FIFO is empty. No return value}}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a0844a80a1a2494fcf9894c4610c664ff}{SPI\_setRxInterrupt}}(\&spiRxFIFOISR);                      \textcolor{comment}{//Assign Rx-\/ISR to SPI-\/module. Rx-\/ISR will be called when there are one or more words (word = 16 Bit) in Rx-\/FIFO. No return value}}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(1)\{}
+\DoxyCodeLine{                                                            \textcolor{comment}{//Endless loop}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} spiTxFIFOISR(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a4138fa89f174ce3fa1b5117a9a031ce0}{SPI\_send}}(spi\_sdata);                                    \textcolor{comment}{//SPI send data to TX-\/FIFO -\/ data will only be shifted out when master sends data}}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a3d8df677d633bdda2d8e4b791f3dc085}{SPI\_clearTxInterruptFlag}}();}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a10f8a229cc350a50cd7e77a556efd10c}{SPI\_interruptAck}}();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\_\_interrupt \textcolor{keywordtype}{void} spiRxFIFOISR(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a890e6e4bc94330d30a9f449ca9192fbe}{SPI\_read}}(\&spi\_rdata);                                   \textcolor{comment}{//SPI read data from RX-\/FIFO}}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_ad614188624f95f80292aafcd97229c79}{SPI\_clearRxInterruptFlag}}();}
+\DoxyCodeLine{    \mbox{\hyperlink{spi_8c_a10f8a229cc350a50cd7e77a556efd10c}{SPI\_interruptAck}}();}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{spi_autotoc_md94}{}\doxyparagraph{Documented C-\/\+Code of module\+:}\label{spi_autotoc_md94}
+\href{dir_74e3a7ad2c0344d5e2e438cbd6b4ae4f.html}{\texttt{ S\+PI}}
+
+\DoxyHorRuler{0}
+\hypertarget{spi_autotoc_md96}{}\doxyparagraph{Detailed description in Technical Reference Manual\+:}\label{spi_autotoc_md96}
+\href{../doc_documents/Technical_Reference_Manual.pdf\#page=548}{\texttt{ Technical\+\_\+\+Reference\+\_\+\+Manual}} \hypertarget{delay}{}\doxysection{Delay}\label{delay}
+This page describes how to use the D\+E\+L\+A\+Y\+\_\+\+U\+S()-\/function
+
+\DoxyHorRuler{0}
+
+
+1) Click your Project with the right Mouse Button -\/-\/$>$ New -\/-\/$>$ File
+
+2) Name your file \char`\"{}\+D\+S\+P2833x\+\_\+us\+Delay.\+asm\char`\"{} -\/ Ensure that it is an assembly file with ending .asm
+
+
+
+
+
+Click Finish
+
+
+
+3) Open file D\+S\+P2833x\+\_\+us\+Delay.\+asm and replace code by \href{../doc_documents/DSP2833x_usDelay.asm}{\texttt{ this code}} ~\newline
+
+
+4) With included \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}} file, user is now able to use the D\+E\+L\+A\+Y\+\_\+\+U\+S() function which provides a delay for desired amount of microseconds
+
+\DoxyHorRuler{0}
+\hypertarget{delay_autotoc_md39}{}\doxyparagraph{Code example}\label{delay_autotoc_md39}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{global__defines_8h}{global\_defines.h}}"{}}                     \textcolor{comment}{//Include global\_defines.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{system__controls_8h}{system\_controls/system\_controls.h}}"{}}    \textcolor{comment}{//Include module of system controls}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} main(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{    \mbox{\hyperlink{system__controls_8c_af00c2329b3f7c533409b5d9983b5103c}{setSystemControls}}();                        \textcolor{comment}{//Call setSystemControls() function     }}
+\DoxyCodeLine{    DELAY\_US(150);                              \textcolor{comment}{//Delay of 150 microseconds}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

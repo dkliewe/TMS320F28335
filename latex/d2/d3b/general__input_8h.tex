@@ -1,0 +1,427 @@
+\hypertarget{general__input_8h}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/general\+\_\+input/general\+\_\+input.h File Reference}
+\label{general__input_8h}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/general\_input/general\_input.h@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/general\_input/general\_input.h}}
+
+
+Header file for General Input module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{general__input_8h_ae6da6da60a56197d6087b039baba0b00}{init\+\_\+general\+Input\+Pin}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em Configuration of G\+P\+IO as general input pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{general__input_8h_a6562bc7df5f03dfe7f5de83eca4b3d1c}{general\+Input\+Pin\+\_\+get\+Value}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em Configuration of G\+P\+IO as general input pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{general__input_8h_ae105c0eec13e7b98579c9a4a07e510e0}{general\+Input\+Pin\+\_\+configure\+External\+Interrupt}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}, void $\ast$, \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em external interrupt on general input pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{general__input_8h_a15ab763c07ce5fcbed2c3069a13d2b16}{general\+Input\+Pin\+\_\+interrupt\+Ack}} ()
+\begin{DoxyCompactList}\small\item\em Giving interrupts acknowledge to interrupt again. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for General Input module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{general__input_8h_ae105c0eec13e7b98579c9a4a07e510e0}\label{general__input_8h_ae105c0eec13e7b98579c9a4a07e510e0}} 
+\index{general\_input.h@{general\_input.h}!generalInputPin\_configureExternalInterrupt@{generalInputPin\_configureExternalInterrupt}}
+\index{generalInputPin\_configureExternalInterrupt@{generalInputPin\_configureExternalInterrupt}!general\_input.h@{general\_input.h}}
+\doxysubsubsection{\texorpdfstring{generalInputPin\_configureExternalInterrupt()}{generalInputPin\_configureExternalInterrupt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} general\+Input\+Pin\+\_\+configure\+External\+Interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{pin,  }\item[{void $\ast$}]{isr,  }\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{edge }\end{DoxyParamCaption})}
+
+
+
+external interrupt on general input pin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 0-\/63 (see \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}})~\newline
+ 2) Interrupt Service routine~\newline
+ 3) interrupt generation type (0=falling edge, 1=rising edge, 2=falling and rising edge) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin ~\newline
+-\/-\/$>$ -\/2 = invalid value of interrupt generation ~\newline
+-\/-\/$>$ -\/3 = all interrupts for G\+P\+IO range in use 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file general\+\_\+input.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91                                                                                      \{}
+\DoxyCodeLine{92     \textcolor{comment}{//make sure pin is configured as input pin first}}
+\DoxyCodeLine{93     \textcolor{keyword}{static} \textcolor{keywordtype}{int} Xint1\_in\_use=0;}
+\DoxyCodeLine{94     \textcolor{keyword}{static} \textcolor{keywordtype}{int} Xint2\_in\_use=0;}
+\DoxyCodeLine{95     \textcolor{keyword}{static} \textcolor{keywordtype}{int} Xint3\_in\_use=0;}
+\DoxyCodeLine{96     \textcolor{keyword}{static} \textcolor{keywordtype}{int} Xint4\_in\_use=0;}
+\DoxyCodeLine{97     \textcolor{keyword}{static} \textcolor{keywordtype}{int} Xint5\_in\_use=0;}
+\DoxyCodeLine{98     \textcolor{keyword}{static} \textcolor{keywordtype}{int} Xint6\_in\_use=0;}
+\DoxyCodeLine{99     \textcolor{keyword}{static} \textcolor{keywordtype}{int} Xint7\_in\_use=0;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     DINT;                                                                                   \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{102     \textcolor{keywordflow}{switch} (pin)\{}
+\DoxyCodeLine{103     \textcolor{keywordflow}{case} 0 ... 31:  EALLOW;                                                                 \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{104                     \textcolor{keywordflow}{switch} (pin)\{}
+\DoxyCodeLine{105                         \textcolor{keywordflow}{case} 0 ... 7:   TMC\_BASE\_PIO-\/>CTL[0].QSEL1 \&= \string~(0x3 << (pin*2));    \textcolor{comment}{// Synch to SYSCLKOUT only}}
+\DoxyCodeLine{106                                         TMC\_BASE\_PIO-\/>CTL[0].CTRL \&= \string~(0x3);                \textcolor{comment}{// sampling period = Tsysclkout for GPIO}}
+\DoxyCodeLine{107                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{108                         \textcolor{keywordflow}{case} 8 ... 15:  TMC\_BASE\_PIO-\/>CTL[0].QSEL1 \&= \string~(0x3 << (pin*2));    \textcolor{comment}{// Synch to SYSCLKOUT only}}
+\DoxyCodeLine{109                                         TMC\_BASE\_PIO-\/>CTL[0].CTRL \&= \string~(0x3 << 8);           \textcolor{comment}{// sampling period = Tsysclkout for GPIO}}
+\DoxyCodeLine{110                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{111                         \textcolor{keywordflow}{case} 16 ... 23: TMC\_BASE\_PIO-\/>CTL[0].QSEL2 \&= \string~(0x3 << (pin*2));    \textcolor{comment}{// Synch to SYSCLKOUT only}}
+\DoxyCodeLine{112                                         TMC\_BASE\_PIO-\/>CTL[0].CTRL \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 16);    \textcolor{comment}{// sampling period = Tsysclkout for GPIO}}
+\DoxyCodeLine{113                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{114                         \textcolor{keywordflow}{case} 24 ... 31: TMC\_BASE\_PIO-\/>CTL[0].QSEL2 \&= \string~(0x3 << (pin*2));    \textcolor{comment}{// Synch to SYSCLKOUT only}}
+\DoxyCodeLine{115                                         TMC\_BASE\_PIO-\/>CTL[0].CTRL \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 24);    \textcolor{comment}{// sampling period = Tsysclkout for GPIO}}
+\DoxyCodeLine{116                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{117                         \textcolor{keywordflow}{default}:        EDIS;}
+\DoxyCodeLine{118                                         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{119                     \}}
+\DoxyCodeLine{120                     \textcolor{keywordflow}{if}(!Xint1\_in\_use)\{}
+\DoxyCodeLine{121                         TMC\_BASE\_INT\_REGS-\/>XINT1 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;                   \textcolor{comment}{// Register ISR in interrupt vector table}}
+\DoxyCodeLine{122                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                             \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{123                         TMC\_BASE\_PIE-\/>GROUP[0].IER |= 0x8;                      \textcolor{comment}{// Enable Xint1 in the PIE: Group 1 interrupt 4}}
+\DoxyCodeLine{124                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= (0x1);                                            \textcolor{comment}{// Enable CPU Group int1}}
+\DoxyCodeLine{125                         EINT;                                                   \textcolor{comment}{// Enable Global Interrupts}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127                         TMC\_BASE\_PIO-\/>XINT1SEL = pin;                           \textcolor{comment}{// Tag XINT1 interrupt with GPIO  // Xint1 is GPIO 1}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129                         \textcolor{keywordflow}{switch}(edge)\{}
+\DoxyCodeLine{130                             \textcolor{keywordflow}{case} 0: TMC\_BASE\_XINT-\/>XINT1CR \&= \string~(0x3 << 2);      \textcolor{comment}{// Interrupt generated on falling edge}}
+\DoxyCodeLine{131                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{132                             \textcolor{keywordflow}{case} 1: TMC\_BASE\_XINT-\/>XINT1CR |= (0x1 << 2);       \textcolor{comment}{// Interrupt generated on rising edge}}
+\DoxyCodeLine{133                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{134                             \textcolor{keywordflow}{case} 2: TMC\_BASE\_XINT-\/>XINT1CR |= (0x3 << 2);       \textcolor{comment}{// Interrupt generated on rising and falling edge}}
+\DoxyCodeLine{135                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{136                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{137                                         \textcolor{keywordflow}{return} -\/2;                              \textcolor{comment}{// Invalid value of interrupt generation}}
+\DoxyCodeLine{138                         \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140                         TMC\_BASE\_XINT-\/>XINT1CR |= 0x1;                          \textcolor{comment}{// Enable Interrupt}}
+\DoxyCodeLine{141                         EDIS;                                                   \textcolor{comment}{// Protect Register}}
+\DoxyCodeLine{142                         Xint1\_in\_use = 1;                                       \textcolor{comment}{// Tag interrupt in use}}
+\DoxyCodeLine{143                     \}}
+\DoxyCodeLine{144                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Xint1\_in\_use \&\& (!Xint2\_in\_use))\{}
+\DoxyCodeLine{145                         TMC\_BASE\_INT\_REGS-\/>XINT2 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;                   \textcolor{comment}{// Register ISR in interrupt vector table}}
+\DoxyCodeLine{146                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                             \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{147                         TMC\_BASE\_PIE-\/>GROUP[0].IER |= 0x10;                     \textcolor{comment}{// Enable Xint2 in the PIE: Group 1 interrupt 5}}
+\DoxyCodeLine{148                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= (0x1 << 0);                                       \textcolor{comment}{// Enable CPU group int1}}
+\DoxyCodeLine{149                         EINT;                                                   \textcolor{comment}{// Enable Global Interrupts}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151                         TMC\_BASE\_PIO-\/>XINT2SEL = pin;                           \textcolor{comment}{// Tag XINT2 interrupt with GPIO}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153                         \textcolor{keywordflow}{switch}(edge)\{}
+\DoxyCodeLine{154                             \textcolor{keywordflow}{case} 0: TMC\_BASE\_XINT-\/>XINT2CR \&= \string~(0x3 << 2);      \textcolor{comment}{// Interrupt generated on falling edge}}
+\DoxyCodeLine{155                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{156                             \textcolor{keywordflow}{case} 1: TMC\_BASE\_XINT-\/>XINT2CR |= (0x1 << 2);       \textcolor{comment}{// Interrupt generated on rising edge}}
+\DoxyCodeLine{157                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{158                             \textcolor{keywordflow}{case} 2: TMC\_BASE\_XINT-\/>XINT2CR |= (0x3 << 2);       \textcolor{comment}{// Interrupt generated on rising and falling edge}}
+\DoxyCodeLine{159                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{160                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{161                                         \textcolor{keywordflow}{return} -\/2;                              \textcolor{comment}{// Invalid value of interrupt generation}}
+\DoxyCodeLine{162                         \}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164                         TMC\_BASE\_XINT-\/>XINT2CR |= 0x1;                          \textcolor{comment}{// Enable Interrupt}}
+\DoxyCodeLine{165                         EDIS;}
+\DoxyCodeLine{166                         Xint2\_in\_use = 1;                                       \textcolor{comment}{// Tag interrupt in use}}
+\DoxyCodeLine{167                     \}}
+\DoxyCodeLine{168                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{169                         EDIS;}
+\DoxyCodeLine{170                         \textcolor{keywordflow}{return} -\/3;                                              \textcolor{comment}{// All interrupts of GPIO Range (0-\/31) in use}}
+\DoxyCodeLine{171                     \}}
+\DoxyCodeLine{172                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{173     \textcolor{keywordflow}{case} 32 ... 63: pin -\/= 32;}
+\DoxyCodeLine{174                     EALLOW;                                                     \textcolor{comment}{// Allow register-\/access}}
+\DoxyCodeLine{175                     \textcolor{keywordflow}{switch} (pin)\{}
+\DoxyCodeLine{176                             \textcolor{keywordflow}{case} 0 ... 7:   TMC\_BASE\_PIO-\/>CTL[1].QSEL1 \&= \string~(0x3 << (pin*2));    \textcolor{comment}{// Synch to SYSCLKOUT only}}
+\DoxyCodeLine{177                                             TMC\_BASE\_PIO-\/>CTL[1].CTRL \&= \string~(0x3);                \textcolor{comment}{// Sampling period = Tsysclkout for GPIO}}
+\DoxyCodeLine{178                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{179                             \textcolor{keywordflow}{case} 8 ... 15:  TMC\_BASE\_PIO-\/>CTL[1].QSEL1 \&= \string~(0x3 << (pin*2));    \textcolor{comment}{// Synch to SYSCLKOUT only}}
+\DoxyCodeLine{180                                             TMC\_BASE\_PIO-\/>CTL[1].CTRL \&= \string~(0x3 << 8);           \textcolor{comment}{//Sampling period = Tsysclkout for GPIO}}
+\DoxyCodeLine{181                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{182                             \textcolor{keywordflow}{case} 16 ... 23: TMC\_BASE\_PIO-\/>CTL[1].QSEL2 \&= \string~(0x3 << (pin*2));    \textcolor{comment}{// Synch to SYSCLKOUT only}}
+\DoxyCodeLine{183                                             TMC\_BASE\_PIO-\/>CTL[1].CTRL \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 16);    \textcolor{comment}{// Sampling period = Tsysclkout for GPIO}}
+\DoxyCodeLine{184                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{185                             \textcolor{keywordflow}{case} 24 ... 31: TMC\_BASE\_PIO-\/>CTL[1].QSEL2 \&= \string~(0x3 << (pin*2));    \textcolor{comment}{// Synch to SYSCLKOUT only}}
+\DoxyCodeLine{186                                             TMC\_BASE\_PIO-\/>CTL[1].CTRL \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 24);    \textcolor{comment}{// Sampling period = Tsysclkout for GPIO}}
+\DoxyCodeLine{187                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{188                             \textcolor{keywordflow}{default}:        EDIS;}
+\DoxyCodeLine{189                                             \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{190                         \}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193                     \textcolor{keywordflow}{if}(!Xint3\_in\_use)\{}
+\DoxyCodeLine{194                         TMC\_BASE\_INT\_REGS-\/>XINT3 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;                   \textcolor{comment}{// Register ISR in interrupt vector table}}
+\DoxyCodeLine{195                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                             \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{196                         TMC\_BASE\_PIE-\/>GROUP[11].IER |= 0x1;                     \textcolor{comment}{// Enable Xint3 in the PIE: Group 12 interrupt 1}}
+\DoxyCodeLine{197                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0800;                                           \textcolor{comment}{// Enable CPU group int 12}}
+\DoxyCodeLine{198                         EINT;                                                   \textcolor{comment}{// Enable Global Interrupts}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200                         TMC\_BASE\_PIO-\/>XINT3SEL = pin;                           \textcolor{comment}{// Tag XINT3 interrupt with GPIO}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202                         \textcolor{keywordflow}{switch}(edge)\{}
+\DoxyCodeLine{203                             \textcolor{keywordflow}{case} 0: TMC\_BASE\_XINT-\/>XINT3CR \&= \string~(0x3 << 2);      \textcolor{comment}{// Interrupt generated on falling edge}}
+\DoxyCodeLine{204                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{205                             \textcolor{keywordflow}{case} 1: TMC\_BASE\_XINT-\/>XINT3CR |= (0x1 << 2);       \textcolor{comment}{// Interrupt generated on rising edge}}
+\DoxyCodeLine{206                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{207                             \textcolor{keywordflow}{case} 2: TMC\_BASE\_XINT-\/>XINT3CR |= (0x3 << 2);       \textcolor{comment}{// Interrupt generated on rising and falling edge}}
+\DoxyCodeLine{208                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{209                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{210                                         \textcolor{keywordflow}{return} -\/2;                              \textcolor{comment}{// Invalid value of interrupt generation}}
+\DoxyCodeLine{211                         \}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213                         TMC\_BASE\_XINT-\/>XINT3CR |= 0x1;                          \textcolor{comment}{// Enable Interrupt}}
+\DoxyCodeLine{214                         EDIS;}
+\DoxyCodeLine{215                         Xint3\_in\_use = 1;                                       \textcolor{comment}{// Tag interrupt in use}}
+\DoxyCodeLine{216                     \}}
+\DoxyCodeLine{217                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Xint3\_in\_use \&\& (!Xint4\_in\_use))\{}
+\DoxyCodeLine{218                         TMC\_BASE\_INT\_REGS-\/>XINT4 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;                   \textcolor{comment}{// Register ISR in interrupt vector table}}
+\DoxyCodeLine{219                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                             \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{220                         TMC\_BASE\_PIE-\/>GROUP[11].IER |= 0x2;                     \textcolor{comment}{// Enable Xint4 in the PIE: Group 12 interrupt 2}}
+\DoxyCodeLine{221                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0800;                                           \textcolor{comment}{// Enable CPU group int 12}}
+\DoxyCodeLine{222                         EINT;                                                   \textcolor{comment}{// Enable Global Interrupts}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224                         TMC\_BASE\_PIO-\/>XINT4SEL = pin;                           \textcolor{comment}{// Tag XINT4 interrupt with GPIO}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226                         \textcolor{keywordflow}{switch}(edge)\{}
+\DoxyCodeLine{227                             \textcolor{keywordflow}{case} 0: TMC\_BASE\_XINT-\/>XINT4CR \&= \string~(0x3 << 2);      \textcolor{comment}{// Interrupt generated on falling edge}}
+\DoxyCodeLine{228                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{229                             \textcolor{keywordflow}{case} 1: TMC\_BASE\_XINT-\/>XINT4CR |= (0x1 << 2);       \textcolor{comment}{// Interrupt generated on rising edge}}
+\DoxyCodeLine{230                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{231                             \textcolor{keywordflow}{case} 2: TMC\_BASE\_XINT-\/>XINT4CR |= (0x3 << 2);       \textcolor{comment}{// Interrupt generated on rising and falling edge}}
+\DoxyCodeLine{232                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{233                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{234                                         \textcolor{keywordflow}{return} -\/2;                              \textcolor{comment}{// Invalid value of interrupt generation}}
+\DoxyCodeLine{235                         \}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237                         TMC\_BASE\_XINT-\/>XINT4CR |= 0x1;                          \textcolor{comment}{// Enable Interrupt}}
+\DoxyCodeLine{238                         EDIS;}
+\DoxyCodeLine{239                         Xint4\_in\_use = 1;                                       \textcolor{comment}{// Tag interrupt in use}}
+\DoxyCodeLine{240                     \}}
+\DoxyCodeLine{241                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Xint3\_in\_use \&\& Xint4\_in\_use \&\& (!Xint5\_in\_use))\{}
+\DoxyCodeLine{242                         TMC\_BASE\_INT\_REGS-\/>XINT5 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;                   \textcolor{comment}{// Register ISR in interrupt vector table}}
+\DoxyCodeLine{243                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                             \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{244                         TMC\_BASE\_PIE-\/>GROUP[11].IER |= 0x4;                     \textcolor{comment}{// Enable Xint5 in the PIE: Group 12 interrupt 3}}
+\DoxyCodeLine{245                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0800;                                           \textcolor{comment}{// Enable CPU group int 12}}
+\DoxyCodeLine{246                         EINT;                                                   \textcolor{comment}{// Enable Global Interrupts}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248                         TMC\_BASE\_PIO-\/>XINT5SEL = pin;                           \textcolor{comment}{// Tag XINT5 interrupt with GPIO}}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250                         \textcolor{keywordflow}{switch}(edge)\{}
+\DoxyCodeLine{251                             \textcolor{keywordflow}{case} 0: TMC\_BASE\_XINT-\/>XINT5CR \&= \string~(0x3 << 2);      \textcolor{comment}{// Interrupt generated on falling edge}}
+\DoxyCodeLine{252                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{253                             \textcolor{keywordflow}{case} 1: TMC\_BASE\_XINT-\/>XINT5CR |= (0x1 << 2);       \textcolor{comment}{// Interrupt generated on rising edge}}
+\DoxyCodeLine{254                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{255                             \textcolor{keywordflow}{case} 2: TMC\_BASE\_XINT-\/>XINT5CR |= (0x3 << 2);       \textcolor{comment}{// Interrupt generated on rising and falling edge}}
+\DoxyCodeLine{256                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{257                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{258                                         \textcolor{keywordflow}{return} -\/2;                              \textcolor{comment}{// Invalid value of interrupt generation}}
+\DoxyCodeLine{259                         \}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261                         TMC\_BASE\_XINT-\/>XINT5CR |= 0x1;                          \textcolor{comment}{// Enable Interrupt}}
+\DoxyCodeLine{262                         EDIS;}
+\DoxyCodeLine{263                         Xint5\_in\_use = 1;                                       \textcolor{comment}{// Tag interrupt in use}}
+\DoxyCodeLine{264                     \}}
+\DoxyCodeLine{265                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Xint3\_in\_use \&\& Xint4\_in\_use \&\& Xint5\_in\_use \&\& (!Xint6\_in\_use))\{}
+\DoxyCodeLine{266                         TMC\_BASE\_INT\_REGS-\/>XINT6 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;                   \textcolor{comment}{// Register ISR in interrupt vector table}}
+\DoxyCodeLine{267                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                             \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{268                         TMC\_BASE\_PIE-\/>GROUP[11].IER |= 0x8;                     \textcolor{comment}{// Enable Xint6 in the PIE: Group 12 interrupt 4}}
+\DoxyCodeLine{269                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0800;                                           \textcolor{comment}{// Enable CPU group int 12}}
+\DoxyCodeLine{270                         EINT;                                                   \textcolor{comment}{// Enable Global Interrupts}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272                         TMC\_BASE\_PIO-\/>XINT6SEL = pin;                           \textcolor{comment}{// Tag XINT6 interrupt with GPIO}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274                         \textcolor{keywordflow}{switch}(edge)\{}
+\DoxyCodeLine{275                             \textcolor{keywordflow}{case} 0: TMC\_BASE\_XINT-\/>XINT6CR \&= \string~(0x3 << 2);      \textcolor{comment}{// Interrupt generated on falling edge}}
+\DoxyCodeLine{276                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{277                             \textcolor{keywordflow}{case} 1: TMC\_BASE\_XINT-\/>XINT6CR |= (0x1 << 2);       \textcolor{comment}{// Interrupt generated on rising edge}}
+\DoxyCodeLine{278                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{279                             \textcolor{keywordflow}{case} 2: TMC\_BASE\_XINT-\/>XINT6CR |= (0x3 << 2);       \textcolor{comment}{// Interrupt generated on rising and falling edge}}
+\DoxyCodeLine{280                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{281                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{282                                         \textcolor{keywordflow}{return} -\/2;                              \textcolor{comment}{// Invalid value of interrupt generation}}
+\DoxyCodeLine{283                         \}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285                         TMC\_BASE\_XINT-\/>XINT6CR |= 0x1;                          \textcolor{comment}{// Enable Interrupt}}
+\DoxyCodeLine{286                         EDIS;}
+\DoxyCodeLine{287                         Xint6\_in\_use = 1;                                       \textcolor{comment}{// Tag interrupt in use}}
+\DoxyCodeLine{288                     \}}
+\DoxyCodeLine{289                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Xint3\_in\_use \&\& Xint4\_in\_use \&\& Xint5\_in\_use \&\& Xint6\_in\_use \&\& (!Xint7\_in\_use))\{}
+\DoxyCodeLine{290                         TMC\_BASE\_INT\_REGS-\/>XINT7 = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})isr;                   \textcolor{comment}{// Register ISR in interrupt vector table}}
+\DoxyCodeLine{291                         TMC\_BASE\_PIE-\/>CTRL |= 0x01;                             \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{292                         TMC\_BASE\_PIE-\/>GROUP[11].IER |= 0x10;                    \textcolor{comment}{// Enable Xint3 in the PIE: Group 12 interrupt 4}}
+\DoxyCodeLine{293                         \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0800;                                           \textcolor{comment}{// Enable CPU group int 12}}
+\DoxyCodeLine{294                         EINT;                                                   \textcolor{comment}{// Enable Global Interrupts}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296                         TMC\_BASE\_PIO-\/>XINT7SEL = pin;                           \textcolor{comment}{// Tag XINT7 interrupt with GPIO}}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298                         \textcolor{keywordflow}{switch}(edge)\{}
+\DoxyCodeLine{299                             \textcolor{keywordflow}{case} 0: TMC\_BASE\_XINT-\/>XINT7CR \&= \string~(0x3 << 2);      \textcolor{comment}{// Interrupt generated on falling edge}}
+\DoxyCodeLine{300                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{301                             \textcolor{keywordflow}{case} 1: TMC\_BASE\_XINT-\/>XINT7CR |= (0x1 << 2);       \textcolor{comment}{// Interrupt generated on rising edge}}
+\DoxyCodeLine{302                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{303                             \textcolor{keywordflow}{case} 2: TMC\_BASE\_XINT-\/>XINT7CR |= (0x3 << 2);       \textcolor{comment}{// Interrupt generated on rising and falling edge}}
+\DoxyCodeLine{304                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{305                             \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{306                                         \textcolor{keywordflow}{return} -\/2;                              \textcolor{comment}{// Invalid value of interrupt generation}}
+\DoxyCodeLine{307                         \}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309                         TMC\_BASE\_XINT-\/>XINT7CR |= 0x1;                          \textcolor{comment}{// Enable Interrupt}}
+\DoxyCodeLine{310                         EDIS;}
+\DoxyCodeLine{311                         Xint7\_in\_use = 1;                                       \textcolor{comment}{// Tag interrupt in use}}
+\DoxyCodeLine{312                     \}}
+\DoxyCodeLine{313                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{314                         EDIS;}
+\DoxyCodeLine{315                         \textcolor{keywordflow}{return} -\/3;                                              \textcolor{comment}{// All interrupts of GPIO Range (0-\/31) in use}}
+\DoxyCodeLine{316                     \}}
+\DoxyCodeLine{317                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{318     \textcolor{keywordflow}{case} 64 ... 87: EDIS;}
+\DoxyCodeLine{319                     \textcolor{keywordflow}{return} -\/3;                                                  \textcolor{comment}{// No external interrupts for pins >63}}
+\DoxyCodeLine{320     \textcolor{keywordflow}{default}:        EDIS;}
+\DoxyCodeLine{321                     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{322     \}}
+\DoxyCodeLine{323     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{324 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{general__input_8h_a6562bc7df5f03dfe7f5de83eca4b3d1c}\label{general__input_8h_a6562bc7df5f03dfe7f5de83eca4b3d1c}} 
+\index{general\_input.h@{general\_input.h}!generalInputPin\_getValue@{generalInputPin\_getValue}}
+\index{generalInputPin\_getValue@{generalInputPin\_getValue}!general\_input.h@{general\_input.h}}
+\doxysubsubsection{\texorpdfstring{generalInputPin\_getValue()}{generalInputPin\_getValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} general\+Input\+Pin\+\_\+get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Configuration of G\+P\+IO as general input pin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 0-\/87 (see \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = value is 0 and operation successful ~\newline
+-\/-\/$>$ 1 = value is 1 and operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file general\+\_\+input.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69     \textcolor{keywordflow}{switch} (pin)\{}
+\DoxyCodeLine{70     \textcolor{keywordflow}{case} 0 ... 31:  \textcolor{keywordflow}{return} ((TMC\_BASE\_PIO-\/>DATA[0].DAT \& ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin)) >> pin);}
+\DoxyCodeLine{71     \textcolor{keywordflow}{case} 32 ... 63: pin -\/= 32;}
+\DoxyCodeLine{72                     \textcolor{keywordflow}{return} ((TMC\_BASE\_PIO-\/>DATA[1].DAT \& ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin)) >> pin);}
+\DoxyCodeLine{73     \textcolor{keywordflow}{case} 64 ... 87: pin -\/= 64;}
+\DoxyCodeLine{74                     \textcolor{keywordflow}{return} ((TMC\_BASE\_PIO-\/>DATA[2].DAT \& ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin)) >> pin);}
+\DoxyCodeLine{75     \textcolor{keywordflow}{default}:        \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{general__input_8h_a15ab763c07ce5fcbed2c3069a13d2b16}\label{general__input_8h_a15ab763c07ce5fcbed2c3069a13d2b16}} 
+\index{general\_input.h@{general\_input.h}!generalInputPin\_interruptAck@{generalInputPin\_interruptAck}}
+\index{generalInputPin\_interruptAck@{generalInputPin\_interruptAck}!general\_input.h@{general\_input.h}}
+\doxysubsubsection{\texorpdfstring{generalInputPin\_interruptAck()}{generalInputPin\_interruptAck()}}
+{\footnotesize\ttfamily void general\+Input\+Pin\+\_\+interrupt\+Ack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Giving interrupts acknowledge to interrupt again. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em /} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/ 
+\end{DoxyReturn}
+
+
+Definition at line 332 of file general\+\_\+input.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{332                                    \{}
+\DoxyCodeLine{333     \textcolor{comment}{// Acknowledge interrupt to get more from group all interrupt groups}}
+\DoxyCodeLine{334     TMC\_BASE\_PIE-\/>ACK |= 0x801;}
+\DoxyCodeLine{335 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{general__input_8h_ae6da6da60a56197d6087b039baba0b00}\label{general__input_8h_ae6da6da60a56197d6087b039baba0b00}} 
+\index{general\_input.h@{general\_input.h}!init\_generalInputPin@{init\_generalInputPin}}
+\index{init\_generalInputPin@{init\_generalInputPin}!general\_input.h@{general\_input.h}}
+\doxysubsubsection{\texorpdfstring{init\_generalInputPin()}{init\_generalInputPin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+general\+Input\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Configuration of G\+P\+IO as general input pin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 0-\/87 (see \mbox{\hyperlink{global__defines_8h}{global\+\_\+defines.\+h}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file general\+\_\+input.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     EALLOW;}
+\DoxyCodeLine{22     \textcolor{keywordflow}{switch}(pin)\{}
+\DoxyCodeLine{23     \textcolor{keywordflow}{case} 0 ... 31:  TMC\_BASE\_PIO-\/>CTL[0].PUD |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                     \textcolor{comment}{// Disable Pull-\/Up on GPIO}}
+\DoxyCodeLine{24                     \textcolor{keywordflow}{if}(pin <= 15)\{}
+\DoxyCodeLine{25                         TMC\_BASE\_PIO-\/>CTL[0].MUX1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << (pin*2));       \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{26                     \}}
+\DoxyCodeLine{27                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{28                         TMC\_BASE\_PIO-\/>CTL[0].MUX2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << ((pin-\/16)*2));  \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{29                     \}}
+\DoxyCodeLine{30                     TMC\_BASE\_PIO-\/>CTL[0].DIR \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                    \textcolor{comment}{// Configures the GPIO pin as an input}}
+\DoxyCodeLine{31                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{32     \textcolor{keywordflow}{case} 32 ... 63: pin -\/= 32;}
+\DoxyCodeLine{33                     TMC\_BASE\_PIO-\/>CTL[1].PUD |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                 \textcolor{comment}{// Disable Pull-\/Up on GPIO}}
+\DoxyCodeLine{34                     \textcolor{keywordflow}{if}(pin <= 15)\{}
+\DoxyCodeLine{35                         TMC\_BASE\_PIO-\/>CTL[1].MUX1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << (pin*2));       \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{36                     \}}
+\DoxyCodeLine{37                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{38                         TMC\_BASE\_PIO-\/>CTL[1].MUX2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << ((pin-\/16)*2));  \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{39                     \}}
+\DoxyCodeLine{40                     TMC\_BASE\_PIO-\/>CTL[1].DIR \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                    \textcolor{comment}{// Configures the GPIO pin as an input}}
+\DoxyCodeLine{41                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{42     \textcolor{keywordflow}{case} 64 ... 87: pin -\/= 64;}
+\DoxyCodeLine{43                     TMC\_BASE\_PIO-\/>CTL[2].PUD |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                 \textcolor{comment}{// Disable Pull-\/Up on GPIO}}
+\DoxyCodeLine{44                     \textcolor{keywordflow}{if}(pin <=15)\{}
+\DoxyCodeLine{45                         TMC\_BASE\_PIO-\/>CTL[2].MUX1 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << (pin*2));       \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{46                     \}}
+\DoxyCodeLine{47                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{48                         TMC\_BASE\_PIO-\/>CTL[2].MUX2 \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << ((pin-\/16)*2));  \textcolor{comment}{// General purpose input/output}}
+\DoxyCodeLine{49                     \}}
+\DoxyCodeLine{50                     TMC\_BASE\_PIO-\/>CTL[2].DIR \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << pin);                    \textcolor{comment}{// Configures the GPIO pin as an input}}
+\DoxyCodeLine{51                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{52     \textcolor{keywordflow}{default}:        EDIS;}
+\DoxyCodeLine{53                     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55     EDIS;}
+\DoxyCodeLine{56     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{57 \}}
+
+\end{DoxyCode}

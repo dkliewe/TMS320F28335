@@ -1,0 +1,550 @@
+\hypertarget{global__defines_8h}{}\doxysection{global\+\_\+defines.\+h File Reference}
+\label{global__defines_8h}\index{global\_defines.h@{global\_defines.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_aa50177803f6edc7fdfc84bab05377948}{C2000\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+ES}}
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_aedda579089c56c5a0df23a0cd47f53a1}{E\+I\+NT}}~asm(\char`\"{} clrc I\+N\+TM\char`\"{})
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a058e7dbf59195ee615d22066fbdd844b}{D\+I\+NT}}~asm(\char`\"{} setc I\+N\+TM\char`\"{})
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a961fad1dc1a245ade76d1f7000f6f16f}{E\+R\+TM}}~asm(\char`\"{} clrc D\+B\+GM\char`\"{})
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_aa1af72313e025548b3b9ce6930ea8e26}{D\+R\+TM}}~asm(\char`\"{} setc D\+B\+GM\char`\"{})
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a1a95377ebb4695a49196cd666e26d97d}{E\+A\+L\+L\+OW}}~asm(\char`\"{} E\+A\+L\+L\+OW\char`\"{})
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a4b430256ca8934310dac586331dd358f}{E\+D\+IS}}~asm(\char`\"{} E\+D\+IS\char`\"{})
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a24ae3a5f12943b9a48c5ca989134936d}{E\+S\+T\+O\+P0}}~asm(\char`\"{} E\+S\+T\+O\+P0\char`\"{})
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a03d2ea0698b957f2fd369ee1a5a10c9b}{T\+M\+C\+\_\+\+I\+D\+\_\+\+P\+I\+OA}}~0
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a201b03f1788546c8423635f6e28fcda4}{T\+M\+C\+\_\+\+I\+D\+\_\+\+P\+I\+OB}}~1
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a9f3f2c1b52b6728585a5577720013e76}{T\+M\+C\+\_\+\+I\+D\+\_\+\+P\+I\+OC}}~2
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~150000000\+UL
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a5615cada35e9e1f571bb4f526470a35e}{F\+\_\+\+C\+P\+U\+\_\+\+H\+A\+LF}}~75000000\+UL
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a2c4b9a5f4a230a3f562aa70fd83b7859}{T\+M\+\_\+\+C\+A\+ST}}(a)~(a)
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_af5d1e7379ae8f35728e2ce99a3b6b499}{R\+E\+G\+\_\+\+C\+A\+ST}}(type,  reg)~((type)\&reg)
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a46ef182de737cf067759bd0f57cf7554}{B\+IT}}(a)~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})1$<$$<$a)
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a20f88dbc839eb32b5fec903474befdd7}{G\+P\+I\+O0}}~0
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a268a24aae7426d60ca627434195da9dd}{E\+P\+W\+M1A}}~0
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_abe59d3a7ce7a18e9440bd54cae1f3fc8}{G\+P\+I\+O1}}~1
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_aa5f7dca1f48cec0d787ad5bd688b1617}{E\+P\+W\+M1B}}~1
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a946039fcc6c4bd11fe8e1adb1a2771bb}{E\+C\+A\+P6}}~1
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a88a95401ea8409c83cbda42f31450cd0}{G\+P\+I\+O2}}~2
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_af3cc04d651b622d5323d74dc2f0999a0}{G\+P\+I\+O3}}~3
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a98aeff9c8b3bbdfd119e4ec4d3f615c8}{G\+P\+I\+O4}}~4
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a1a96368c99d63b0e715b7e0421f4a209}{G\+P\+I\+O5}}~5
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a46027cd97ff756e5ddadcc10811b5699}{G\+P\+I\+O6}}~6
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a3820cacb614277004870fc37b33ad084}{G\+P\+I\+O7}}~7
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_aa951be0ce26f788049a86e407a70ae20}{G\+P\+I\+O8}}~8
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_ae2a4c4d28729daf18e1923a1878e7352}{G\+P\+I\+O9}}~9
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_ae285b2475841ecb1ac23d8511b360d0e}{G\+P\+I\+O10}}~10
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_ac376b1c124378935df7b3c171b2bef35}{G\+P\+I\+O11}}~11
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a1dfa6e5489489f2797d3d80c718716ce}{G\+P\+I\+O12}}~12
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a4b7d9a3961712ddd2a58532f4dcedc1d}{G\+P\+I\+O13}}~13
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_ad42a78782c6bb99ad7e7c1ec975b5b96}{G\+P\+I\+O14}}~14
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_aabc2f003b1495cd03eef1fae31e6847a}{G\+P\+I\+O15}}~15
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a209f1a013588f481824ff0f57d2fc21e}{G\+P\+I\+O16}}~16
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_abf972cfb05a7f86e9a69db243792cbac}{G\+P\+I\+O17}}~17
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_aaa3c86348d99077ec718c2461f0d4a91}{G\+P\+I\+O18}}~18
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a546be0d3be4335be87bd46b9d6442edd}{G\+P\+I\+O19}}~19
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a414493de8389b7908e5e8b6723a5fdd3}{G\+P\+I\+O20}}~20
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a3b9ee0b882294530e8d2f343af3ba0fe}{G\+P\+I\+O21}}~21
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_abdcdabfb67b100b20bd0326d730b69bb}{G\+P\+I\+O22}}~22
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_abd64ab501b16d9074764973f71adde81}{G\+P\+I\+O23}}~23
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a5d3043fd1db106a844092560243b5ddf}{G\+P\+I\+O24}}~24
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a36cff7d300b200f71fcf3341651c4ae1}{G\+P\+I\+O25}}~25
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a1471cf2ee224d707874fa19c68b3d5dc}{G\+P\+I\+O26}}~26
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a0a715cbedcbaadfd991b28b3ce1caa07}{G\+P\+I\+O27}}~27
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a6e5ccec6266bec3c50538e4b5a9cb0d7}{G\+P\+I\+O28}}~28
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_a62fa810782439ccd99ea38f7ed500a94}{G\+P\+I\+O29}}~29
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_ab2aa0ef0d4e65930b0caa23b1bf65388}{G\+P\+I\+O30}}~30
+\item 
+\#define \mbox{\hyperlink{global__defines_8h_ae9d664cb72ad512e573c2827e799216d}{G\+P\+I\+O31}}~31
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}}
+\item 
+typedef long \mbox{\hyperlink{global__defines_8h_a4ca2d97e571b049be6f4cdcfaa1ab946}{int32}}
+\item 
+typedef long long \mbox{\hyperlink{global__defines_8h_aecfc3c54bd29ad5964e1c1c3ccbf89df}{int64}}
+\item 
+typedef unsigned int \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}
+\item 
+typedef unsigned long \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}}
+\item 
+typedef unsigned long long \mbox{\hyperlink{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}{Uint64}}
+\item 
+typedef float \mbox{\hyperlink{global__defines_8h_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}}
+\item 
+typedef long double \mbox{\hyperlink{global__defines_8h_a47242387dc90e467815edcf50c40636b}{float64}}
+\item 
+typedef volatile \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} \mbox{\hyperlink{global__defines_8h_abd82d806a7d411d6b2275422007cc4f8}{T\+M\+\_\+\+R\+E\+G16}}
+\item 
+typedef volatile \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}} \mbox{\hyperlink{global__defines_8h_a6a39e22630545a9014256e6f604d1291}{T\+M\+\_\+\+R\+E\+G32}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{global__defines_8h_a7c6368b321bd9acd0149b030bb8275ed}{boolean}} \{ \mbox{\hyperlink{global__defines_8h_a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b}{True}}, 
+\mbox{\hyperlink{global__defines_8h_a7c6368b321bd9acd0149b030bb8275edaf9d46b7804d93a4fcde88489a1b68c24}{False}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+cregister volatile unsigned int \mbox{\hyperlink{global__defines_8h_a1790c0117f7106f597b3540ba57df515}{I\+FR}}
+\item 
+cregister volatile unsigned int \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{I\+ER}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{global__defines_8h_a46ef182de737cf067759bd0f57cf7554}\label{global__defines_8h_a46ef182de737cf067759bd0f57cf7554}} 
+\index{global\_defines.h@{global\_defines.h}!BIT@{BIT}}
+\index{BIT@{BIT}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{BIT}{BIT}}
+{\footnotesize\ttfamily \#define B\+IT(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})1$<$$<$a)}
+
+\mbox{\Hypertarget{global__defines_8h_aa50177803f6edc7fdfc84bab05377948}\label{global__defines_8h_aa50177803f6edc7fdfc84bab05377948}} 
+\index{global\_defines.h@{global\_defines.h}!C2000\_DATA\_TYPES@{C2000\_DATA\_TYPES}}
+\index{C2000\_DATA\_TYPES@{C2000\_DATA\_TYPES}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{C2000\_DATA\_TYPES}{C2000\_DATA\_TYPES}}
+{\footnotesize\ttfamily \#define C2000\+\_\+\+D\+A\+T\+A\+\_\+\+T\+Y\+P\+ES}
+
+\mbox{\Hypertarget{global__defines_8h_a058e7dbf59195ee615d22066fbdd844b}\label{global__defines_8h_a058e7dbf59195ee615d22066fbdd844b}} 
+\index{global\_defines.h@{global\_defines.h}!DINT@{DINT}}
+\index{DINT@{DINT}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{DINT}{DINT}}
+{\footnotesize\ttfamily \#define D\+I\+NT~asm(\char`\"{} setc I\+N\+TM\char`\"{})}
+
+\mbox{\Hypertarget{global__defines_8h_aa1af72313e025548b3b9ce6930ea8e26}\label{global__defines_8h_aa1af72313e025548b3b9ce6930ea8e26}} 
+\index{global\_defines.h@{global\_defines.h}!DRTM@{DRTM}}
+\index{DRTM@{DRTM}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{DRTM}{DRTM}}
+{\footnotesize\ttfamily \#define D\+R\+TM~asm(\char`\"{} setc D\+B\+GM\char`\"{})}
+
+\mbox{\Hypertarget{global__defines_8h_a1a95377ebb4695a49196cd666e26d97d}\label{global__defines_8h_a1a95377ebb4695a49196cd666e26d97d}} 
+\index{global\_defines.h@{global\_defines.h}!EALLOW@{EALLOW}}
+\index{EALLOW@{EALLOW}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{EALLOW}{EALLOW}}
+{\footnotesize\ttfamily \#define E\+A\+L\+L\+OW~asm(\char`\"{} E\+A\+L\+L\+OW\char`\"{})}
+
+\mbox{\Hypertarget{global__defines_8h_a946039fcc6c4bd11fe8e1adb1a2771bb}\label{global__defines_8h_a946039fcc6c4bd11fe8e1adb1a2771bb}} 
+\index{global\_defines.h@{global\_defines.h}!ECAP6@{ECAP6}}
+\index{ECAP6@{ECAP6}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{ECAP6}{ECAP6}}
+{\footnotesize\ttfamily \#define E\+C\+A\+P6~1}
+
+\mbox{\Hypertarget{global__defines_8h_a4b430256ca8934310dac586331dd358f}\label{global__defines_8h_a4b430256ca8934310dac586331dd358f}} 
+\index{global\_defines.h@{global\_defines.h}!EDIS@{EDIS}}
+\index{EDIS@{EDIS}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{EDIS}{EDIS}}
+{\footnotesize\ttfamily \#define E\+D\+IS~asm(\char`\"{} E\+D\+IS\char`\"{})}
+
+\mbox{\Hypertarget{global__defines_8h_aedda579089c56c5a0df23a0cd47f53a1}\label{global__defines_8h_aedda579089c56c5a0df23a0cd47f53a1}} 
+\index{global\_defines.h@{global\_defines.h}!EINT@{EINT}}
+\index{EINT@{EINT}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{EINT}{EINT}}
+{\footnotesize\ttfamily \#define E\+I\+NT~asm(\char`\"{} clrc I\+N\+TM\char`\"{})}
+
+\mbox{\Hypertarget{global__defines_8h_a268a24aae7426d60ca627434195da9dd}\label{global__defines_8h_a268a24aae7426d60ca627434195da9dd}} 
+\index{global\_defines.h@{global\_defines.h}!EPWM1A@{EPWM1A}}
+\index{EPWM1A@{EPWM1A}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{EPWM1A}{EPWM1A}}
+{\footnotesize\ttfamily \#define E\+P\+W\+M1A~0}
+
+\mbox{\Hypertarget{global__defines_8h_aa5f7dca1f48cec0d787ad5bd688b1617}\label{global__defines_8h_aa5f7dca1f48cec0d787ad5bd688b1617}} 
+\index{global\_defines.h@{global\_defines.h}!EPWM1B@{EPWM1B}}
+\index{EPWM1B@{EPWM1B}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{EPWM1B}{EPWM1B}}
+{\footnotesize\ttfamily \#define E\+P\+W\+M1B~1}
+
+\mbox{\Hypertarget{global__defines_8h_a961fad1dc1a245ade76d1f7000f6f16f}\label{global__defines_8h_a961fad1dc1a245ade76d1f7000f6f16f}} 
+\index{global\_defines.h@{global\_defines.h}!ERTM@{ERTM}}
+\index{ERTM@{ERTM}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{ERTM}{ERTM}}
+{\footnotesize\ttfamily \#define E\+R\+TM~asm(\char`\"{} clrc D\+B\+GM\char`\"{})}
+
+\mbox{\Hypertarget{global__defines_8h_a24ae3a5f12943b9a48c5ca989134936d}\label{global__defines_8h_a24ae3a5f12943b9a48c5ca989134936d}} 
+\index{global\_defines.h@{global\_defines.h}!ESTOP0@{ESTOP0}}
+\index{ESTOP0@{ESTOP0}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{ESTOP0}{ESTOP0}}
+{\footnotesize\ttfamily \#define E\+S\+T\+O\+P0~asm(\char`\"{} E\+S\+T\+O\+P0\char`\"{})}
+
+\mbox{\Hypertarget{global__defines_8h_a43bafb28b29491ec7f871319b5a3b2f8}\label{global__defines_8h_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{global\_defines.h@{global\_defines.h}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~150000000\+UL}
+
+\mbox{\Hypertarget{global__defines_8h_a5615cada35e9e1f571bb4f526470a35e}\label{global__defines_8h_a5615cada35e9e1f571bb4f526470a35e}} 
+\index{global\_defines.h@{global\_defines.h}!F\_CPU\_HALF@{F\_CPU\_HALF}}
+\index{F\_CPU\_HALF@{F\_CPU\_HALF}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{F\_CPU\_HALF}{F\_CPU\_HALF}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+P\+U\+\_\+\+H\+A\+LF~75000000\+UL}
+
+\mbox{\Hypertarget{global__defines_8h_a20f88dbc839eb32b5fec903474befdd7}\label{global__defines_8h_a20f88dbc839eb32b5fec903474befdd7}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO0@{GPIO0}}
+\index{GPIO0@{GPIO0}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO0}{GPIO0}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O0~0}
+
+\mbox{\Hypertarget{global__defines_8h_abe59d3a7ce7a18e9440bd54cae1f3fc8}\label{global__defines_8h_abe59d3a7ce7a18e9440bd54cae1f3fc8}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO1@{GPIO1}}
+\index{GPIO1@{GPIO1}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO1}{GPIO1}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O1~1}
+
+\mbox{\Hypertarget{global__defines_8h_ae285b2475841ecb1ac23d8511b360d0e}\label{global__defines_8h_ae285b2475841ecb1ac23d8511b360d0e}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO10@{GPIO10}}
+\index{GPIO10@{GPIO10}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO10}{GPIO10}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O10~10}
+
+\mbox{\Hypertarget{global__defines_8h_ac376b1c124378935df7b3c171b2bef35}\label{global__defines_8h_ac376b1c124378935df7b3c171b2bef35}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO11@{GPIO11}}
+\index{GPIO11@{GPIO11}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO11}{GPIO11}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O11~11}
+
+\mbox{\Hypertarget{global__defines_8h_a1dfa6e5489489f2797d3d80c718716ce}\label{global__defines_8h_a1dfa6e5489489f2797d3d80c718716ce}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO12@{GPIO12}}
+\index{GPIO12@{GPIO12}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO12}{GPIO12}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O12~12}
+
+\mbox{\Hypertarget{global__defines_8h_a4b7d9a3961712ddd2a58532f4dcedc1d}\label{global__defines_8h_a4b7d9a3961712ddd2a58532f4dcedc1d}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO13@{GPIO13}}
+\index{GPIO13@{GPIO13}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO13}{GPIO13}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O13~13}
+
+\mbox{\Hypertarget{global__defines_8h_ad42a78782c6bb99ad7e7c1ec975b5b96}\label{global__defines_8h_ad42a78782c6bb99ad7e7c1ec975b5b96}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO14@{GPIO14}}
+\index{GPIO14@{GPIO14}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO14}{GPIO14}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O14~14}
+
+\mbox{\Hypertarget{global__defines_8h_aabc2f003b1495cd03eef1fae31e6847a}\label{global__defines_8h_aabc2f003b1495cd03eef1fae31e6847a}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO15@{GPIO15}}
+\index{GPIO15@{GPIO15}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO15}{GPIO15}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O15~15}
+
+\mbox{\Hypertarget{global__defines_8h_a209f1a013588f481824ff0f57d2fc21e}\label{global__defines_8h_a209f1a013588f481824ff0f57d2fc21e}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO16@{GPIO16}}
+\index{GPIO16@{GPIO16}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO16}{GPIO16}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O16~16}
+
+\mbox{\Hypertarget{global__defines_8h_abf972cfb05a7f86e9a69db243792cbac}\label{global__defines_8h_abf972cfb05a7f86e9a69db243792cbac}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO17@{GPIO17}}
+\index{GPIO17@{GPIO17}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO17}{GPIO17}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O17~17}
+
+\mbox{\Hypertarget{global__defines_8h_aaa3c86348d99077ec718c2461f0d4a91}\label{global__defines_8h_aaa3c86348d99077ec718c2461f0d4a91}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO18@{GPIO18}}
+\index{GPIO18@{GPIO18}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO18}{GPIO18}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O18~18}
+
+\mbox{\Hypertarget{global__defines_8h_a546be0d3be4335be87bd46b9d6442edd}\label{global__defines_8h_a546be0d3be4335be87bd46b9d6442edd}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO19@{GPIO19}}
+\index{GPIO19@{GPIO19}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO19}{GPIO19}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O19~19}
+
+\mbox{\Hypertarget{global__defines_8h_a88a95401ea8409c83cbda42f31450cd0}\label{global__defines_8h_a88a95401ea8409c83cbda42f31450cd0}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO2@{GPIO2}}
+\index{GPIO2@{GPIO2}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO2}{GPIO2}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O2~2}
+
+\mbox{\Hypertarget{global__defines_8h_a414493de8389b7908e5e8b6723a5fdd3}\label{global__defines_8h_a414493de8389b7908e5e8b6723a5fdd3}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO20@{GPIO20}}
+\index{GPIO20@{GPIO20}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO20}{GPIO20}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O20~20}
+
+\mbox{\Hypertarget{global__defines_8h_a3b9ee0b882294530e8d2f343af3ba0fe}\label{global__defines_8h_a3b9ee0b882294530e8d2f343af3ba0fe}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO21@{GPIO21}}
+\index{GPIO21@{GPIO21}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO21}{GPIO21}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O21~21}
+
+\mbox{\Hypertarget{global__defines_8h_abdcdabfb67b100b20bd0326d730b69bb}\label{global__defines_8h_abdcdabfb67b100b20bd0326d730b69bb}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO22@{GPIO22}}
+\index{GPIO22@{GPIO22}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO22}{GPIO22}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O22~22}
+
+\mbox{\Hypertarget{global__defines_8h_abd64ab501b16d9074764973f71adde81}\label{global__defines_8h_abd64ab501b16d9074764973f71adde81}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO23@{GPIO23}}
+\index{GPIO23@{GPIO23}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO23}{GPIO23}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O23~23}
+
+\mbox{\Hypertarget{global__defines_8h_a5d3043fd1db106a844092560243b5ddf}\label{global__defines_8h_a5d3043fd1db106a844092560243b5ddf}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO24@{GPIO24}}
+\index{GPIO24@{GPIO24}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO24}{GPIO24}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O24~24}
+
+\mbox{\Hypertarget{global__defines_8h_a36cff7d300b200f71fcf3341651c4ae1}\label{global__defines_8h_a36cff7d300b200f71fcf3341651c4ae1}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO25@{GPIO25}}
+\index{GPIO25@{GPIO25}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO25}{GPIO25}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O25~25}
+
+\mbox{\Hypertarget{global__defines_8h_a1471cf2ee224d707874fa19c68b3d5dc}\label{global__defines_8h_a1471cf2ee224d707874fa19c68b3d5dc}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO26@{GPIO26}}
+\index{GPIO26@{GPIO26}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO26}{GPIO26}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O26~26}
+
+\mbox{\Hypertarget{global__defines_8h_a0a715cbedcbaadfd991b28b3ce1caa07}\label{global__defines_8h_a0a715cbedcbaadfd991b28b3ce1caa07}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO27@{GPIO27}}
+\index{GPIO27@{GPIO27}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO27}{GPIO27}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O27~27}
+
+\mbox{\Hypertarget{global__defines_8h_a6e5ccec6266bec3c50538e4b5a9cb0d7}\label{global__defines_8h_a6e5ccec6266bec3c50538e4b5a9cb0d7}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO28@{GPIO28}}
+\index{GPIO28@{GPIO28}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO28}{GPIO28}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O28~28}
+
+\mbox{\Hypertarget{global__defines_8h_a62fa810782439ccd99ea38f7ed500a94}\label{global__defines_8h_a62fa810782439ccd99ea38f7ed500a94}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO29@{GPIO29}}
+\index{GPIO29@{GPIO29}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO29}{GPIO29}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O29~29}
+
+\mbox{\Hypertarget{global__defines_8h_af3cc04d651b622d5323d74dc2f0999a0}\label{global__defines_8h_af3cc04d651b622d5323d74dc2f0999a0}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO3@{GPIO3}}
+\index{GPIO3@{GPIO3}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO3}{GPIO3}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O3~3}
+
+\mbox{\Hypertarget{global__defines_8h_ab2aa0ef0d4e65930b0caa23b1bf65388}\label{global__defines_8h_ab2aa0ef0d4e65930b0caa23b1bf65388}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO30@{GPIO30}}
+\index{GPIO30@{GPIO30}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO30}{GPIO30}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O30~30}
+
+\mbox{\Hypertarget{global__defines_8h_ae9d664cb72ad512e573c2827e799216d}\label{global__defines_8h_ae9d664cb72ad512e573c2827e799216d}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO31@{GPIO31}}
+\index{GPIO31@{GPIO31}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO31}{GPIO31}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O31~31}
+
+\mbox{\Hypertarget{global__defines_8h_a98aeff9c8b3bbdfd119e4ec4d3f615c8}\label{global__defines_8h_a98aeff9c8b3bbdfd119e4ec4d3f615c8}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO4@{GPIO4}}
+\index{GPIO4@{GPIO4}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO4}{GPIO4}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O4~4}
+
+\mbox{\Hypertarget{global__defines_8h_a1a96368c99d63b0e715b7e0421f4a209}\label{global__defines_8h_a1a96368c99d63b0e715b7e0421f4a209}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO5@{GPIO5}}
+\index{GPIO5@{GPIO5}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO5}{GPIO5}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O5~5}
+
+\mbox{\Hypertarget{global__defines_8h_a46027cd97ff756e5ddadcc10811b5699}\label{global__defines_8h_a46027cd97ff756e5ddadcc10811b5699}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO6@{GPIO6}}
+\index{GPIO6@{GPIO6}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO6}{GPIO6}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O6~6}
+
+\mbox{\Hypertarget{global__defines_8h_a3820cacb614277004870fc37b33ad084}\label{global__defines_8h_a3820cacb614277004870fc37b33ad084}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO7@{GPIO7}}
+\index{GPIO7@{GPIO7}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO7}{GPIO7}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O7~7}
+
+\mbox{\Hypertarget{global__defines_8h_aa951be0ce26f788049a86e407a70ae20}\label{global__defines_8h_aa951be0ce26f788049a86e407a70ae20}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO8@{GPIO8}}
+\index{GPIO8@{GPIO8}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO8}{GPIO8}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O8~8}
+
+\mbox{\Hypertarget{global__defines_8h_ae2a4c4d28729daf18e1923a1878e7352}\label{global__defines_8h_ae2a4c4d28729daf18e1923a1878e7352}} 
+\index{global\_defines.h@{global\_defines.h}!GPIO9@{GPIO9}}
+\index{GPIO9@{GPIO9}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{GPIO9}{GPIO9}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O9~9}
+
+\mbox{\Hypertarget{global__defines_8h_af5d1e7379ae8f35728e2ce99a3b6b499}\label{global__defines_8h_af5d1e7379ae8f35728e2ce99a3b6b499}} 
+\index{global\_defines.h@{global\_defines.h}!REG\_CAST@{REG\_CAST}}
+\index{REG\_CAST@{REG\_CAST}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{REG\_CAST}{REG\_CAST}}
+{\footnotesize\ttfamily \#define R\+E\+G\+\_\+\+C\+A\+ST(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{reg }\end{DoxyParamCaption})~((type)\&reg)}
+
+\mbox{\Hypertarget{global__defines_8h_a2c4b9a5f4a230a3f562aa70fd83b7859}\label{global__defines_8h_a2c4b9a5f4a230a3f562aa70fd83b7859}} 
+\index{global\_defines.h@{global\_defines.h}!TM\_CAST@{TM\_CAST}}
+\index{TM\_CAST@{TM\_CAST}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{TM\_CAST}{TM\_CAST}}
+{\footnotesize\ttfamily \#define T\+M\+\_\+\+C\+A\+ST(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~(a)}
+
+\mbox{\Hypertarget{global__defines_8h_a03d2ea0698b957f2fd369ee1a5a10c9b}\label{global__defines_8h_a03d2ea0698b957f2fd369ee1a5a10c9b}} 
+\index{global\_defines.h@{global\_defines.h}!TMC\_ID\_PIOA@{TMC\_ID\_PIOA}}
+\index{TMC\_ID\_PIOA@{TMC\_ID\_PIOA}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{TMC\_ID\_PIOA}{TMC\_ID\_PIOA}}
+{\footnotesize\ttfamily \#define T\+M\+C\+\_\+\+I\+D\+\_\+\+P\+I\+OA~0}
+
+\mbox{\Hypertarget{global__defines_8h_a201b03f1788546c8423635f6e28fcda4}\label{global__defines_8h_a201b03f1788546c8423635f6e28fcda4}} 
+\index{global\_defines.h@{global\_defines.h}!TMC\_ID\_PIOB@{TMC\_ID\_PIOB}}
+\index{TMC\_ID\_PIOB@{TMC\_ID\_PIOB}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{TMC\_ID\_PIOB}{TMC\_ID\_PIOB}}
+{\footnotesize\ttfamily \#define T\+M\+C\+\_\+\+I\+D\+\_\+\+P\+I\+OB~1}
+
+\mbox{\Hypertarget{global__defines_8h_a9f3f2c1b52b6728585a5577720013e76}\label{global__defines_8h_a9f3f2c1b52b6728585a5577720013e76}} 
+\index{global\_defines.h@{global\_defines.h}!TMC\_ID\_PIOC@{TMC\_ID\_PIOC}}
+\index{TMC\_ID\_PIOC@{TMC\_ID\_PIOC}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{TMC\_ID\_PIOC}{TMC\_ID\_PIOC}}
+{\footnotesize\ttfamily \#define T\+M\+C\+\_\+\+I\+D\+\_\+\+P\+I\+OC~2}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{global__defines_8h_aacdc525d6f7bddb3ae95d5c311bd06a1}\label{global__defines_8h_aacdc525d6f7bddb3ae95d5c311bd06a1}} 
+\index{global\_defines.h@{global\_defines.h}!float32@{float32}}
+\index{float32@{float32}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{float32}{float32}}
+{\footnotesize\ttfamily typedef float \mbox{\hyperlink{global__defines_8h_aacdc525d6f7bddb3ae95d5c311bd06a1}{float32}}}
+
+\mbox{\Hypertarget{global__defines_8h_a47242387dc90e467815edcf50c40636b}\label{global__defines_8h_a47242387dc90e467815edcf50c40636b}} 
+\index{global\_defines.h@{global\_defines.h}!float64@{float64}}
+\index{float64@{float64}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{float64}{float64}}
+{\footnotesize\ttfamily typedef long double \mbox{\hyperlink{global__defines_8h_a47242387dc90e467815edcf50c40636b}{float64}}}
+
+\mbox{\Hypertarget{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}\label{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}} 
+\index{global\_defines.h@{global\_defines.h}!int16@{int16}}
+\index{int16@{int16}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{int16}{int16}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}}}
+
+\mbox{\Hypertarget{global__defines_8h_a4ca2d97e571b049be6f4cdcfaa1ab946}\label{global__defines_8h_a4ca2d97e571b049be6f4cdcfaa1ab946}} 
+\index{global\_defines.h@{global\_defines.h}!int32@{int32}}
+\index{int32@{int32}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{int32}{int32}}
+{\footnotesize\ttfamily typedef long \mbox{\hyperlink{global__defines_8h_a4ca2d97e571b049be6f4cdcfaa1ab946}{int32}}}
+
+\mbox{\Hypertarget{global__defines_8h_aecfc3c54bd29ad5964e1c1c3ccbf89df}\label{global__defines_8h_aecfc3c54bd29ad5964e1c1c3ccbf89df}} 
+\index{global\_defines.h@{global\_defines.h}!int64@{int64}}
+\index{int64@{int64}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{int64}{int64}}
+{\footnotesize\ttfamily typedef long long \mbox{\hyperlink{global__defines_8h_aecfc3c54bd29ad5964e1c1c3ccbf89df}{int64}}}
+
+\mbox{\Hypertarget{global__defines_8h_abd82d806a7d411d6b2275422007cc4f8}\label{global__defines_8h_abd82d806a7d411d6b2275422007cc4f8}} 
+\index{global\_defines.h@{global\_defines.h}!TM\_REG16@{TM\_REG16}}
+\index{TM\_REG16@{TM\_REG16}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{TM\_REG16}{TM\_REG16}}
+{\footnotesize\ttfamily typedef volatile \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} \mbox{\hyperlink{global__defines_8h_abd82d806a7d411d6b2275422007cc4f8}{T\+M\+\_\+\+R\+E\+G16}}}
+
+\mbox{\Hypertarget{global__defines_8h_a6a39e22630545a9014256e6f604d1291}\label{global__defines_8h_a6a39e22630545a9014256e6f604d1291}} 
+\index{global\_defines.h@{global\_defines.h}!TM\_REG32@{TM\_REG32}}
+\index{TM\_REG32@{TM\_REG32}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{TM\_REG32}{TM\_REG32}}
+{\footnotesize\ttfamily typedef volatile \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}} \mbox{\hyperlink{global__defines_8h_a6a39e22630545a9014256e6f604d1291}{T\+M\+\_\+\+R\+E\+G32}}}
+
+\mbox{\Hypertarget{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}\label{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}} 
+\index{global\_defines.h@{global\_defines.h}!Uint16@{Uint16}}
+\index{Uint16@{Uint16}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{Uint16}{Uint16}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}
+
+\mbox{\Hypertarget{global__defines_8h_aba99025e657f892beb7ff31cecf64653}\label{global__defines_8h_aba99025e657f892beb7ff31cecf64653}} 
+\index{global\_defines.h@{global\_defines.h}!Uint32@{Uint32}}
+\index{Uint32@{Uint32}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{Uint32}{Uint32}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}}}
+
+\mbox{\Hypertarget{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}\label{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}} 
+\index{global\_defines.h@{global\_defines.h}!Uint64@{Uint64}}
+\index{Uint64@{Uint64}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{Uint64}{Uint64}}
+{\footnotesize\ttfamily typedef unsigned long long \mbox{\hyperlink{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}{Uint64}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{global__defines_8h_a7c6368b321bd9acd0149b030bb8275ed}\label{global__defines_8h_a7c6368b321bd9acd0149b030bb8275ed}} 
+\index{global\_defines.h@{global\_defines.h}!boolean@{boolean}}
+\index{boolean@{boolean}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{boolean}{boolean}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{global__defines_8h_a7c6368b321bd9acd0149b030bb8275ed}{boolean}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{True@{True}!global\_defines.h@{global\_defines.h}}\index{global\_defines.h@{global\_defines.h}!True@{True}}}\mbox{\Hypertarget{global__defines_8h_a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b}\label{global__defines_8h_a7c6368b321bd9acd0149b030bb8275eda6d32c34708a0a3507c4bdb89219d650b}} 
+True&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{False@{False}!global\_defines.h@{global\_defines.h}}\index{global\_defines.h@{global\_defines.h}!False@{False}}}\mbox{\Hypertarget{global__defines_8h_a7c6368b321bd9acd0149b030bb8275edaf9d46b7804d93a4fcde88489a1b68c24}\label{global__defines_8h_a7c6368b321bd9acd0149b030bb8275edaf9d46b7804d93a4fcde88489a1b68c24}} 
+False&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}\label{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}} 
+\index{global\_defines.h@{global\_defines.h}!IER@{IER}}
+\index{IER@{IER}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{IER}{IER}}
+{\footnotesize\ttfamily cregister volatile unsigned int I\+ER\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{global__defines_8h_a1790c0117f7106f597b3540ba57df515}\label{global__defines_8h_a1790c0117f7106f597b3540ba57df515}} 
+\index{global\_defines.h@{global\_defines.h}!IFR@{IFR}}
+\index{IFR@{IFR}!global\_defines.h@{global\_defines.h}}
+\doxysubsubsection{\texorpdfstring{IFR}{IFR}}
+{\footnotesize\ttfamily cregister volatile unsigned int I\+FR\hspace{0.3cm}{\ttfamily [extern]}}
+

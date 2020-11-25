@@ -1,0 +1,675 @@
+\hypertarget{can_8c}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/can/can.c File Reference}
+\label{can_8c}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/can/can.c@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/can/can.c}}
+
+
+Source code file for C\+AN module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_t_m_c___b_a_s_e___c_a_n_8h_a98c4117a64b7357e2a86e67e525a82da}{T\+M\+P\+S\+\_\+\+C\+AN}} \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{C\+A\+N\+\_\+get\+Interface}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} gpio)
+\begin{DoxyCompactList}\small\item\em get\+\_\+can\+\_\+interface for matching right C\+A\+\_\+\+Interfaces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{can_8c_afbd627fc452b01712d35768a34951597}{init\+\_\+\+C\+AN}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int, \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}} baudrate)
+\begin{DoxyCompactList}\small\item\em Init C\+A\+N-\/\+Module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{can_8c_a79cccc4f7bc882cdbee8397111b6ef84}{C\+A\+N\+\_\+setup\+Mailbox}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int, int mb\+\_\+number, \mbox{\hyperlink{can_8h_af55d0fca7ff3e5347e89f1babbb69679}{Can\+Mailbox}} $\ast$mailbox)
+\begin{DoxyCompactList}\small\item\em C\+A\+N\+\_\+setup\+\_\+\+Mailbox -\/ assign mailboxnumber to mailbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{can_8c_ae402e5e16ad8d007c39b71add14b65a8}{C\+A\+N\+\_\+get\+Mailbox}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int, int mb\+\_\+number, \mbox{\hyperlink{can_8h_af55d0fca7ff3e5347e89f1babbb69679}{Can\+Mailbox}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em C\+A\+N\+\_\+get\+Mailbox -\/ get data that has been sent to specific mailbox. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{can_8c_ace70c4ffa3494841c801e1b6b484f5e0}{C\+A\+N\+\_\+send}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int, int mb\+\_\+number, \mbox{\hyperlink{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}{Uint64}} $\ast$data, int length)
+\item 
+int \mbox{\hyperlink{can_8c_a0e000cabdb656a6c30815d81077e77c0}{C\+A\+N\+\_\+data\+Available}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int)
+\begin{DoxyCompactList}\small\item\em C\+A\+N\+\_\+data\+Available. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{can_8c_a3e2eca89c17c2821cca192d9d09b050c}{C\+A\+N\+\_\+data\+Available\+At\+Mailbox}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int, int mb\+\_\+number)
+\begin{DoxyCompactList}\small\item\em C\+A\+N\+\_\+data\+Available at specific mailbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{can_8c_aad939fea62d76186174632eec487324d}{C\+A\+N\+\_\+reset\+Mailbox}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int, int mb\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Reset mailbox with specific mailbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{can_8c_a04bf72a4fdb9c57dce07f2017db437a8}{C\+A\+N\+\_\+get}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int, int mb\+\_\+number, \mbox{\hyperlink{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}{Uint64}} $\ast$data, int length)
+\begin{DoxyCompactList}\small\item\em Read data from mailbox with specific mailbox. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{can_8c_aee0943506f8e2d26f2d77d5ee778391d}{C\+A\+N\+\_\+mailbox\+Active}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int, int mb\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Is specific mailbox active?. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{can_8c_a7e7cd12972c1fcf367c440a1b60cbc1c}{C\+A\+N\+\_\+get\+Next\+Inactive\+Mailbox}} (\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}} C\+A\+N\+\_\+\+Int)
+\begin{DoxyCompactList}\small\item\em Returns first inactive mailbox (0-\/32). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source code file for C\+AN module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{can_8c_a0e000cabdb656a6c30815d81077e77c0}\label{can_8c_a0e000cabdb656a6c30815d81077e77c0}} 
+\index{can.c@{can.c}!CAN\_dataAvailable@{CAN\_dataAvailable}}
+\index{CAN\_dataAvailable@{CAN\_dataAvailable}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_dataAvailable()}{CAN\_dataAvailable()}}
+{\footnotesize\ttfamily int C\+A\+N\+\_\+data\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int }\end{DoxyParamCaption})}
+
+
+
+C\+A\+N\+\_\+data\+Available. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+A\+N\+\_\+\+Interface~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data available~\newline
+-\/-\/$>$ 0 = no~\newline
+-\/-\/$>$ 1 = yes 
+\end{DoxyReturn}
+
+
+Definition at line 405 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{405                                             \{}
+\DoxyCodeLine{406     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408     \textcolor{keywordflow}{return} CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_ac1ac6c3f1d0f42dde9cd4575e59b1509}{RMP}}?1:0;}
+\DoxyCodeLine{409 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_a3e2eca89c17c2821cca192d9d09b050c}\label{can_8c_a3e2eca89c17c2821cca192d9d09b050c}} 
+\index{can.c@{can.c}!CAN\_dataAvailableAtMailbox@{CAN\_dataAvailableAtMailbox}}
+\index{CAN\_dataAvailableAtMailbox@{CAN\_dataAvailableAtMailbox}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_dataAvailableAtMailbox()}{CAN\_dataAvailableAtMailbox()}}
+{\footnotesize\ttfamily int C\+A\+N\+\_\+data\+Available\+At\+Mailbox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int,  }\item[{int}]{mb\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+C\+A\+N\+\_\+data\+Available at specific mailbox. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+A\+N\+\_\+\+Interface~\newline
+ 2) mailbox number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data available~\newline
+-\/-\/$>$ 0 = no~\newline
+-\/-\/$>$ 1 = yes 
+\end{DoxyReturn}
+
+
+Definition at line 419 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{419                                                                     \{}
+\DoxyCodeLine{420     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422     \textcolor{keywordflow}{return} CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_ac1ac6c3f1d0f42dde9cd4575e59b1509}{RMP}}\&(1<<mb\_number)?1:0;}
+\DoxyCodeLine{423 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_a04bf72a4fdb9c57dce07f2017db437a8}\label{can_8c_a04bf72a4fdb9c57dce07f2017db437a8}} 
+\index{can.c@{can.c}!CAN\_get@{CAN\_get}}
+\index{CAN\_get@{CAN\_get}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_get()}{CAN\_get()}}
+{\footnotesize\ttfamily void C\+A\+N\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int,  }\item[{int}]{mb\+\_\+number,  }\item[{\mbox{\hyperlink{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}{Uint64}} $\ast$}]{data,  }\item[{int}]{length }\end{DoxyParamCaption})}
+
+
+
+Read data from mailbox with specific mailbox. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+A\+N\+\_\+\+Interface~\newline
+ 2) mailbox number 3) Pointer to data 4) length of data to be read in byte \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 445 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{445                                                                             \{   \textcolor{comment}{//Funktion zum Auslesen von Mailbox DATEN}}
+\DoxyCodeLine{446     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});}
+\DoxyCodeLine{447 }
+\DoxyCodeLine{448     \textcolor{keywordtype}{int} i;      \textcolor{comment}{//Vorher überprüfen ob überhaupt neue Daten vorhanden sind!}}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450     \textcolor{keywordflow}{for}(i=0;i<length;i++) \{}
+\DoxyCodeLine{451         \textcolor{keywordflow}{if}(i<4) \{}
+\DoxyCodeLine{452             *data   |= CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ac21ab6848a60d1c6ba5b858927b3f43b}{MDL}};}
+\DoxyCodeLine{453         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{454             *data   |= ((\mbox{\hyperlink{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}{Uint64}})CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_a7827492f048c39c376fa8b74452201a6}{MDH}}<<32);}
+\DoxyCodeLine{455         \}}
+\DoxyCodeLine{456     \}}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_ac1ac6c3f1d0f42dde9cd4575e59b1509}{RMP}} |= (1<<mb\_number);}
+\DoxyCodeLine{459 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_ace352073ceeb3f1da638be955e0f32e8}\label{can_8c_ace352073ceeb3f1da638be955e0f32e8}} 
+\index{can.c@{can.c}!CAN\_getInterface@{CAN\_getInterface}}
+\index{CAN\_getInterface@{CAN\_getInterface}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_getInterface()}{CAN\_getInterface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_t_m_c___b_a_s_e___c_a_n_8h_a98c4117a64b7357e2a86e67e525a82da}{T\+M\+P\+S\+\_\+\+C\+AN}} C\+A\+N\+\_\+get\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{gpio }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+can\+\_\+interface for matching right C\+A\+\_\+\+Interfaces. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) gpio (cantx pin)~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to respective C\+A\+N-\/\+Module~\newline
+-\/-\/$>$ 0x6000 = T\+M\+C\+\_\+\+B\+A\+S\+E\+\_\+\+C\+A\+NA~\newline
+-\/-\/$>$ 0x6200 = T\+M\+C\+\_\+\+B\+A\+S\+E\+\_\+\+C\+A\+NB~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 501 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{501                                       \{}
+\DoxyCodeLine{502     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN;}
+\DoxyCodeLine{503     \textcolor{keywordflow}{switch}(gpio)\{}
+\DoxyCodeLine{504         \textcolor{keywordflow}{case} 8:     CAN = TMC\_BASE\_CANB;}
+\DoxyCodeLine{505                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{506         \textcolor{keywordflow}{case} 10:    CAN = TMC\_BASE\_CANB;}
+\DoxyCodeLine{507                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{508         \textcolor{keywordflow}{case} 12:    CAN = TMC\_BASE\_CANB;}
+\DoxyCodeLine{509                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{510         \textcolor{keywordflow}{case} 13:    CAN = TMC\_BASE\_CANB;}
+\DoxyCodeLine{511                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{512         \textcolor{keywordflow}{case} 16:    CAN = TMC\_BASE\_CANB;}
+\DoxyCodeLine{513                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{514         \textcolor{keywordflow}{case} 17:    CAN = TMC\_BASE\_CANB;}
+\DoxyCodeLine{515                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{516         \textcolor{keywordflow}{case} 18:    CAN = TMC\_BASE\_CANA;}
+\DoxyCodeLine{517                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{518         \textcolor{keywordflow}{case} 19:    CAN = TMC\_BASE\_CANA;}
+\DoxyCodeLine{519                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{520         \textcolor{keywordflow}{case} 20:    CAN = TMC\_BASE\_CANB;}
+\DoxyCodeLine{521                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{522         \textcolor{keywordflow}{case} 21:    CAN = TMC\_BASE\_CANB;}
+\DoxyCodeLine{523                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{524         \textcolor{keywordflow}{case} 30:    CAN = TMC\_BASE\_CANA;}
+\DoxyCodeLine{525                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{526         \textcolor{keywordflow}{case} 31:    CAN = TMC\_BASE\_CANA;}
+\DoxyCodeLine{527                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{528         \textcolor{keywordflow}{default}:    \textcolor{keywordflow}{break};}
+\DoxyCodeLine{529     \}}
+\DoxyCodeLine{530     \textcolor{keywordflow}{return} CAN;}
+\DoxyCodeLine{531 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_ae402e5e16ad8d007c39b71add14b65a8}\label{can_8c_ae402e5e16ad8d007c39b71add14b65a8}} 
+\index{can.c@{can.c}!CAN\_getMailbox@{CAN\_getMailbox}}
+\index{CAN\_getMailbox@{CAN\_getMailbox}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_getMailbox()}{CAN\_getMailbox()}}
+{\footnotesize\ttfamily void C\+A\+N\+\_\+get\+Mailbox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int,  }\item[{int}]{mb\+\_\+number,  }\item[{\mbox{\hyperlink{can_8h_af55d0fca7ff3e5347e89f1babbb69679}{Can\+Mailbox}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+C\+A\+N\+\_\+get\+Mailbox -\/ get data that has been sent to specific mailbox. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+A\+N\+\_\+\+Interface~\newline
+ 2) mailbox number~\newline
+ 3) Can\+Mailbox $\ast$mailbox~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 355 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{355                                                                            \{}
+\DoxyCodeLine{356     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358     \textcolor{keywordflow}{if}(CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ae4d51b677574ef96e9bf7cf3152a1bbb}{ID}}>>31 != 0) \{}
+\DoxyCodeLine{359         data-\/>\mbox{\hyperlink{struct___can_mailbox_a3b418ae401d189c3fd4311f0f1c074e7}{Message\_ID}} = CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ae4d51b677574ef96e9bf7cf3152a1bbb}{ID}}\&0x1FFFFFFF;}
+\DoxyCodeLine{360         data-\/>\mbox{\hyperlink{struct___can_mailbox_a46aefd6d3d8d80a5a7fa3c2c25d2638d}{extended}} = 1;}
+\DoxyCodeLine{361     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{362         data-\/>\mbox{\hyperlink{struct___can_mailbox_a3b418ae401d189c3fd4311f0f1c074e7}{Message\_ID}} = (CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ae4d51b677574ef96e9bf7cf3152a1bbb}{ID}}>>18)\&0x7FF;}
+\DoxyCodeLine{363         data-\/>\mbox{\hyperlink{struct___can_mailbox_a46aefd6d3d8d80a5a7fa3c2c25d2638d}{extended}} = 0;}
+\DoxyCodeLine{364     \}}
+\DoxyCodeLine{365     data-\/>\mbox{\hyperlink{struct___can_mailbox_af487fc530cbeeb9acc36e4fd7521e6ed}{messageLength}} = CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_a5f10418d8dba3a5641907c95edb7ba60}{CTRL}}\&0x0F;}
+\DoxyCodeLine{366     data-\/>\mbox{\hyperlink{struct___can_mailbox_ae6e7758508e31420e4c1babd1eeae205}{direction}} = (\mbox{\hyperlink{can_8h_a3a66bfc91ca24ccfe46022bfa27b9be1}{CAN\_direction}})(CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a0fead0cfd9dc34c7a8fe0eedd21e13ca}{MD}}\&(1UL<<mb\_number));}
+\DoxyCodeLine{367     data-\/>\mbox{\hyperlink{struct___can_mailbox_aa5805c5e936174e5092bf7a5b78e7e64}{active}} = CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a5e19acc428e5c1bd1c55536def78052c}{ME}}\&(1UL<<mb\_number)?1:0;}
+\DoxyCodeLine{368 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_a7e7cd12972c1fcf367c440a1b60cbc1c}\label{can_8c_a7e7cd12972c1fcf367c440a1b60cbc1c}} 
+\index{can.c@{can.c}!CAN\_getNextInactiveMailbox@{CAN\_getNextInactiveMailbox}}
+\index{CAN\_getNextInactiveMailbox@{CAN\_getNextInactiveMailbox}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_getNextInactiveMailbox()}{CAN\_getNextInactiveMailbox()}}
+{\footnotesize\ttfamily int C\+A\+N\+\_\+get\+Next\+Inactive\+Mailbox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int }\end{DoxyParamCaption})}
+
+
+
+Returns first inactive mailbox (0-\/32). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+A\+N\+\_\+\+Interface~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+first inactive mailbox~\newline
+-\/-\/$>$ 0-\/32 = number of inactive mailbox~\newline
+-\/-\/$>$ -\/1 = all mailboxes in use~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 481 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{481                                                      \{}
+\DoxyCodeLine{482     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{485     \textcolor{keywordflow}{for}(i=0; i<32; i++) \{}
+\DoxyCodeLine{486         \textcolor{keywordflow}{if}(!(CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a5e19acc428e5c1bd1c55536def78052c}{ME}} \& (1UL<<i))) \{}
+\DoxyCodeLine{487             \textcolor{keywordflow}{return} i;}
+\DoxyCodeLine{488         \}}
+\DoxyCodeLine{489     \}}
+\DoxyCodeLine{490     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_aee0943506f8e2d26f2d77d5ee778391d}\label{can_8c_aee0943506f8e2d26f2d77d5ee778391d}} 
+\index{can.c@{can.c}!CAN\_mailboxActive@{CAN\_mailboxActive}}
+\index{CAN\_mailboxActive@{CAN\_mailboxActive}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_mailboxActive()}{CAN\_mailboxActive()}}
+{\footnotesize\ttfamily int C\+A\+N\+\_\+mailbox\+Active (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int,  }\item[{int}]{mb\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Is specific mailbox active?. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+A\+N\+\_\+\+Interface~\newline
+ 2) mailbox number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status~\newline
+-\/-\/$>$ 0 = no~\newline
+-\/-\/$>$ 1 = yes~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 469 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{469                                                            \{}
+\DoxyCodeLine{470     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});}
+\DoxyCodeLine{471     \textcolor{keywordflow}{return} (CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a5e19acc428e5c1bd1c55536def78052c}{ME}} \& (1UL<<mb\_number))?1:0;}
+\DoxyCodeLine{472 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_aad939fea62d76186174632eec487324d}\label{can_8c_aad939fea62d76186174632eec487324d}} 
+\index{can.c@{can.c}!CAN\_resetMailbox@{CAN\_resetMailbox}}
+\index{CAN\_resetMailbox@{CAN\_resetMailbox}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_resetMailbox()}{CAN\_resetMailbox()}}
+{\footnotesize\ttfamily void C\+A\+N\+\_\+reset\+Mailbox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int,  }\item[{int}]{mb\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Reset mailbox with specific mailbox. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+A\+N\+\_\+\+Interface~\newline
+ 2) mailbox number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 431 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{431                                                            \{                    \textcolor{comment}{//Funktion zum Löschen des "{}neue Nachricht"{} bit}}
+\DoxyCodeLine{432     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_ac1ac6c3f1d0f42dde9cd4575e59b1509}{RMP}} |= (1<<mb\_number);}
+\DoxyCodeLine{435 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_ace70c4ffa3494841c801e1b6b484f5e0}\label{can_8c_ace70c4ffa3494841c801e1b6b484f5e0}} 
+\index{can.c@{can.c}!CAN\_send@{CAN\_send}}
+\index{CAN\_send@{CAN\_send}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_send()}{CAN\_send()}}
+{\footnotesize\ttfamily int C\+A\+N\+\_\+send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int,  }\item[{int}]{mb\+\_\+number,  }\item[{\mbox{\hyperlink{global__defines_8h_a69e971e1bcd1d1beb4e09a8b17a95636}{Uint64}} $\ast$}]{data,  }\item[{int}]{length }\end{DoxyParamCaption})}
+
+
+
+Definition at line 370 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{370                                                                             \{}
+\DoxyCodeLine{371     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{374     \mbox{\hyperlink{struct___can_mailbox}{CanMailbox}} mail;}
+\DoxyCodeLine{375     \textcolor{keywordflow}{if}(length>8)}
+\DoxyCodeLine{376         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{377     \mbox{\hyperlink{can_8c_ae402e5e16ad8d007c39b71add14b65a8}{CAN\_getMailbox}}(CAN\_Int, mb\_number, \&mail);}
+\DoxyCodeLine{378     mail.\mbox{\hyperlink{struct___can_mailbox_af487fc530cbeeb9acc36e4fd7521e6ed}{messageLength}} = length;}
+\DoxyCodeLine{379     \mbox{\hyperlink{can_8c_a79cccc4f7bc882cdbee8397111b6ef84}{CAN\_setupMailbox}}(CAN\_Int, mb\_number, \&mail);}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ac21ab6848a60d1c6ba5b858927b3f43b}{MDL}} = 0;}
+\DoxyCodeLine{382     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_a7827492f048c39c376fa8b74452201a6}{MDH}} = 0;}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384     \textcolor{keywordflow}{for}(i=0;i<length;i++) \{}
+\DoxyCodeLine{385         \textcolor{keywordflow}{if}(i<4) \{}
+\DoxyCodeLine{386             CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ac21ab6848a60d1c6ba5b858927b3f43b}{MDL}} |= (*data\&0xFFFFFFFF);}
+\DoxyCodeLine{387         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{388             CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_a7827492f048c39c376fa8b74452201a6}{MDH}} |= (*data>>32)\&0xFFFFFFFF;}
+\DoxyCodeLine{389         \}}
+\DoxyCodeLine{390     \}}
+\DoxyCodeLine{391   \textcolor{keywordflow}{if}(CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_abb17ab96e4286b370a4c284dd74563c9}{TA}} \& (1UL<<mb\_number))}
+\DoxyCodeLine{392       CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_abb17ab96e4286b370a4c284dd74563c9}{TA}} |= (1UL<<mb\_number);}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394   CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a533e7a0a703e2f20166db3bd0c4d19b4}{TRS}} |= (1UL<<mb\_number);                                      \textcolor{comment}{// Send Mailbox}}
+\DoxyCodeLine{395   \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{396 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_a79cccc4f7bc882cdbee8397111b6ef84}\label{can_8c_a79cccc4f7bc882cdbee8397111b6ef84}} 
+\index{can.c@{can.c}!CAN\_setupMailbox@{CAN\_setupMailbox}}
+\index{CAN\_setupMailbox@{CAN\_setupMailbox}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_setupMailbox()}{CAN\_setupMailbox()}}
+{\footnotesize\ttfamily void C\+A\+N\+\_\+setup\+Mailbox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int,  }\item[{int}]{mb\+\_\+number,  }\item[{\mbox{\hyperlink{can_8h_af55d0fca7ff3e5347e89f1babbb69679}{Can\+Mailbox}} $\ast$}]{mailbox }\end{DoxyParamCaption})}
+
+
+
+C\+A\+N\+\_\+setup\+\_\+\+Mailbox -\/ assign mailboxnumber to mailbox. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) C\+A\+N\+\_\+\+Interface~\newline
+ 2) mailbox number~\newline
+ 3) Can\+Mailbox $\ast$mailbox~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 318 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{318                                                                                \{}
+\DoxyCodeLine{319     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321     \textcolor{keywordtype}{long} temp;}
+\DoxyCodeLine{322     \textcolor{keywordflow}{if}(mailbox-\/>\mbox{\hyperlink{struct___can_mailbox_a46aefd6d3d8d80a5a7fa3c2c25d2638d}{extended}}) \{}
+\DoxyCodeLine{323         temp = ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})mailbox-\/>\mbox{\hyperlink{struct___can_mailbox_a3b418ae401d189c3fd4311f0f1c074e7}{Message\_ID}}) | (1UL<<31);}
+\DoxyCodeLine{324     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{325         temp = ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})mailbox-\/>\mbox{\hyperlink{struct___can_mailbox_a3b418ae401d189c3fd4311f0f1c074e7}{Message\_ID}}<<18);}
+\DoxyCodeLine{326     \}}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328     \textcolor{comment}{// Write Id-\/Register only when change is pending}}
+\DoxyCodeLine{329     \textcolor{keywordflow}{if}(CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ae4d51b677574ef96e9bf7cf3152a1bbb}{ID}} != temp) \{}
+\DoxyCodeLine{330         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a5e19acc428e5c1bd1c55536def78052c}{ME}} \&= \string~(1UL<<mb\_number);                                     \textcolor{comment}{// Set off mailbox for Id change}}
+\DoxyCodeLine{331         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ae4d51b677574ef96e9bf7cf3152a1bbb}{ID}} = temp;                                   \textcolor{comment}{// Write Id-\/register}}
+\DoxyCodeLine{332     \}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_a5f10418d8dba3a5641907c95edb7ba60}{CTRL}} = (CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[mb\_number].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_a5f10418d8dba3a5641907c95edb7ba60}{CTRL}} \&= \string~0x0F ) | mailbox-\/>\mbox{\hyperlink{struct___can_mailbox_af487fc530cbeeb9acc36e4fd7521e6ed}{messageLength}};}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{336     \textcolor{keywordflow}{if}(mailbox-\/>\mbox{\hyperlink{struct___can_mailbox_ae6e7758508e31420e4c1babd1eeae205}{direction}} == \mbox{\hyperlink{can_8h_acbaf3bd7840aef6761b8bc6b9b25aa5ba88cd0d05173db0a38b0ec204b7d0a045}{CAN\_Rx}}) \{}
+\DoxyCodeLine{337         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a0fead0cfd9dc34c7a8fe0eedd21e13ca}{MD}} |= (1UL<<mb\_number);                                  \textcolor{comment}{// Mailbox Direction}}
+\DoxyCodeLine{338     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (mailbox-\/>\mbox{\hyperlink{struct___can_mailbox_ae6e7758508e31420e4c1babd1eeae205}{direction}} == \mbox{\hyperlink{can_8h_acbaf3bd7840aef6761b8bc6b9b25aa5bacebff6e9719da3828edc77e993ccb239}{CAN\_Tx}}) \{}
+\DoxyCodeLine{339         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a0fead0cfd9dc34c7a8fe0eedd21e13ca}{MD}} \&= \string~(1UL<<mb\_number);                                     \textcolor{comment}{// Mailbox Direction}}
+\DoxyCodeLine{340     \}}
+\DoxyCodeLine{341     \textcolor{keywordflow}{if}(mailbox-\/>\mbox{\hyperlink{struct___can_mailbox_aa5805c5e936174e5092bf7a5b78e7e64}{active}}) \{}
+\DoxyCodeLine{342         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a5e19acc428e5c1bd1c55536def78052c}{ME}} |= (1UL<<mb\_number);                                  \textcolor{comment}{// Activate Mailbox}}
+\DoxyCodeLine{343     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{344         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a5e19acc428e5c1bd1c55536def78052c}{ME}} \&= \string~(1UL<<mb\_number);                                     \textcolor{comment}{// Activate Mailbox}}
+\DoxyCodeLine{345     \}}
+\DoxyCodeLine{346 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{can_8c_afbd627fc452b01712d35768a34951597}\label{can_8c_afbd627fc452b01712d35768a34951597}} 
+\index{can.c@{can.c}!init\_CAN@{init\_CAN}}
+\index{init\_CAN@{init\_CAN}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{init\_CAN()}{init\_CAN()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+\+C\+AN (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{can_8h_a16e5be3aaff6f9acfcc12532e9efe017}{Can\+Interface}}}]{C\+A\+N\+\_\+\+Int,  }\item[{\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}}}]{baudrate }\end{DoxyParamCaption})}
+
+
+
+Init C\+A\+N-\/\+Module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) Can\+Interface~\newline
+ 2) baud rate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of canrx ~\newline
+-\/-\/$>$ -\/2 = invalid value of cantx ~\newline
+-\/-\/$>$ -\/3 = C\+A\+N-\/\+Module already in use ~\newline
+-\/-\/$>$ -\/4 = not able to set baudrate, baudrate too low~\newline
+-\/-\/$>$ -\/5 = Baudrate too high 1Mbit/s~\newline
+-\/-\/$>$ -\/6 = Tseg1 $<$ Tseg2; Tseg1 needs to be $>$= Tseg2~\newline
+-\/-\/$>$ -\/7 = Tseg1\+: maximal 16Tq~\newline
+-\/-\/$>$ -\/8 = Tseg2\+: maximal 8Tq ~\newline
+-\/-\/$>$ -\/9 = Tseg1\+: minimal 2Tq ~\newline
+-\/-\/$>$ -\/10 = Tseg2\+: minimal 1Tq ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 30 of file can.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                                                      \{}
+\DoxyCodeLine{31     \mbox{\hyperlink{struct___t_m_s___c_a_n}{TMPS\_CAN}} CAN = \mbox{\hyperlink{can_8c_ace352073ceeb3f1da638be955e0f32e8}{CAN\_getInterface}}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});            \textcolor{comment}{// Call function to assign correct address-\/value to variable for register-\/access}}
+\DoxyCodeLine{32     \textcolor{keyword}{static} \textcolor{keywordtype}{int} CAN\_A\_in\_use=0;}
+\DoxyCodeLine{33     \textcolor{keyword}{static} \textcolor{keywordtype}{int} CAN\_B\_in\_use=0;}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     EALLOW;}
+\DoxyCodeLine{37     \textcolor{keywordflow}{switch}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}})\{}
+\DoxyCodeLine{38     \textcolor{keywordflow}{case} 10:    \textcolor{keywordflow}{if}(!CAN\_B\_in\_use)\{}
+\DoxyCodeLine{39                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});                   \textcolor{comment}{// Enable pull-\/up for GPIO(CANRXB)}}
+\DoxyCodeLine{40                     TMC\_BASE\_PIO-\/>CTL[0].QSEL1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 20);                        \textcolor{comment}{// Asynch qual for GPIO10 (CANRXB)}}
+\DoxyCodeLine{41                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 20);                     \textcolor{comment}{// Configure GPIO10 for CANRXB}}
+\DoxyCodeLine{42                     \textcolor{keywordflow}{switch}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}})\{}
+\DoxyCodeLine{43                         \textcolor{keywordflow}{case} 8:     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO8 (CANTXB)}}
+\DoxyCodeLine{44                                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 16);     \textcolor{comment}{// Configure GPIO8 for CANTXB}}
+\DoxyCodeLine{45                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{46                         \textcolor{keywordflow}{case} 12:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{47                                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 24);     \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{48                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{49                         \textcolor{keywordflow}{case} 16:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{50                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x2);                     \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{51                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{52                         \textcolor{keywordflow}{case} 20:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{53                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x3 << 8);                \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{54                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{55                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{56                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{57                     \}}
+\DoxyCodeLine{58                     CAN\_B\_in\_use=1;}
+\DoxyCodeLine{59                 \}}
+\DoxyCodeLine{60                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{61                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{62                 \}}
+\DoxyCodeLine{63                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{64     \textcolor{keywordflow}{case} 13:    \textcolor{keywordflow}{if}(!CAN\_B\_in\_use)\{}
+\DoxyCodeLine{65                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});                   \textcolor{comment}{// Enable pull-\/up for GPIO(CANRXB)}}
+\DoxyCodeLine{66                     TMC\_BASE\_PIO-\/>CTL[0].QSEL1 |= (0x3 << (CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}}*2));              \textcolor{comment}{// Asynch qual for GPIO (CANRXB)}}
+\DoxyCodeLine{67                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 26);                     \textcolor{comment}{// Configure GPIO for CANRXB}}
+\DoxyCodeLine{68                     \textcolor{keywordflow}{switch}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}})\{}
+\DoxyCodeLine{69                         \textcolor{keywordflow}{case} 8:     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO8 (CANTXB)}}
+\DoxyCodeLine{70                                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 16);     \textcolor{comment}{// Configure GPIO8 for CANTXB}}
+\DoxyCodeLine{71                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{72                         \textcolor{keywordflow}{case} 12:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{73                                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 24);     \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{74                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{75                         \textcolor{keywordflow}{case} 16:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{76                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x2);                     \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{77                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{78                         \textcolor{keywordflow}{case} 20:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{79                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x3 << 8);                \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{80                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{81                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{82                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{83                     \}}
+\DoxyCodeLine{84                     CAN\_B\_in\_use=1;}
+\DoxyCodeLine{85                 \}}
+\DoxyCodeLine{86                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{87                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{88                 \}}
+\DoxyCodeLine{89                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{90     \textcolor{keywordflow}{case} 17:    \textcolor{keywordflow}{if}(!CAN\_B\_in\_use)\{}
+\DoxyCodeLine{91                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});                   \textcolor{comment}{// Enable pull-\/up for GPIO(CANRXB)}}
+\DoxyCodeLine{92                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= (0x3 << 2);                               \textcolor{comment}{// Asynch qual for GPIO (CANRXB)}}
+\DoxyCodeLine{93                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x2 << 2);                                \textcolor{comment}{// Configure GPIO for CANRXB}}
+\DoxyCodeLine{94                     \textcolor{keywordflow}{switch}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}})\{}
+\DoxyCodeLine{95                         \textcolor{keywordflow}{case} 8:     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO8 (CANTXB)}}
+\DoxyCodeLine{96                                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 16);     \textcolor{comment}{// Configure GPIO8 for CANTXB}}
+\DoxyCodeLine{97                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{98                         \textcolor{keywordflow}{case} 12:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{99                                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 24);     \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{100                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{101                         \textcolor{keywordflow}{case} 16:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{102                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x2);                     \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{103                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{104                         \textcolor{keywordflow}{case} 20:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{105                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x3 << 8);                \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{106                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{107                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{108                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{109                     \}}
+\DoxyCodeLine{110                     CAN\_B\_in\_use=1;}
+\DoxyCodeLine{111                 \}}
+\DoxyCodeLine{112                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{113                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{114                 \}}
+\DoxyCodeLine{115                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{116     \textcolor{keywordflow}{case} 18:    \textcolor{keywordflow}{if}(!CAN\_A\_in\_use)\{}
+\DoxyCodeLine{117                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});                   \textcolor{comment}{// Enable pull-\/up for GPIO(CANRXA)}}
+\DoxyCodeLine{118                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= (0x3 << 4);                               \textcolor{comment}{// Asynch qual for GPIO (CANRXA)}}
+\DoxyCodeLine{119                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x3 << 4);                                \textcolor{comment}{// Configure GPIO for CANRXA}}
+\DoxyCodeLine{120                     \textcolor{keywordflow}{switch}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}})\{}
+\DoxyCodeLine{121                         \textcolor{keywordflow}{case} 19:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXA)}}
+\DoxyCodeLine{122                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x3 << 6);                \textcolor{comment}{// Configure GPIO for CANTXA}}
+\DoxyCodeLine{123                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{124                         \textcolor{keywordflow}{case} 31:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXA)}}
+\DoxyCodeLine{125                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 30);     \textcolor{comment}{// Configure GPIO for CANTXA}}
+\DoxyCodeLine{126                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{127                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{128                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{129                     \}}
+\DoxyCodeLine{130                     CAN\_A\_in\_use=1;}
+\DoxyCodeLine{131                 \}}
+\DoxyCodeLine{132                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{133                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{134                 \}}
+\DoxyCodeLine{135                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{136     \textcolor{keywordflow}{case} 21:    \textcolor{keywordflow}{if}(!CAN\_B\_in\_use)\{}
+\DoxyCodeLine{137                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});                   \textcolor{comment}{// Enable pull-\/up for GPIO(CANRXB)}}
+\DoxyCodeLine{138                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= (0x3 << 10);                              \textcolor{comment}{// Asynch qual for GPIO (CANRXB)}}
+\DoxyCodeLine{139                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x3 << 10);                               \textcolor{comment}{// Configure GPIO for CANRXB}}
+\DoxyCodeLine{140                     \textcolor{keywordflow}{switch}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}})\{}
+\DoxyCodeLine{141                         \textcolor{keywordflow}{case} 8:     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO8 (CANTXB)}}
+\DoxyCodeLine{142                                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 16);     \textcolor{comment}{// Configure GPIO8 for CANTXB}}
+\DoxyCodeLine{143                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{144                         \textcolor{keywordflow}{case} 12:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{145                                     TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x2 << 24);     \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{146                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{147                         \textcolor{keywordflow}{case} 16:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{148                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x2);                     \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{149                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{150                         \textcolor{keywordflow}{case} 20:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~(0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}});   \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXB)}}
+\DoxyCodeLine{151                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x3 << 8);                \textcolor{comment}{// Configure GPIO for CANTXB}}
+\DoxyCodeLine{152                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{153                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{154                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{155                     \}}
+\DoxyCodeLine{156                     CAN\_B\_in\_use=1;}
+\DoxyCodeLine{157                 \}}
+\DoxyCodeLine{158                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{159                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{160                 \}}
+\DoxyCodeLine{161                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{162     \textcolor{keywordflow}{case} 30:    \textcolor{keywordflow}{if}(!CAN\_A\_in\_use)\{}
+\DoxyCodeLine{163                     TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a0ebceed44792358264acd86f878a892b}{canrx}});                 \textcolor{comment}{// Enable pull-\/up for GPIO(CANRXA)}}
+\DoxyCodeLine{164                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3 << 28);                                \textcolor{comment}{// Asynch qual for GPIO (CANRXA)}}
+\DoxyCodeLine{165                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 28);                             \textcolor{comment}{// Configure GPIO for CANRXA}}
+\DoxyCodeLine{166                     \textcolor{keywordflow}{switch}(CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}})\{}
+\DoxyCodeLine{167                         \textcolor{keywordflow}{case} 19:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}}); \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXA)}}
+\DoxyCodeLine{168                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x3 << 6);                        \textcolor{comment}{// Configure GPIO for CANTXA}}
+\DoxyCodeLine{169                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{170                         \textcolor{keywordflow}{case} 31:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << CAN\_Int.\mbox{\hyperlink{struct___can_interface_a326560c574126f649d5b71a48716ac6c}{cantx}}); \textcolor{comment}{// Enable pull-\/up for GPIO (CANTXA)}}
+\DoxyCodeLine{171                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 30);             \textcolor{comment}{// Configure GPIO for CANTXA}}
+\DoxyCodeLine{172                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{173                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{174                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{175                     \}}
+\DoxyCodeLine{176                     CAN\_A\_in\_use=1;}
+\DoxyCodeLine{177                 \}}
+\DoxyCodeLine{178                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{179                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{180                 \}}
+\DoxyCodeLine{181                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{182     \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{183                 \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{184     \}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_a140eccdc6196225ceca6bb3b43114cd4}{RIOC}} = 0x08;                           \textcolor{comment}{// CANRX pin is used for the CAN receive functions.}}
+\DoxyCodeLine{187     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_ae4bf36f1ef20dbf7af0ce82e3a702918}{TIOC}} = 0x08;                           \textcolor{comment}{// CANTX pin is used for the CAN transmit functions}}
+\DoxyCodeLine{188     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_acc85c4e6cdb0facde283834e76c2ed20}{MC}} |= (0x1 << 10);                       \textcolor{comment}{// The data is received or transmitted least significant byte first}}
+\DoxyCodeLine{189     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_acc85c4e6cdb0facde283834e76c2ed20}{MC}} |= (0x1 << 13);                       \textcolor{comment}{// Select eCAN mode: 32 Mailboxes}}
+\DoxyCodeLine{190     CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_acc85c4e6cdb0facde283834e76c2ed20}{MC}} |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 16);             \textcolor{comment}{// Free mode: The peripheral continues to run in SUSPEND}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{keywordflow}{for}(i=0;i<32;i++) \{                         \textcolor{comment}{// Clear all values of mailboxes}}
+\DoxyCodeLine{193         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[i].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_a5f10418d8dba3a5641907c95edb7ba60}{CTRL}} = 0;}
+\DoxyCodeLine{194         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[i].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ae4d51b677574ef96e9bf7cf3152a1bbb}{ID}} = 0;}
+\DoxyCodeLine{195         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[i].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_a7827492f048c39c376fa8b74452201a6}{MDH}} = 0;}
+\DoxyCodeLine{196         CAN-\/>\mbox{\hyperlink{struct___t_m_s___c_a_n_aa9eb2b7c7a50e18bd7d3e065188a766a}{MO}}[i].\mbox{\hyperlink{struct___t_m_s___c_a_n___m_o_ac21ab6848a60d1c6ba5b858927b3f43b}{MDL}} = 0;}
+\DoxyCodeLine{197     \}}
+\DoxyCodeLine{198     EDIS;}
+\DoxyCodeLine{199     \textcolor{keywordflow}{return} CAN\_setBaudrate(CAN, baudrate);}
+\DoxyCodeLine{200 \}}
+
+\end{DoxyCode}

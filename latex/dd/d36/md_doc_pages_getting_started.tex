@@ -1,0 +1,97 @@
+\mbox{\hyperlink{group__setup__ccs__project}{Set up C\+C\+S-\/\+Project}} ~\newline
+ \mbox{\hyperlink{import_library}{Import library to Project Explorer}} ~\newline
+ \mbox{\hyperlink{link_to_library}{Link library to project}} ~\newline
+ \mbox{\hyperlink{first_steps}{First Steps}} ~\newline
+ \mbox{\hyperlink{write_to_flash}{Programming the Flash}} \hypertarget{import_library}{}\doxysection{Import library to Project Explorer}\label{import_library}
+\hypertarget{link_to_library}{}\doxysection{Link library to project}\label{link_to_library}
+\hypertarget{first_steps}{}\doxysection{First Steps}\label{first_steps}
+1) Überlege dir vorher, welche G\+P\+I\+Os welche F\+Unktion ausführen sollen
+
+
+\begin{DoxyItemize}
+\item Ein G\+P\+IO kann nur eine Funktion ausführen
+\item Die letzte Konfiguration überschreibt eine vorherige Konfiguration
+\end{DoxyItemize}
+
+2) Importiere global defines.\+h und die notwendigen header-\/\+Dateien für die verwendeten Modulke der G\+P\+I\+Os
+
+3) Set system controls
+
+4) Initialisiere die G\+P\+I\+Os indem du die initialisierungsfunktionen aufrufst -\/-\/$>$ tippe \char`\"{}init\char`\"{} und drücke anschließend Strg+\+Space um alle Initialisierungsfunktionen zu sehen
+
+-\/-\/$>$ look into respective header or source file of used module to see which functions can be used for module-\/operations
+
+-\/-\/$>$ see in documentation code examples how to call functions for modules \hypertarget{write_to_flash}{}\doxysection{Programming the Flash}\label{write_to_flash}
+~\newline
+
+
+This section describes how to program and execute code from the on-\/chip flash memory. Using the on-\/chip flash eliminates the need for external non-\/volatile memory or a host processor from which to bootload.
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Link Initialized Sections to On-\/\+Chip-\/\+Flash}}
+
+
+\begin{DoxyEnumerate}
+\item Click your Project with the right Mouse Button -\/-\/$>$ Open Properties Properties
+\item Navigate to General -\/-\/$>$ Select the Linker command file\+: F28335.\+cmd
+
+
+
+Apply and Close -\/-\/$>$ F28335.\+cmd is created in Project Folder
+\item Open file F28335.\+cmd and replace code by \href{../doc_documents/F28335.cmd}{\texttt{ this~code}} ~\newline
+
+\end{DoxyEnumerate}
+
+Initialized Sections are now linked to Flash for standalone operation
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Executing from Flash after Reset}}
+
+
+\begin{DoxyEnumerate}
+\item Click your Project with the right Mouse Button -\/-\/$>$ New -\/-\/$>$ File
+\item Name your file \char`\"{}\+T\+M\+S320\+F28335\+\_\+\+Startupcode.\+asm\char`\"{} -\/ Ensure that it is an assembly file with ending .asm
+
+
+\item Open file T\+M\+S320\+F28335\+\_\+\+Startupcode.\+asm and replace code by \href{../doc_documents/TMS320F28335_Startupcode.asm}{\texttt{ this code}} ~\newline
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Check your configuration}}
+
+
+\begin{DoxyEnumerate}
+\item Click Build Project
+\item Click Debug Button -\/-\/$>$ Erasing Flash Sectors appears
+
+
+\item Click Reset C\+PU Button 
+
+-\/-\/$>$ Disassembly window opens
+
+-\/-\/$>$ Click View Disassembly... 
+\end{DoxyEnumerate}
+
+You can see the start of the bootloader in the bootram now
+
+
+\begin{DoxyEnumerate}
+\item You can now single step through the bootloader, to understand the operations of the bootloader $\vert$ Or you click on Run -\/-\/$>$ Go Main to skip the single steps
+
+
+\end{DoxyEnumerate}
+
+-\/-\/$>$ When code jumps to your main() function, it confirms that your flash has been programmed properly and that the bootloader is properly configured to jump to flash. ~\newline
+
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Flash has been successfully programmed and your code runs in standalone operation on the T\+M\+S320\+F28335 when it is powered.}} 

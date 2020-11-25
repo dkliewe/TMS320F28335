@@ -1,0 +1,519 @@
+\hypertarget{spi_8c}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/spi/spi.c File Reference}
+\label{spi_8c}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/spi/spi.c@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/spi/spi.c}}
+
+
+Source code file for S\+PI module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{spi_8c_a822ea761e61142122be27516846a3730}{init\+\_\+\+S\+P\+I\+Master\+Mode}} (\mbox{\hyperlink{spi_8h_aef9c61c6b33b55d173c7169a217bfc82}{S\+P\+I\+Interface}} S\+P\+I\+\_\+\+Int, \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}} baudrate)
+\begin{DoxyCompactList}\small\item\em Initialization of S\+PI Interface for Master mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{spi_8c_ae6bd0e32460f99dfc631141865162e89}{init\+\_\+\+S\+P\+I\+Slave\+Mode}} (\mbox{\hyperlink{spi_8h_aef9c61c6b33b55d173c7169a217bfc82}{S\+P\+I\+Interface}} S\+P\+I\+\_\+\+Int)
+\begin{DoxyCompactList}\small\item\em Initialization of S\+PI Interface for slave mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{spi_8c_adde31e5a5cc62ce8b9fb2eba2616add6}{S\+P\+I\+\_\+set\+Tx\+Interrupt}} (void $\ast$spi\+Tx\+F\+I\+F\+O\+I\+SR)
+\begin{DoxyCompactList}\small\item\em Configuration of S\+PI Tx I\+SR. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{spi_8c_a0844a80a1a2494fcf9894c4610c664ff}{S\+P\+I\+\_\+set\+Rx\+Interrupt}} (void $\ast$spi\+Rx\+F\+I\+F\+O\+I\+SR)
+\begin{DoxyCompactList}\small\item\em Configuration of S\+PI Rx I\+SR. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{spi_8c_a4138fa89f174ce3fa1b5117a9a031ce0}{S\+P\+I\+\_\+send}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} sdata)
+\begin{DoxyCompactList}\small\item\em Send data via S\+PI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{spi_8c_a890e6e4bc94330d30a9f449ca9192fbe}{S\+P\+I\+\_\+read}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} $\ast$rdata)
+\begin{DoxyCompactList}\small\item\em Read Rx-\/data of S\+PI module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{spi_8c_a10f8a229cc350a50cd7e77a556efd10c}{S\+P\+I\+\_\+interrupt\+Ack}} ()
+\begin{DoxyCompactList}\small\item\em Giving interrupts acknowledge to interrupt again. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{spi_8c_ad614188624f95f80292aafcd97229c79}{S\+P\+I\+\_\+clear\+Rx\+Interrupt\+Flag}} (void)
+\begin{DoxyCompactList}\small\item\em Clear Interrupt Flag for receive operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{spi_8c_a3d8df677d633bdda2d8e4b791f3dc085}{S\+P\+I\+\_\+clear\+Tx\+Interrupt\+Flag}} ()
+\begin{DoxyCompactList}\small\item\em Clear Interrupt Flag for transmit operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source code file for S\+PI module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{spi_8c_a822ea761e61142122be27516846a3730}\label{spi_8c_a822ea761e61142122be27516846a3730}} 
+\index{spi.c@{spi.c}!init\_SPIMasterMode@{init\_SPIMasterMode}}
+\index{init\_SPIMasterMode@{init\_SPIMasterMode}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{init\_SPIMasterMode()}{init\_SPIMasterMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+\+S\+P\+I\+Master\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{spi_8h_aef9c61c6b33b55d173c7169a217bfc82}{S\+P\+I\+Interface}}}]{S\+P\+I\+\_\+\+Int,  }\item[{\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}}}]{baudrate }\end{DoxyParamCaption})}
+
+
+
+Initialization of S\+PI Interface for Master mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) S\+P\+I\+Interface S\+P\+I\+\_\+\+Int ~\newline
+ 2) Uint32 baudrate ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = S\+P\+I\+\_\+\+Int.\+spi\+\_\+simo invalid value ~\newline
+-\/-\/$>$ -\/2 = S\+P\+I\+\_\+\+Int.\+spi\+\_\+somi invalid value ~\newline
+-\/-\/$>$ -\/3 = S\+P\+I\+\_\+\+Int.\+spi\+\_\+clk invalid value ~\newline
+-\/-\/$>$ -\/4 = S\+P\+I\+\_\+\+Int.\+spi\+\_\+ss invalid value ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 22 of file spi.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22                                                                \{}
+\DoxyCodeLine{23     EALLOW;}
+\DoxyCodeLine{24     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_aba7fb43dda864cb36d356ff13408b29f}{spi\_simo}})\{}
+\DoxyCodeLine{25         \textcolor{keywordflow}{case} 16:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<16);                       \textcolor{comment}{// Enable pull-\/up on GPIO16 (SPISIMOA)}}
+\DoxyCodeLine{26                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= (0x3);                                \textcolor{comment}{// Asynch input GPIO16 (SPISIMOA)}}
+\DoxyCodeLine{27                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x1);                                 \textcolor{comment}{// Configure GPIO16 as SPISIMOA}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_ad8b1a92405cf7bc3616eaa337f3b9227}{spi\_somi}})\{}
+\DoxyCodeLine{30                         \textcolor{keywordflow}{case} 17:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<17);       \textcolor{comment}{// Enable pull-\/up on GPIO17 (SPISOMIA)}}
+\DoxyCodeLine{31                                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= (0x3<<2);             \textcolor{comment}{// Asynch input GPIO17 (SPISOMIA)}}
+\DoxyCodeLine{32                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x1<<2);              \textcolor{comment}{// Configure GPIO17 as SPISOMIA}}
+\DoxyCodeLine{33                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{34                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{35                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{36                     \}}
+\DoxyCodeLine{37                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_a50d0e75a05f22240ec8c7907f9d1c0f8}{spi\_clk}})\{}
+\DoxyCodeLine{38                         \textcolor{keywordflow}{case} 18:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<18);       \textcolor{comment}{// Enable pull-\/up on GPIO18 (SPICLKA)}}
+\DoxyCodeLine{39                                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<4);       \textcolor{comment}{// Asynch input GPIO18 (SPICLKA)}}
+\DoxyCodeLine{40                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<4);        \textcolor{comment}{// Configure GPIO18 as SPICLKA}}
+\DoxyCodeLine{41                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{42                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{43                                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{44                     \}}
+\DoxyCodeLine{45                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_a44b8e9603f88ad20c279e90ebc8d1a94}{spi\_ss}})\{}
+\DoxyCodeLine{46                         \textcolor{keywordflow}{case} 19:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<19);       \textcolor{comment}{// Enable pull-\/up on GPIO19 (SPISTEA)}}
+\DoxyCodeLine{47                                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<6);       \textcolor{comment}{// Asynch input GPIO19 (SPISTEA)}}
+\DoxyCodeLine{48                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<6);        \textcolor{comment}{// Configure GPIO19 as SPISTEA}}
+\DoxyCodeLine{49                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{50                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{51                                     \textcolor{keywordflow}{return} -\/4;}
+\DoxyCodeLine{52                     \}}
+\DoxyCodeLine{53                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{54         \textcolor{keywordflow}{case} 54:    TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<22);                       \textcolor{comment}{// Enable pull-\/up on GPIO54 (SPISIMOA)}}
+\DoxyCodeLine{55                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<12);                  \textcolor{comment}{// Asynch input GPIO54 (SPISIMOA)}}
+\DoxyCodeLine{56                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<12);                       \textcolor{comment}{// Configure GPIO54 as SPISIMOA}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_ad8b1a92405cf7bc3616eaa337f3b9227}{spi\_somi}})\{}
+\DoxyCodeLine{59                         \textcolor{keywordflow}{case} 55:    TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<23);       \textcolor{comment}{// Enable pull-\/up on GPIO55 (SPISOMIA)}}
+\DoxyCodeLine{60                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<14);  \textcolor{comment}{// Asynch input GPIO55 (SPISOMIA)}}
+\DoxyCodeLine{61                                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<14);       \textcolor{comment}{// Configure GPIO55 as SPISOMIA}}
+\DoxyCodeLine{62                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{63                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{64                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{65                     \}}
+\DoxyCodeLine{66                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_a50d0e75a05f22240ec8c7907f9d1c0f8}{spi\_clk}})\{}
+\DoxyCodeLine{67                         \textcolor{keywordflow}{case} 56:    TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<24);       \textcolor{comment}{// Enable pull-\/up on GPIO56 (SPICLKA)}}
+\DoxyCodeLine{68                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<16);  \textcolor{comment}{// Asynch input GPIO56 (SPICLKA)}}
+\DoxyCodeLine{69                                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<16);       \textcolor{comment}{// Configure GPIO56 as SPICLKA}}
+\DoxyCodeLine{70                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{71                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{72                                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{73                     \}}
+\DoxyCodeLine{74                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_a44b8e9603f88ad20c279e90ebc8d1a94}{spi\_ss}})\{}
+\DoxyCodeLine{75                         \textcolor{keywordflow}{case} 57:    TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<25);       \textcolor{comment}{// Enable pull-\/up on GPIO57 (SPISTEA)}}
+\DoxyCodeLine{76                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<18);  \textcolor{comment}{// Asynch input GPIO57 (SPISTEA)}}
+\DoxyCodeLine{77                                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<18);       \textcolor{comment}{// Configure GPIO57 as SPISTEA}}
+\DoxyCodeLine{78                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{79                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{80                                     \textcolor{keywordflow}{return} -\/4;}
+\DoxyCodeLine{81                     \}}
+\DoxyCodeLine{82                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{83         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{84                     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{85     \}}
+\DoxyCodeLine{86     EDIS;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     TMC\_BASE\_SPIA-\/>CCR \&= \string~(0x1<<7);                        \textcolor{comment}{// Set in Reset}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     TMC\_BASE\_SPIA-\/>CTL |= 0x0004;                           \textcolor{comment}{// Enable master mode}}
+\DoxyCodeLine{91     TMC\_BASE\_SPIA-\/>CTL |= 0x0002;                           \textcolor{comment}{// Enable transmission}}
+\DoxyCodeLine{92     TMC\_BASE\_SPIA-\/>CTL |= 0x0001;                           \textcolor{comment}{// Enable interrupts}}
+\DoxyCodeLine{93     TMC\_BASE\_SPIA-\/>BRR |= (F\_LSPCLK/baudrate)-\/1;            \textcolor{comment}{// Set Baudrate}}
+\DoxyCodeLine{94     TMC\_BASE\_SPIA-\/>CCR |= SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_aeb757cc6b370d657946a94451b67a5ee}{wordlength\_in\_bit}}-\/1;     \textcolor{comment}{// Set Wordlength}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// Initialize SPI FIFO registers}}
+\DoxyCodeLine{97     TMC\_BASE\_SPIA-\/>FFRX \&= \string~(0x1F);}
+\DoxyCodeLine{98     TMC\_BASE\_SPIA-\/>FFRX |= (0x1);                           \textcolor{comment}{// Receive FIFO interrupt when there are 1 or more words in receive fifo}}
+\DoxyCodeLine{99     TMC\_BASE\_SPIA-\/>FFRX |= (0x1 << 5);                      \textcolor{comment}{// Enable interrupt}}
+\DoxyCodeLine{100     TMC\_BASE\_SPIA-\/>FFRX |= (0x1 << 6);                      \textcolor{comment}{// Clear Interrupt Flag}}
+\DoxyCodeLine{101     TMC\_BASE\_SPIA-\/>FFRX |= (0x1 << 13);                     \textcolor{comment}{// Re-\/enable receive FIFO operation}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     TMC\_BASE\_SPIA-\/>FFTX \&= \string~(0x1F);                         \textcolor{comment}{// Transmit FIFO interrupt when Transmit Fifo empty}}
+\DoxyCodeLine{104     TMC\_BASE\_SPIA-\/>FFTX |= (0x1 << 5);                      \textcolor{comment}{// Enable Interrupt}}
+\DoxyCodeLine{105     TMC\_BASE\_SPIA-\/>FFTX |= (0x1 << 6);                      \textcolor{comment}{// Clear Interrupt Flag}}
+\DoxyCodeLine{106     TMC\_BASE\_SPIA-\/>FFTX |= (0x1 << 13);                     \textcolor{comment}{// Release FIFO from reset}}
+\DoxyCodeLine{107     TMC\_BASE\_SPIA-\/>FFTX |= (0x1 << 14);                     \textcolor{comment}{// FIFO enhancements enabled}}
+\DoxyCodeLine{108     TMC\_BASE\_SPIA-\/>FFTX |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << 15);               \textcolor{comment}{// SPI FIFO resume}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     TMC\_BASE\_SPIA-\/>FFCT |= (0x8);                           \textcolor{comment}{// Transmit Delay}}
+\DoxyCodeLine{111     TMC\_BASE\_SPIA-\/>CCR |= (0x1<<7);                         \textcolor{comment}{// Relinquish SPI from Reset}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{114 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{spi_8c_ae6bd0e32460f99dfc631141865162e89}\label{spi_8c_ae6bd0e32460f99dfc631141865162e89}} 
+\index{spi.c@{spi.c}!init\_SPISlaveMode@{init\_SPISlaveMode}}
+\index{init\_SPISlaveMode@{init\_SPISlaveMode}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{init\_SPISlaveMode()}{init\_SPISlaveMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+\+S\+P\+I\+Slave\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{spi_8h_aef9c61c6b33b55d173c7169a217bfc82}{S\+P\+I\+Interface}}}]{S\+P\+I\+\_\+\+Int }\end{DoxyParamCaption})}
+
+
+
+Initialization of S\+PI Interface for slave mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) S\+P\+I\+Interface S\+P\+I\+\_\+\+Int ~\newline
+ 2) Uint32 baudrate ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16~\newline
+-\/-\/$>$ 0 = operation successful~\newline
+-\/-\/$>$ -\/1 = S\+P\+I\+\_\+\+Int.\+spi\+\_\+simo invalid value ~\newline
+-\/-\/$>$ -\/2 = S\+P\+I\+\_\+\+Int.\+spi\+\_\+somi invalid value ~\newline
+-\/-\/$>$ -\/3 = S\+P\+I\+\_\+\+Int.\+spi\+\_\+clk invalid value ~\newline
+-\/-\/$>$ -\/4 = S\+P\+I\+\_\+\+Int.\+spi\+\_\+ss invalid value ~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 127 of file spi.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127                                              \{}
+\DoxyCodeLine{128     EALLOW;}
+\DoxyCodeLine{129     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_aba7fb43dda864cb36d356ff13408b29f}{spi\_simo}})\{}
+\DoxyCodeLine{130         \textcolor{keywordflow}{case} 16:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<16);                       \textcolor{comment}{// Enable pull-\/up on GPIO16 (SPISIMOA)}}
+\DoxyCodeLine{131                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= (0x3);                                \textcolor{comment}{// Asynch input GPIO16 (SPISIMOA)}}
+\DoxyCodeLine{132                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x1);                                 \textcolor{comment}{// Configure GPIO16 as SPISIMOA}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_ad8b1a92405cf7bc3616eaa337f3b9227}{spi\_somi}})\{}
+\DoxyCodeLine{135                         \textcolor{keywordflow}{case} 17:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<17);       \textcolor{comment}{// Enable pull-\/up on GPIO17 (SPISOMIA)}}
+\DoxyCodeLine{136                                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= (0x3<<2);             \textcolor{comment}{// Asynch input GPIO17 (SPISOMIA)}}
+\DoxyCodeLine{137                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= (0x1<<2);              \textcolor{comment}{// Configure GPIO17 as SPISOMIA}}
+\DoxyCodeLine{138                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{139                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{140                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{141                     \}}
+\DoxyCodeLine{142                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_a50d0e75a05f22240ec8c7907f9d1c0f8}{spi\_clk}})\{}
+\DoxyCodeLine{143                         \textcolor{keywordflow}{case} 18:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<18);       \textcolor{comment}{// Enable pull-\/up on GPIO18 (SPICLKA)}}
+\DoxyCodeLine{144                                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<4);       \textcolor{comment}{// Asynch input GPIO18 (SPICLKA)}}
+\DoxyCodeLine{145                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<4);        \textcolor{comment}{// Configure GPIO18 as SPICLKA}}
+\DoxyCodeLine{146                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{147                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{148                                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{149                     \}}
+\DoxyCodeLine{150                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_a44b8e9603f88ad20c279e90ebc8d1a94}{spi\_ss}})\{}
+\DoxyCodeLine{151                         \textcolor{keywordflow}{case} 19:    TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<19);       \textcolor{comment}{// Enable pull-\/up on GPIO19 (SPISTEA)}}
+\DoxyCodeLine{152                                     TMC\_BASE\_PIO-\/>CTL[0].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<6);       \textcolor{comment}{// Asynch input GPIO19 (SPISTEA)}}
+\DoxyCodeLine{153                                     TMC\_BASE\_PIO-\/>CTL[0].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<6);        \textcolor{comment}{// Configure GPIO19 as SPISTEA}}
+\DoxyCodeLine{154                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{155                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{156                                     \textcolor{keywordflow}{return} -\/4;}
+\DoxyCodeLine{157                     \}}
+\DoxyCodeLine{158                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{159         \textcolor{keywordflow}{case} 54:    TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<22);                       \textcolor{comment}{// Enable pull-\/up on GPIO54 (SPISIMOA)}}
+\DoxyCodeLine{160                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<12);                  \textcolor{comment}{// Asynch input GPIO54 (SPISIMOA)}}
+\DoxyCodeLine{161                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<12);                       \textcolor{comment}{// Configure GPIO54 as SPISIMOA}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_ad8b1a92405cf7bc3616eaa337f3b9227}{spi\_somi}})\{}
+\DoxyCodeLine{164                         \textcolor{keywordflow}{case} 55:    TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<23);       \textcolor{comment}{// Enable pull-\/up on GPIO55 (SPISOMIA)}}
+\DoxyCodeLine{165                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<14);  \textcolor{comment}{// Asynch input GPIO55 (SPISOMIA)}}
+\DoxyCodeLine{166                                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<14);       \textcolor{comment}{// Configure GPIO55 as SPISOMIA}}
+\DoxyCodeLine{167                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{168                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{169                                     \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{170                     \}}
+\DoxyCodeLine{171                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_a50d0e75a05f22240ec8c7907f9d1c0f8}{spi\_clk}})\{}
+\DoxyCodeLine{172                         \textcolor{keywordflow}{case} 56:    TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<24);       \textcolor{comment}{// Enable pull-\/up on GPIO56 (SPICLKA)}}
+\DoxyCodeLine{173                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<16);  \textcolor{comment}{// Asynch input GPIO56 (SPICLKA)}}
+\DoxyCodeLine{174                                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<16);       \textcolor{comment}{// Configure GPIO56 as SPICLKA}}
+\DoxyCodeLine{175                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{176                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{177                                     \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{178                     \}}
+\DoxyCodeLine{179                     \textcolor{keywordflow}{switch}(SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_a44b8e9603f88ad20c279e90ebc8d1a94}{spi\_ss}})\{}
+\DoxyCodeLine{180                         \textcolor{keywordflow}{case} 57:    TMC\_BASE\_PIO-\/>CTL[1].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<25);       \textcolor{comment}{// Enable pull-\/up on GPIO57 (SPISTEA)}}
+\DoxyCodeLine{181                                     TMC\_BASE\_PIO-\/>CTL[1].QSEL2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x3<<18);  \textcolor{comment}{// Asynch input GPIO57 (SPISTEA)}}
+\DoxyCodeLine{182                                     TMC\_BASE\_PIO-\/>CTL[1].MUX2 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<18);       \textcolor{comment}{// Configure GPIO57 as SPISTEA}}
+\DoxyCodeLine{183                                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{184                         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{185                                     \textcolor{keywordflow}{return} -\/4;}
+\DoxyCodeLine{186                     \}}
+\DoxyCodeLine{187                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{188         \textcolor{keywordflow}{default}:    EDIS;}
+\DoxyCodeLine{189                     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{190     \}}
+\DoxyCodeLine{191     EDIS;}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     TMC\_BASE\_SPIA-\/>CCR \&= \string~(0x1<<7);                        \textcolor{comment}{// Set in Reset}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196     TMC\_BASE\_SPIA-\/>CTL \&= \string~(0x0004);                        \textcolor{comment}{// Disable master mode}}
+\DoxyCodeLine{197     TMC\_BASE\_SPIA-\/>CTL |= (0x2);                            \textcolor{comment}{// Enable transmission}}
+\DoxyCodeLine{198     TMC\_BASE\_SPIA-\/>CTL |= (0x1);                            \textcolor{comment}{// Enable interrupts}}
+\DoxyCodeLine{199     TMC\_BASE\_SPIA-\/>CCR |= SPI\_Int.\mbox{\hyperlink{struct___s_p_i_interface_aeb757cc6b370d657946a94451b67a5ee}{wordlength\_in\_bit}}-\/1;     \textcolor{comment}{// Set Wordlength}}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201     \textcolor{comment}{// Initialize SPI FIFO registers}}
+\DoxyCodeLine{202     TMC\_BASE\_SPIA-\/>FFRX |= (0x1<<13);                       \textcolor{comment}{// Re-\/enable receive FIFO operation}}
+\DoxyCodeLine{203     TMC\_BASE\_SPIA-\/>FFRX \&= \string~(0x1F);                         \textcolor{comment}{// Receive}}
+\DoxyCodeLine{204     TMC\_BASE\_SPIA-\/>FFRX |= (0x1);                           \textcolor{comment}{// Set RX FIFO level to 1}}
+\DoxyCodeLine{205     TMC\_BASE\_SPIA-\/>FFRX |= (0x1<<5);                        \textcolor{comment}{// Enable interrupt}}
+\DoxyCodeLine{206     TMC\_BASE\_SPIA-\/>FFRX |= (0x1<<6);                        \textcolor{comment}{// Clear Interrupt Flag}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     TMC\_BASE\_SPIA-\/>FFTX |= (0x1<<13);                       \textcolor{comment}{// Release FIFO from reset}}
+\DoxyCodeLine{210     TMC\_BASE\_SPIA-\/>FFTX |= (0x1<<14);                       \textcolor{comment}{// FIFO enhancements enabled}}
+\DoxyCodeLine{211     TMC\_BASE\_SPIA-\/>FFTX \&= \string~(0x1F);                         \textcolor{comment}{// Set TX FIFO level to 0}}
+\DoxyCodeLine{212     TMC\_BASE\_SPIA-\/>FFTX |= (0x1<<5);                        \textcolor{comment}{// Enable Interrupt}}
+\DoxyCodeLine{213     TMC\_BASE\_SPIA-\/>FFTX |= (0x1<<6);                        \textcolor{comment}{// Clear Interrupt Flag}}
+\DoxyCodeLine{214     TMC\_BASE\_SPIA-\/>FFTX |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1<<15);             \textcolor{comment}{// SPI FIFO resume}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216     TMC\_BASE\_SPIA-\/>CCR |= (0x1<<7);                         \textcolor{comment}{// Relinquish SPI from Reset}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{219 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{spi_8c_ad614188624f95f80292aafcd97229c79}\label{spi_8c_ad614188624f95f80292aafcd97229c79}} 
+\index{spi.c@{spi.c}!SPI\_clearRxInterruptFlag@{SPI\_clearRxInterruptFlag}}
+\index{SPI\_clearRxInterruptFlag@{SPI\_clearRxInterruptFlag}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_clearRxInterruptFlag()}{SPI\_clearRxInterruptFlag()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+clear\+Rx\+Interrupt\+Flag (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear Interrupt Flag for receive operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em /} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/ 
+\end{DoxyReturn}
+
+
+Definition at line 289 of file spi.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{289                                    \{}
+\DoxyCodeLine{290     TMC\_BASE\_SPIA-\/>FFRX |= (0x1 << 6);                      \textcolor{comment}{// Clear Interrupt Flag}}
+\DoxyCodeLine{291 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{spi_8c_a3d8df677d633bdda2d8e4b791f3dc085}\label{spi_8c_a3d8df677d633bdda2d8e4b791f3dc085}} 
+\index{spi.c@{spi.c}!SPI\_clearTxInterruptFlag@{SPI\_clearTxInterruptFlag}}
+\index{SPI\_clearTxInterruptFlag@{SPI\_clearTxInterruptFlag}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_clearTxInterruptFlag()}{SPI\_clearTxInterruptFlag()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+clear\+Tx\+Interrupt\+Flag (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear Interrupt Flag for transmit operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em /} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/ 
+\end{DoxyReturn}
+
+
+Definition at line 298 of file spi.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{298                                \{}
+\DoxyCodeLine{299     TMC\_BASE\_SPIA-\/>FFTX |= (0x1 << 6);                      \textcolor{comment}{// Clear Interrupt Flag}}
+\DoxyCodeLine{300 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{spi_8c_a10f8a229cc350a50cd7e77a556efd10c}\label{spi_8c_a10f8a229cc350a50cd7e77a556efd10c}} 
+\index{spi.c@{spi.c}!SPI\_interruptAck@{SPI\_interruptAck}}
+\index{SPI\_interruptAck@{SPI\_interruptAck}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_interruptAck()}{SPI\_interruptAck()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+interrupt\+Ack (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Giving interrupts acknowledge to interrupt again. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em /} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/ 
+\end{DoxyReturn}
+
+
+Definition at line 280 of file spi.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{280                        \{}
+\DoxyCodeLine{281     TMC\_BASE\_PIE-\/>ACK |= 0x20;                              \textcolor{comment}{// Acknowledge interrupt to get more from group all interrupt groups}}
+\DoxyCodeLine{282 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{spi_8c_a890e6e4bc94330d30a9f449ca9192fbe}\label{spi_8c_a890e6e4bc94330d30a9f449ca9192fbe}} 
+\index{spi.c@{spi.c}!SPI\_read@{SPI\_read}}
+\index{SPI\_read@{SPI\_read}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_read()}{SPI\_read()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}} $\ast$}]{rdata }\end{DoxyParamCaption})}
+
+
+
+Read Rx-\/data of S\+PI module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) Pointer to rdata ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 269 of file spi.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{269                              \{}
+\DoxyCodeLine{270     \textcolor{keywordflow}{if}((TMC\_BASE\_SPIA-\/>FFRX \& 0x1F00))\{                     \textcolor{comment}{// If Receive-\/FIFO not empty}}
+\DoxyCodeLine{271         *rdata=TMC\_BASE\_SPIA-\/>RXBUF;                        \textcolor{comment}{// Read data}}
+\DoxyCodeLine{272     \}}
+\DoxyCodeLine{273 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{spi_8c_a4138fa89f174ce3fa1b5117a9a031ce0}\label{spi_8c_a4138fa89f174ce3fa1b5117a9a031ce0}} 
+\index{spi.c@{spi.c}!SPI\_send@{SPI\_send}}
+\index{SPI\_send@{SPI\_send}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_send()}{SPI\_send()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{sdata }\end{DoxyParamCaption})}
+
+
+
+Send data via S\+PI. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) Uint16 data ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 258 of file spi.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{258                            \{}
+\DoxyCodeLine{259     \textcolor{keywordflow}{if}(!(TMC\_BASE\_SPIA-\/>FFTX \& 0x1F00))\{                    \textcolor{comment}{// If Transmit FIFO empty}}
+\DoxyCodeLine{260         TMC\_BASE\_SPIA-\/>TXBUF=sdata;                         \textcolor{comment}{// Send data}}
+\DoxyCodeLine{261     \}}
+\DoxyCodeLine{262 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{spi_8c_a0844a80a1a2494fcf9894c4610c664ff}\label{spi_8c_a0844a80a1a2494fcf9894c4610c664ff}} 
+\index{spi.c@{spi.c}!SPI\_setRxInterrupt@{SPI\_setRxInterrupt}}
+\index{SPI\_setRxInterrupt@{SPI\_setRxInterrupt}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_setRxInterrupt()}{SPI\_setRxInterrupt()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+set\+Rx\+Interrupt (\begin{DoxyParamCaption}\item[{void $\ast$}]{spi\+Rx\+F\+I\+F\+O\+I\+SR }\end{DoxyParamCaption})}
+
+
+
+Configuration of S\+PI Rx I\+SR. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) Pointer to address of I\+SR ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 242 of file spi.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{242                                             \{}
+\DoxyCodeLine{243     DINT;                                                   \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{244     EALLOW;                                                 \textcolor{comment}{// Allow Register writes}}
+\DoxyCodeLine{245     TMC\_BASE\_INT\_REGS-\/>SPIRXINTA = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiRxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{246     EDIS;                                                   \textcolor{comment}{// Protect registers}}
+\DoxyCodeLine{247     TMC\_BASE\_PIE-\/>CTRL |= 0x01;                             \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{248     TMC\_BASE\_PIE-\/>GROUP[5].IER |= 0x1;                      \textcolor{comment}{// Enable I2cInt1A in the PIE: Group 6 interrupt 1}}
+\DoxyCodeLine{249     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0020;                                           \textcolor{comment}{// Enable CPU int block}}
+\DoxyCodeLine{250     EINT;                                                   \textcolor{comment}{// Enable Interrupts}}
+\DoxyCodeLine{251 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{spi_8c_adde31e5a5cc62ce8b9fb2eba2616add6}\label{spi_8c_adde31e5a5cc62ce8b9fb2eba2616add6}} 
+\index{spi.c@{spi.c}!SPI\_setTxInterrupt@{SPI\_setTxInterrupt}}
+\index{SPI\_setTxInterrupt@{SPI\_setTxInterrupt}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_setTxInterrupt()}{SPI\_setTxInterrupt()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+set\+Tx\+Interrupt (\begin{DoxyParamCaption}\item[{void $\ast$}]{spi\+Tx\+F\+I\+F\+O\+I\+SR }\end{DoxyParamCaption})}
+
+
+
+Configuration of S\+PI Tx I\+SR. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) Pointer to address of I\+SR ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/~\newline
+
+\end{DoxyReturn}
+
+
+Definition at line 226 of file spi.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{226                                             \{}
+\DoxyCodeLine{227     DINT;                                                   \textcolor{comment}{// Disable Interrupts}}
+\DoxyCodeLine{228     EALLOW;                                                 \textcolor{comment}{// Allow Register writes}}
+\DoxyCodeLine{229     TMC\_BASE\_INT\_REGS-\/>SPITXINTA = (\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})spiTxFIFOISR;  \textcolor{comment}{// Assign Interrupt Service Routine}}
+\DoxyCodeLine{230     EDIS;                                                   \textcolor{comment}{// Protect registers}}
+\DoxyCodeLine{231     TMC\_BASE\_PIE-\/>CTRL |= 0x01;                             \textcolor{comment}{// Enable PIE block}}
+\DoxyCodeLine{232     TMC\_BASE\_PIE-\/>GROUP[5].IER |= 0x2;                      \textcolor{comment}{// Enable I2cInt1A in the PIE: Group 6 interrupt 2}}
+\DoxyCodeLine{233     \mbox{\hyperlink{global__defines_8h_a8d912c89db0fb8d197e5856f05ce4907}{IER}} |= 0x0020;                                           \textcolor{comment}{// Enable CPU int block}}
+\DoxyCodeLine{234     EINT;                                                   \textcolor{comment}{// Enable Interrupts}}
+\DoxyCodeLine{235 \}}
+
+\end{DoxyCode}

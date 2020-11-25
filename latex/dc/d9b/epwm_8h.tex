@@ -1,0 +1,259 @@
+\hypertarget{epwm_8h}{}\doxysection{C\+:/\+Users/\+Kliewe/workspace\+\_\+\+B\+A\+A\+\_\+v10/workspace\+\_\+\+B\+A\+A\+\_\+v10/\+T\+M\+S320\+F28335/epwm/epwm.h File Reference}
+\label{epwm_8h}\index{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/epwm/epwm.h@{C:/Users/Kliewe/workspace\_BAA\_v10/workspace\_BAA\_v10/TMS320F28335/epwm/epwm.h}}
+
+
+Header file for e\+P\+WM module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{epwm_8h_a38f3b3ddda3a2822a4999d8ca19cd8fa}{init\+\_\+e\+P\+WM}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}, \mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})
+\begin{DoxyCompactList}\small\item\em Configuration of G\+P\+IO as epwm. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{epwm_8h_a4a39a3ff3529523f92f73a7f0d4cbf7d}{e\+P\+W\+M\+\_\+start}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}, \mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em Start e\+P\+WM signal on pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} \mbox{\hyperlink{epwm_8h_a4fc74e3b45bc45d49d7fb45bc5b5ed22}{e\+P\+W\+M\+\_\+stop}} (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}})
+\begin{DoxyCompactList}\small\item\em Stop e\+P\+WM signal on pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for e\+P\+WM module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{epwm_8h_a4a39a3ff3529523f92f73a7f0d4cbf7d}\label{epwm_8h_a4a39a3ff3529523f92f73a7f0d4cbf7d}} 
+\index{epwm.h@{epwm.h}!ePWM\_start@{ePWM\_start}}
+\index{ePWM\_start@{ePWM\_start}!epwm.h@{epwm.h}}
+\doxysubsubsection{\texorpdfstring{ePWM\_start()}{ePWM\_start()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} e\+P\+W\+M\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{gpio,  }\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{dutycycle }\end{DoxyParamCaption})}
+
+
+
+Start e\+P\+WM signal on pin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) e\+P\+WM pin as Uint16 -\/-\/$>$ valid value\+: 0-\/11 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin -\/-\/$>$ -\/2 = invalid value of dutycycle 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file epwm.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87                                                \{}
+\DoxyCodeLine{88     \textcolor{keywordflow}{if}(dutycycle>100)\{}
+\DoxyCodeLine{89         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keywordflow}{if}(gpio<=11)\{}
+\DoxyCodeLine{93         \textcolor{keywordflow}{switch}(gpio)\{}
+\DoxyCodeLine{94             \textcolor{keywordflow}{case} 0: TMC\_BASE\_EPWM1-\/>AQCSFRC \&= \string~(0x1);                                                          \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{95                     TMC\_BASE\_EPWM1-\/>CMPA = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM1-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{96                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{97             \textcolor{keywordflow}{case} 1: TMC\_BASE\_EPWM1-\/>AQCSFRC \&= \string~(0x1 << 2);                                                     \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{98                     TMC\_BASE\_EPWM1-\/>CMPB = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM1-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{99                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{100             \textcolor{keywordflow}{case} 2: TMC\_BASE\_EPWM2-\/>AQCSFRC \&= \string~(0x1);                                                          \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{101                     TMC\_BASE\_EPWM2-\/>CMPA = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM2-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{102                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{103             \textcolor{keywordflow}{case} 3: TMC\_BASE\_EPWM2-\/>AQCSFRC \&= \string~(0x1 << 2);                                                     \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{104                     TMC\_BASE\_EPWM2-\/>CMPB = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM2-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{105                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{106             \textcolor{keywordflow}{case} 4: TMC\_BASE\_EPWM3-\/>AQCSFRC \&= \string~(0x1);                                                          \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{107                     TMC\_BASE\_EPWM3-\/>CMPA = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM3-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{108                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{109             \textcolor{keywordflow}{case} 5: TMC\_BASE\_EPWM3-\/>AQCSFRC \&= \string~(0x1 << 2);                                                     \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{110                     TMC\_BASE\_EPWM3-\/>CMPB = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM3-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{111                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{112             \textcolor{keywordflow}{case} 6: TMC\_BASE\_EPWM4-\/>AQCSFRC \&= \string~(0x1);                                                          \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{113                     TMC\_BASE\_EPWM4-\/>CMPA = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM4-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{114                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{115             \textcolor{keywordflow}{case} 7: TMC\_BASE\_EPWM4-\/>AQCSFRC \&= \string~(0x1 << 2);                                                     \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{116                     TMC\_BASE\_EPWM4-\/>CMPB = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM4-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{117                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{118             \textcolor{keywordflow}{case} 8: TMC\_BASE\_EPWM5-\/>AQCSFRC \&= \string~(0x1);                                                          \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{119                     TMC\_BASE\_EPWM5-\/>CMPA =(\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM5-\/>TBPRD * (100-\/dutycycle)) / 100);   \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{120                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{121             \textcolor{keywordflow}{case} 9: TMC\_BASE\_EPWM5-\/>AQCSFRC \&= \string~(0x1 << 2);                                                     \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{122                     TMC\_BASE\_EPWM5-\/>CMPB = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM5-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{123                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{124             \textcolor{keywordflow}{case} 10:    TMC\_BASE\_EPWM6-\/>AQCSFRC \&= \string~(0x1);                                                          \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{125                         TMC\_BASE\_EPWM6-\/>CMPA = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM6-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{126                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{127             \textcolor{keywordflow}{case} 11:    TMC\_BASE\_EPWM6-\/>AQCSFRC \&= \string~(0x1 << 2);                                                     \textcolor{comment}{// Software forcing is disabled and has no effect}}
+\DoxyCodeLine{128                         TMC\_BASE\_EPWM6-\/>CMPB = (\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}) (((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})TMC\_BASE\_EPWM6-\/>TBPRD * (100-\/dutycycle)) / 100);  \textcolor{comment}{// Set compare value}}
+\DoxyCodeLine{129                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{130             \textcolor{keywordflow}{default}: \textcolor{keywordflow}{break};}
+\DoxyCodeLine{131         \}}
+\DoxyCodeLine{132     \}}
+\DoxyCodeLine{133     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{134         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{137 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{epwm_8h_a4fc74e3b45bc45d49d7fb45bc5b5ed22}\label{epwm_8h_a4fc74e3b45bc45d49d7fb45bc5b5ed22}} 
+\index{epwm.h@{epwm.h}!ePWM\_stop@{ePWM\_stop}}
+\index{ePWM\_stop@{ePWM\_stop}!epwm.h@{epwm.h}}
+\doxysubsubsection{\texorpdfstring{ePWM\_stop()}{ePWM\_stop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} e\+P\+W\+M\+\_\+stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{gpio }\end{DoxyParamCaption})}
+
+
+
+Stop e\+P\+WM signal on pin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) e\+P\+WM pin as Uint16 -\/-\/$>$ valid value\+: 0-\/11 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin 
+\end{DoxyReturn}
+
+
+Definition at line 146 of file epwm.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{146                             \{}
+\DoxyCodeLine{147     \textcolor{keywordflow}{switch}(gpio)\{}
+\DoxyCodeLine{148         \textcolor{keywordflow}{case} 0: TMC\_BASE\_EPWM1-\/>CMPA = TMC\_BASE\_EPWM1-\/>TBPRD;   \textcolor{comment}{// Set CMPA = TBPRD}}
+\DoxyCodeLine{149                 TMC\_BASE\_EPWM1-\/>AQCSFRC |= 0x1;                 \textcolor{comment}{// Forces a continuous low on output A}}
+\DoxyCodeLine{150                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{151         \textcolor{keywordflow}{case} 1: TMC\_BASE\_EPWM1-\/>CMPB = TMC\_BASE\_EPWM1-\/>TBPRD;   \textcolor{comment}{// Set CMPB = TBPRD}}
+\DoxyCodeLine{152                 TMC\_BASE\_EPWM1-\/>AQCSFRC |= (0x1<<2);            \textcolor{comment}{// Forces a continuous low on output B}}
+\DoxyCodeLine{153                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{154         \textcolor{keywordflow}{case} 2: TMC\_BASE\_EPWM2-\/>CMPA = TMC\_BASE\_EPWM2-\/>TBPRD;   \textcolor{comment}{// Set CMPA = TBPRD}}
+\DoxyCodeLine{155                 TMC\_BASE\_EPWM2-\/>AQCSFRC |= 0x1;                 \textcolor{comment}{// Forces a continuous low on output A}}
+\DoxyCodeLine{156                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{157         \textcolor{keywordflow}{case} 3: TMC\_BASE\_EPWM2-\/>CMPB = TMC\_BASE\_EPWM2-\/>TBPRD;   \textcolor{comment}{// Set CMPB = TBPRD}}
+\DoxyCodeLine{158                 TMC\_BASE\_EPWM2-\/>AQCSFRC |= (0x1<<2);            \textcolor{comment}{// Forces a continuous low on output B}}
+\DoxyCodeLine{159                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{160         \textcolor{keywordflow}{case} 4: TMC\_BASE\_EPWM3-\/>CMPA = TMC\_BASE\_EPWM3-\/>TBPRD;   \textcolor{comment}{// Set CMPA = TBPRD}}
+\DoxyCodeLine{161                 TMC\_BASE\_EPWM3-\/>AQCSFRC |= 0x1;                 \textcolor{comment}{// Forces a continuous low on output A}}
+\DoxyCodeLine{162                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{163         \textcolor{keywordflow}{case} 5: TMC\_BASE\_EPWM3-\/>CMPB = TMC\_BASE\_EPWM3-\/>TBPRD;   \textcolor{comment}{// Set CMPB = TBPRD}}
+\DoxyCodeLine{164                 TMC\_BASE\_EPWM3-\/>AQCSFRC |= (0x1<<2);            \textcolor{comment}{// Forces a continuous low on output B}}
+\DoxyCodeLine{165                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{166         \textcolor{keywordflow}{case} 6: TMC\_BASE\_EPWM4-\/>CMPA = TMC\_BASE\_EPWM4-\/>TBPRD;   \textcolor{comment}{// Set CMPA = TBPRD}}
+\DoxyCodeLine{167                 TMC\_BASE\_EPWM4-\/>AQCSFRC |= 0x1;                 \textcolor{comment}{// Forces a continuous low on output A}}
+\DoxyCodeLine{168                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{169         \textcolor{keywordflow}{case} 7: TMC\_BASE\_EPWM4-\/>CMPB = TMC\_BASE\_EPWM4-\/>TBPRD;   \textcolor{comment}{// Set CMPB = TBPRD}}
+\DoxyCodeLine{170                 TMC\_BASE\_EPWM4-\/>AQCSFRC |= (0x1<<2);            \textcolor{comment}{// Forces a continuous low on output B}}
+\DoxyCodeLine{171                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{172         \textcolor{keywordflow}{case} 8: TMC\_BASE\_EPWM5-\/>CMPA = TMC\_BASE\_EPWM5-\/>TBPRD;   \textcolor{comment}{// Set CMPA = TBPRD}}
+\DoxyCodeLine{173                 TMC\_BASE\_EPWM5-\/>AQCSFRC |= 0x1;                 \textcolor{comment}{// Forces a continuous low on output A}}
+\DoxyCodeLine{174                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{175         \textcolor{keywordflow}{case} 9: TMC\_BASE\_EPWM5-\/>CMPB = TMC\_BASE\_EPWM5-\/>TBPRD;   \textcolor{comment}{// Set CMPB = TBPRD}}
+\DoxyCodeLine{176                 TMC\_BASE\_EPWM5-\/>AQCSFRC |= (0x1<<2);            \textcolor{comment}{// Forces a continuous low on output B}}
+\DoxyCodeLine{177                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{178         \textcolor{keywordflow}{case} 10:    TMC\_BASE\_EPWM6-\/>CMPA = TMC\_BASE\_EPWM6-\/>TBPRD;   \textcolor{comment}{// Set CMPA = TBPRD}}
+\DoxyCodeLine{179                     TMC\_BASE\_EPWM6-\/>AQCSFRC |= 0x1;                 \textcolor{comment}{// Forces a continuous low on output A}}
+\DoxyCodeLine{180                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{181         \textcolor{keywordflow}{case} 11:    TMC\_BASE\_EPWM6-\/>CMPB = TMC\_BASE\_EPWM6-\/>TBPRD;   \textcolor{comment}{// Set CMPB = TBPRD}}
+\DoxyCodeLine{182                     TMC\_BASE\_EPWM6-\/>AQCSFRC |= (0x1<<2);            \textcolor{comment}{// Forces a continuous low on output B}}
+\DoxyCodeLine{183                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{184         \textcolor{keywordflow}{default}: \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{185     \}}
+\DoxyCodeLine{186     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{187 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{epwm_8h_a38f3b3ddda3a2822a4999d8ca19cd8fa}\label{epwm_8h_a38f3b3ddda3a2822a4999d8ca19cd8fa}} 
+\index{epwm.h@{epwm.h}!init\_ePWM@{init\_ePWM}}
+\index{init\_ePWM@{init\_ePWM}!epwm.h@{epwm.h}}
+\doxysubsubsection{\texorpdfstring{init\_ePWM()}{init\_ePWM()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__defines_8h_a74c874318b0a5111bb5c5119fa8c71b5}{int16}} init\+\_\+e\+P\+WM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__defines_8h_a59a9f6be4562c327cbfb4f7e8e18f08b}{Uint16}}}]{gpio,  }\item[{\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}}}]{frequency }\end{DoxyParamCaption})}
+
+
+
+Configuration of G\+P\+IO as epwm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & 1) G\+P\+IO pin as Uint16 -\/-\/$>$ valid value\+: 0-\/11 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of operations as int16~\newline
+-\/-\/$>$ 0 = operation successful ~\newline
+-\/-\/$>$ -\/1 = invalid value of G\+P\+IO pin -\/-\/$>$ -\/2 = invalid value of frequency 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file epwm.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                                               \{}
+\DoxyCodeLine{21     \mbox{\hyperlink{struct___t_m_s___e_p_w_m}{TMPS\_EPWM}} PWM;                                             \textcolor{comment}{// Create variable for register-\/access}}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if}((frequency > 10000000) || (frequency < 1145))\{           \textcolor{comment}{// Check frequency}}
+\DoxyCodeLine{23         \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{26         \textcolor{keywordflow}{switch}(gpio)\{                                           \textcolor{comment}{// Check GPIO-\/Input parameter}}
+\DoxyCodeLine{27             \textcolor{keywordflow}{case} 0 ... 1:   PWM = TMC\_BASE\_EPWM1;               \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{28                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{29             \textcolor{keywordflow}{case} 2 ... 3:   PWM = TMC\_BASE\_EPWM2;               \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{30                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{31             \textcolor{keywordflow}{case} 4 ... 5:   PWM = TMC\_BASE\_EPWM3;               \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{32                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{33             \textcolor{keywordflow}{case} 6 ... 7:   PWM = TMC\_BASE\_EPWM4;               \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{34                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{35             \textcolor{keywordflow}{case} 8 ... 9:   PWM = TMC\_BASE\_EPWM5;               \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{36                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{37             \textcolor{keywordflow}{case} 10 ... 11:     PWM = TMC\_BASE\_EPWM6;           \textcolor{comment}{// Assign Register-\/address to variable for register access}}
+\DoxyCodeLine{38                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{39             \textcolor{keywordflow}{default}: \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{40         \}}
+\DoxyCodeLine{41         EALLOW;                                                 \textcolor{comment}{// Allow register access}}
+\DoxyCodeLine{42         TMC\_BASE\_PIO-\/>CTL[0].PUD \&= \string~((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << gpio);               \textcolor{comment}{// Enable pull-\/up on GPIO}}
+\DoxyCodeLine{43         TMC\_BASE\_PIO-\/>CTL[0].MUX1 |= ((\mbox{\hyperlink{global__defines_8h_aba99025e657f892beb7ff31cecf64653}{Uint32}})0x1 << gpio*2);     \textcolor{comment}{// Configure GPIO as EPWM}}
+\DoxyCodeLine{44         TMC\_BASE\_SCR-\/>PCLKCR0 = (0xfffb);                       \textcolor{comment}{// Stop TBCLK (Time Base Clock) within each enabled ePWM module}}
+\DoxyCodeLine{45         EDIS;                                                   \textcolor{comment}{// Protect register}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_ae2c54ea2463dae7425a2603907d8fe25}{TBPRD}} = (F\_CPU/frequency)/2;                      \textcolor{comment}{// Set time-\/based period register}}
+\DoxyCodeLine{48         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a107ec0bea829074e22eb6bae5bebc434}{TBPHS}} = 0x0000;                                   \textcolor{comment}{// Phase is 0}}
+\DoxyCodeLine{49         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_aa6ccdb64756b8bf09db2ed4c1e25ff05}{TBCTR}} = 0x0000;                                   \textcolor{comment}{// Clear counter}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{comment}{//Setup counter mode}}
+\DoxyCodeLine{52         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a068c02c7fbf61da36bbbf24fb4e1a2e0}{TBCTL}} = 0x2;                                      \textcolor{comment}{// UpDown Count mode}}
+\DoxyCodeLine{53         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a068c02c7fbf61da36bbbf24fb4e1a2e0}{TBCTL}} \&= \string~(0x1 << 2);                             \textcolor{comment}{// Disable phase loading}}
+\DoxyCodeLine{54         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a068c02c7fbf61da36bbbf24fb4e1a2e0}{TBCTL}} \&= \string~(0x7 << 7);                             \textcolor{comment}{// Set Clock ratio to SYSCLKOUT}}
+\DoxyCodeLine{55         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a068c02c7fbf61da36bbbf24fb4e1a2e0}{TBCTL}} \&= \string~(0x7 << 10);                                \textcolor{comment}{// Disable Time-\/base Clock Prescale}}
+\DoxyCodeLine{56         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a068c02c7fbf61da36bbbf24fb4e1a2e0}{TBCTL}} \&= \string~(0x1 << 3);                                 \textcolor{comment}{// Load TBPRD from TB\_SHADOW;}}
+\DoxyCodeLine{57         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a068c02c7fbf61da36bbbf24fb4e1a2e0}{TBCTL}} |= (0x1 << 4);                              \textcolor{comment}{// Time-\/base counter equal to zero (TBCTR = 0x0000)}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{comment}{// Setup shadowing}}
+\DoxyCodeLine{60         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a48495f67a08fb0470f99869a35df95e5}{CMPCTL}} \&= \string~(0x1);}
+\DoxyCodeLine{61         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a48495f67a08fb0470f99869a35df95e5}{CMPCTL}} \&= \string~(0x1 << 2);}
+\DoxyCodeLine{62         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a48495f67a08fb0470f99869a35df95e5}{CMPCTL}} \&= \string~(0x1 << 4);}
+\DoxyCodeLine{63         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a48495f67a08fb0470f99869a35df95e5}{CMPCTL}} \&= \string~(0x1 << 6);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{comment}{// Set actions}}
+\DoxyCodeLine{67         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a59476aeabe03f80255e377895f934129}{AQCTLA}} = (0x2 << 4);                                 \textcolor{comment}{// Set PWM1A on event A, up count}}
+\DoxyCodeLine{68         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a59476aeabe03f80255e377895f934129}{AQCTLA}} |= (0x1 << 6);                                \textcolor{comment}{// Clear PWM1A on event A, down count}}
+\DoxyCodeLine{69         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a59ee9cbf6e44e011918326f8cdb1e052}{AQCTLB}} = (0x2 << 8);                                 \textcolor{comment}{// Set PWM1B on event B, up count}}
+\DoxyCodeLine{70         PWM-\/>\mbox{\hyperlink{struct___t_m_s___e_p_w_m_a59ee9cbf6e44e011918326f8cdb1e052}{AQCTLB}} |= (0x1 << 10);                               \textcolor{comment}{// Clear PWM1B on event B, down count}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         EALLOW;}
+\DoxyCodeLine{73         TMC\_BASE\_SCR-\/>PCLKCR0 = (0xffff);                       \textcolor{comment}{// All enabled ePWM module clocks are started with the first rising edge of TBCLK aligned.}}
+\DoxyCodeLine{74         EDIS;}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
